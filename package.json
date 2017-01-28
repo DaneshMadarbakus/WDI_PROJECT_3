@@ -15,5 +15,12 @@
   "bugs": {
     "url": "https://github.com/DaneshMadarbakus/WDI_PROJECT_3/issues"
   },
-  "homepage": "https://github.com/DaneshMadarbakus/WDI_PROJECT_3#readme"
+  "homepage": "https://github.com/DaneshMadarbakus/WDI_PROJECT_3#readme",
+  "dependencies": {
+    "body-parser": "^1.16.0",
+    "express": "^4.14.0",
+    "express-jwt": "^5.1.0",
+    "mongoose": "^4.7.9",
+    "morgan": "^1.7.0"
+  }
 }
