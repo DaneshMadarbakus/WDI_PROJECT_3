@@ -1,0 +1,19 @@
+{
+  "name": "wdi_project_3",
+  "version": "1.0.0",
+  "description": "A team project for WDI.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/DaneshMadarbakus/WDI_PROJECT_3.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/DaneshMadarbakus/WDI_PROJECT_3/issues"
+  },
+  "homepage": "https://github.com/DaneshMadarbakus/WDI_PROJECT_3#readme"
+}

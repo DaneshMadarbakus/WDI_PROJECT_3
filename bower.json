@@ -1,0 +1,24 @@
+{
+  "name": "wdi_project_3",
+  "description": "A team project for WDI.",
+  "main": "index.js",
+  "authors": [
+    "rainede <rainey@techgiver.com>"
+  ],
+  "license": "ISC",
+  "homepage": "https://github.com/DaneshMadarbakus/WDI_PROJECT_3",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular": "^1.6.1",
+    "angular-jwt": "^0.1.9",
+    "angular-ui-router": "^0.4.2",
+    "bootstrap": "^3.3.7",
+    "angular-resource": "^1.6.1"
+  }
+}
