@@ -8,6 +8,10 @@ function usersIndex(req, res){
 }
 
 function usersShow(req, res){
+  User.findById(req.params.id, (err, user) =>{
+    if (err) return res.status(500).json({message: 'Something went wrong trying show User'});
+    if(!user) return res.status(404).json({message: 'No User was found '});
+  });
 }
 
 function usersUpdate(req, res){
@@ -19,5 +23,6 @@ function usersDelete(req, res){
 }
 
 module.exports = {
-  index: usersIndex
+  index: usersIndex,
+  show: usersShow
 };
