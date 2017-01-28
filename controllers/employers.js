@@ -19,7 +19,11 @@ function employersUpdate(req, res){
 }
 
 function employersDelete(req, res){
-
+  Employer.findByIdAndRemove(req.params.id, (err, employer) => {
+    if (err) return res.status(500).json({ message: 'Something went wrong.' });
+    if (!employer) return res.status(404).json({ message: 'User not found.' });
+    return res.status(204);
+  });
 }
 
 
