@@ -1,3 +1,4 @@
+
 const express     = require('express');
 const morgan      = require('morgan');
 const bodyParser  = require('body-parser');
@@ -5,6 +6,7 @@ const expressJWT  = require('express-jwt');
 const mongoose    = require('mongoose');
 const cors        = require('cors');
 const app         = express();
+
 
 const routes      = require('config/routes');
 const config      = require('config/config');
