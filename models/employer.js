@@ -16,9 +16,21 @@ employerSchema.path('passwordHash').validate(validatePassword);
 
 employerSchema.path('email').validate(validateEmail);
 
-employerSchema.methods.validatePassword();
+employerSchema.methods.validatePassword;
 
-function setPassword() {
+employerSchema.set('toJSON', {
+  transform: function(doc, ret) {
+    delete ret.passwordHash;
+    delete ret.__v;
+    return ret;
+  }
+});
+
+module.exports = mongoose.model('User', employerSchema);
+
+function setPassword(value) {
+  this._password    = value;
+  this.passwordHash = bcrypt.hashSync(value, bcrypt.genSaltSync(8));
 
 }
 
