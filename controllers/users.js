@@ -24,11 +24,15 @@ function usersUpdate(req, res){
 }
 
 function usersDelete(req, res){
-
+  User.findByIdAndRemove(req.params.id, (err, user) => {
+    if (err) return res.status(500).json({ message: 'Something went wrong with deleting this user '});
+    if(!user) return res.status(404).json({message: 'No User was found'});
+  });
 }
 
 module.exports = {
   index: usersIndex,
   show: usersShow,
-  update: usersUpdate
+  update: usersUpdate,
+  delete: usersDelete
 };
