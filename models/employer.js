@@ -9,3 +9,19 @@ const employerSchema = new mongoose.Schema({
 });
 
 employerSchema.virtual('password').set(setPassword);
+
+employerSchema.virtual('passwordConfirmation').set(setPasswordConfirmation);
+
+employerSchema.path('passwordHash').validate(validatePassword);
+
+employerSchema.path('email').validate(validateEmail);
+
+employerSchema.methods.validatePassword();
+
+function setPassword() {
+
+}
+
+function setPasswordConfirmation() {
+
+}
