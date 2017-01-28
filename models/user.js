@@ -19,6 +19,11 @@ userSchema
   .path('passwordHash')
   .validate(validatePasswordHash);
 
+userSchema
+  .path('email')
+  .validate(validateEmail);
+
+
 module.exports = mongoose.model('User', userSchema);
 
 function setPassword(value){
@@ -33,7 +38,7 @@ function setPasswordConfirmation(passwordConfirmation) {
 function validatePasswordHash(){
   if(this.isNew){
     if(!this._password){
-      return this.invalidate('password', 'A password is required.')
+      return this.invalidate('password', 'A password is required.');
     }
     if(!this._password.length < 6){
       return this.invalidate('password', 'A password must be at least 6 characters');
@@ -41,5 +46,11 @@ function validatePasswordHash(){
     if(!this._password !== this._passwordConfirmation){
       return this.invalidate('passwordConfirmation', 'Passwords do not match');
     }
+  }
+}
+
+function validateEmail(email){
+  if(!validator.isEmail(email)){
+    return this.invalidate('email', 'Email must be valid email address');
   }
 }
