@@ -23,6 +23,7 @@ userSchema
   .path('email')
   .validate(validateEmail);
 
+userSchema.methods.validatePassword = validatePassword;
 
 module.exports = mongoose.model('User', userSchema);
 
@@ -53,4 +54,8 @@ function validateEmail(email){
   if(!validator.isEmail(email)){
     return this.invalidate('email', 'Email must be valid email address');
   }
+}
+
+function validatePassword(password){
+  return bcrypt.compareSync(password, this.passwordHash);
 }
