@@ -1,4 +1,4 @@
-//Seed file for users
+//Seed file
 
 //require mongoose
 const mongoose = require('mongoose');
@@ -10,10 +10,11 @@ mongoose.connect(databaseUrl);
 
 //require models
 const User    = require('../models/user');
-const Company = require('../models/company')
-
+const Company = require('../models/company');
+const Idea   = require('../models/idea');
 //drop db
 User.collection.drop();
 Company.collection.drop();
+Idea.collection.drop();
 
-const
+//
