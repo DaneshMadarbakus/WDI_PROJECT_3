@@ -6,53 +6,9 @@ const User = require('../../models/user.js');
 //The body of the test.
 describe('Authentication tests', function() {
 
-<<<<<<< HEAD
 
-const User = require('../../models/user');
-=======
-  
   const User = require('../../models/user');
->>>>>>> test
 
-//The body of the test.
-describe('Authentication tests', function() {
-  console.log('auth test');
-
-  //5 second timeout
-  this.timeout(5000);
-
-const User = require('../../models/user.js');
-
-//The body of the test.
-describe('Authentication tests', function() {
-
-
-
-
-  describe('POST valid details to /api/register ', () =>  {
-
-    it('return a valid jwt token', done => {
-      api.post('/api/register')
-        .set('Accept', 'application/json')
-        .send({
-          user: {
-            email: 'testuser@testuser.com',
-            password: 'password',
-            passwordConfirmation: 'password'
-          }
-
-});
-    it(' should return a valid jwt token', (done) => {
-      api.post('/api/register')
-      .set('Accept', 'application/json')
-      .send(
-        {
-          email: 'testuser@testuser.com',
-          password: 'password',
-          passwordConfirmation: 'password'
-        }
-      });
-});
   //The body of the test.
   describe('Authentication tests', function() {
     console.log('auth test');
@@ -71,21 +27,8 @@ describe('Authentication tests', function() {
       it(' should return a valid jwt token', (done) => {
         api.post('/api/register')
         .set('Accept', 'application/json')
-<<<<<<< HEAD
-        .send({
-
-          email: 'testuser@testuser.com',
-          password: 'password'
-
-        }).end((err, res) => {
-          expect(res.body.token).to.be.a('string');
-          done();
-
-          user: {
-=======
         .send(
           {
->>>>>>> test
             email: 'testuser@testuser.com',
             password: 'password',
             passwordConfirmation: 'password'
@@ -107,9 +50,6 @@ describe('Authentication tests', function() {
             password: 'password'
           }).expect(400, done);
         });
-    });
-  });
-
       });
 
       describe(' POST valid credentials to /api/login', () => {
@@ -155,5 +95,4 @@ describe('Authentication tests', function() {
       });
     });
   });
-
 });
