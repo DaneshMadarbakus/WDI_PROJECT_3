@@ -49,10 +49,10 @@ function validatePasswordHash(){
     if(!this._password){
       return this.invalidate('password', 'A password is required.');
     }
-    if(!this._password.length < 6){
+    if(this._password.length < 6){
       return this.invalidate('password', 'A password must be at least 6 characters');
     }
-    if(!this._password !== this._passwordConfirmation){
+    if(this._password !== this._passwordConfirmation){
       return this.invalidate('passwordConfirmation', 'Passwords do not match');
     }
   }
