@@ -44,7 +44,10 @@ function companiesUpdate(req, res){
 }
 
 function  companiesDelete(req, res){
-
+  Company.findByIdAndRemove(req.params.id, (err, company) => {
+    if (err) return res.status(500).json({ message: 'Something went wrong with deleting this Company '});
+    if(!company) return res.status(404).json({message: 'No Company was found'});
+  });
 }
 
 module.exports = {
