@@ -11,6 +11,11 @@ function companiesCreate(req, res){
     if (!user) return res.status(404).json({ error: 'No user was found.' });
 
   });
+  const company = new Company(req.body.company);
+  company.save(err => {
+    if (err) return res.render('companies/new', { error: err.message });
+    return res.redirect('/companies');
+});
 }
 
 function companiesIndex(req, res) {
@@ -33,5 +38,6 @@ module.exports = {
   create: companiesCreate,
   update: companiesUpdate,
   delete: companiesDelete,
-  show: companiesShow
+  show: companiesShow,
+  new: companiesNew
 };

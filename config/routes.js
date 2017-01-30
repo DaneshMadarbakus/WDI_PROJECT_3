@@ -16,10 +16,10 @@ router.route('/users/:id')
   .delete(usersController.delete);
 
 router.route('/companies')
-  .get(companiesController.index);
+  .get(companiesController.index)
   .post(companiesController.create);
 router.route('/companies/new')
-  .get(companies.new);
+  .get(companiesController.new);
 router.route('/companies/:id')
   .get(companiesController.show)
   .put(companiesController.update)
