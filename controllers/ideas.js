@@ -44,7 +44,6 @@ function ideasDelete(req, res){
 }
 
 module.exports = {
-  index: ideasIndex,
   create: ideasCreate,
   show: ideasShow,
   update: ideasUpdate,
