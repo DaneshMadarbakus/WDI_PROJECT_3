@@ -6,6 +6,6 @@ registerCtrl.$inject = ['User'];
 function registerCtrl(User){
   const vm = this;
   vm.register = () => {
-    User.register();
+    User.register(vm.user);
   };
 }
