@@ -1,7 +1,10 @@
 const Idea = require('../models/idea');
 
-function ideasIndex() {
-
+function ideasIndex(req, res) {
+  Idea.find((err, ideas) => {
+    if (err) return res.status(500).json({ message: 'Something went wrong.' });
+    return res.status(200).json(ideas);
+  });
 }
 
 function ideasNew(){
@@ -12,8 +15,11 @@ function ideasCreate(){
 
 }
 
-function ideasShow(){
-
+function ideasShow(req, res){
+  Idea.findById(req.params.id, (err, idea) => {
+    if (err) return res.status(500).json({ message: 'Something went wrong.'});
+    return res.status(200).json(idea);
+  });
 }
 
 function ideasEdit(){
