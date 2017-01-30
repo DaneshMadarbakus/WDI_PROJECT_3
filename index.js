@@ -11,6 +11,12 @@ const config      = require('./config/config');
 
 mongoose.connect(config.db);
 
+//testing
+const environment = app.get('env');
+if ('test' !== environment) {
+  app.use(require('morgan')('dev'));
+}
+
 app.use(morgan('dev'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
@@ -33,3 +39,5 @@ function jwtErrorHandler(err, req, res, next){
 app.use('/', routes);
 
 app.listen(config.port, console.log(`app is listening on ${config.port}`));
+
+module.exports = app;
