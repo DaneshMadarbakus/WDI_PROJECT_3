@@ -16,7 +16,7 @@ describe('Authentication tests', function() {
   });
 
   describe('POST valid details to /api/register ', () =>  {
-    it('return a valid jwt token', done => {
+    it(' should return a valid jwt token', done => {
       api.post('/register')
       .set('Accept', 'application/json')
       .send(
@@ -31,6 +31,17 @@ describe('Authentication tests', function() {
         expect(res.body.token).to.be.a('string');
         done();
       });
+    });
+  });
+
+  describe('POST invalid details to /api/register', () => {
+    it(' should something went wrong with authenticating a new user', done => {
+      api.post('/register')
+      .set('Accept', 'application/json')
+      .send({
+        email: 'testtest.com',
+        password: 'password'
+      }).expect(400, done);
     });
   });
 
