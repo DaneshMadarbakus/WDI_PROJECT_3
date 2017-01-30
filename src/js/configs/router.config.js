@@ -30,9 +30,15 @@ function Router($stateProvider, $locationProvider, $urlRouterProvider){
   })
   .state('companyIndex', {
     url: '/companies',
-    templateUrl: '/js/views/companies.html',
+    templateUrl: '/js/views/companies/index.html',
     controller: 'companiesIndexCtrl',
     controllerAs: 'companiesIndex'
+  })
+  .state('companyShow', {
+    url: '/companies/:id',
+    templateUrl: '/js/views/companies/show.html',
+    controller: 'companiesShowCtrl',
+    controllerAs: 'companiesShow'
   });
 
   $urlRouterProvider.otherwise('/');
