@@ -35,7 +35,7 @@ describe('Authentication tests', function() {
   });
 
   describe('POST invalid details to /api/register', () => {
-    it(' should something went wrong with authenticating a new user', done => {
+    it(' should return a 400 status', done => {
       api.post('/api/register')
       .set('Accept', 'application/json')
       .send({
