@@ -4,7 +4,7 @@ const config = require('../config/config');
 
 function userAuthenticationsRegister(req, res){
   User.create(req.body, (err, user) => {
-    if (err) return res.status(500).json({ message: 'Something went wrong with authenticating a new user'});
+    if (err) return res.status(500).json({ message: 'Something went wrong with authenticating a new user', err});
     const token = jwt.sign({id: user.id}, config.secret, {expiresIn: 60*60*24*7});
     return res.status(201).json({
       user,
@@ -28,6 +28,6 @@ function userAuthenticationLogin(req, res){
 }
 
 module.exports = {
-  userRegister: userAuthenticationsRegister,
-  userLogin: userAuthenticationLogin
+  register: userAuthenticationsRegister,
+  login: userAuthenticationLogin
 };
