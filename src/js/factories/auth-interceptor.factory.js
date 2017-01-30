@@ -5,10 +5,10 @@ angular
 AuthInterceptor.$inject = [];
 function AuthInterceptor(){
   return {
-    request(config){
+    request: function(config){
       return config;
     },
-    response(res){
+    response: function(res){
       return res;
     }
   };
