@@ -1,6 +1,6 @@
 const mongoose = require('mongoose');
 
-const ideaSchema = new mongoose.schema({
+const ideaSchema = new mongoose.Schema({
   idea: {type: String, required: true},
   company: {type: String}
 });
