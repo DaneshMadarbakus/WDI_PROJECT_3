@@ -4,5 +4,16 @@ angular
 
 Router.$inject = ['$stateProvider', '$locationProvider', '$urlRouterProvider'];
 function Router($stateProvider, $locationProvider, $urlRouterProvider){
-  $stateProvider.state('home', {url: '/', templateUrl: '/js/views/home.html'});
+  $stateProvider
+  .state('home', {
+    url: '/', templateUrl: '/js/views/home.html'
+  })
+  .state('register', {
+    url: '/register', templateUrl: '/js/views/register.html', controller: 'registerCtrl', controllerAs: 'register'
+  })
+  .state('login', {
+    url: '/login', templateUrl: '/js/views/login.html', controller: 'loginCtrl', controllerAs: 'login'
+  });
+
+
 }
