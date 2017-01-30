@@ -25,12 +25,9 @@ function ideasShow(req, res){
 function ideasUpdate(req, res){
   console.log('fired', req.body);
   Idea.findByIdAndUpdate(req.params.id, req.body, { new: true}, (err, idea) => {
-    console.log(req.body);
     if (err) return res.status(500).json({message: 'Something went wrong trying update Idea'});
     if(!idea) return res.status(404).json({message: 'No Idea was found '});
-    console.log(idea);
     return res.status(200).json(idea);
-
   });
 }
 
