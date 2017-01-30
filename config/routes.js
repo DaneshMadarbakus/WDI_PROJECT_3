@@ -1,48 +1,44 @@
-const express = require('express');
-const router = express.Router();
+const express         = require('express');
+const router          = express.Router();
+const statics         = require('../controllers/statics');
+const users           = require('../controllers/users');
+const companies       = require('../controllers/companies');
+const authentications = require('../controllers/authentications');
+const ideas           = require('../controllers/ideas');
 
-const staticsController = require('../controllers/statics');
-const usersController = require('../controllers/users');
-const companiesController = require('../controllers/companies');
-
-const authentications = require('../controllers/user-authentication-controller');
-const ideasController = require('../controllers/ideas');
+/*
+ * UNPROTECTED ROUTES
+ */
 
 router.route('/')
-  .get(staticsController.home);
-
+  .get(statics.home);
 router.route('/login')
   .post(authentications.login);
 router.route('/register')
   .post(authentications.register);
 
+/*
+ * PROTECTED ROUTES
+ */
+
 router.route('/users')
-  .get(usersController.index);
+  .get(users.index);
 router.route('/users/:id')
-  .get(usersController.show)
-  .put(usersController.update)
-  .delete(usersController.delete);
-
+  .get(users.show)
+  .put(users.update)
+  .delete(users.delete);
 router.route('/companies')
-  .get(companiesController.index)
-  .post(companiesController.create);
-// router.route('/companies/new')
-//   .get(companiesController.new);
+  .get(companies.index)
+  .post(authentications.assign, companies.create);
 router.route('/companies/:id')
-  .get(companiesController.show)
-  .put(companiesController.update)
-  .delete(companiesController.delete);
-//router.route('/companies/:id/edit')
-//  .get(companiesController.edit);
-
-router.route('/ideas')
-  .get(ideasController.index)
-  .post(ideasController.create);
-
-router.route('/ideas/:id')
-  .get(ideasController.show)
-  .patch(ideasController.update)
-  .put(ideasController.update)
-  .delete(ideasController.delete);
+  .get(companies.show)
+  .put(companies.update)
+  .delete(companies.delete);
+router.route('/companies/:id/ideas')
+  .post(authentications.assign, ideas.create);
+router.route('/companies/:company_id/ideas/:id')
+  .get(ideas.show)
+  .put(ideas.update)
+  .delete(ideas.delete);
 
 module.exports = router;

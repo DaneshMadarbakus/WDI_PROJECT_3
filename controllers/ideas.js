@@ -1,17 +1,22 @@
-const Idea = require('../models/idea');
+const Idea    = require('../models/idea');
+const Company = require('../models/company');
 
-function ideasIndex(req, res) {
-  Idea.find((err, ideas) => {
-    if (err) return res.status(500).json({ message: 'Something went wrong.' });
-    return res.status(200).json(ideas);
-  });
-}
-
+/*
+ * POST /companies/:id/ideas
+ */
 function ideasCreate(req, res){
-  const idea = new Idea(req.body);
-  idea.save((err, idea) => {
+  Company.findById(req.params.id, (err, company) => {
     if (err) return res.status(500).json({ message: 'Something went wrong.' });
-    return res.status(201).json(idea);
+    if (!company) return res.status(404).json({ message: 'Company not found.' });
+
+    const idea   = new Idea(req.body.idea);
+    idea.company = company._id;
+    idea.creator = req.user._id;
+
+    idea.save((err, idea) => {
+      if (err) return res.status(500).json({ message: 'Something went wrong.' });
+      return res.status(201).json(idea);
+    });
   });
 }
 
