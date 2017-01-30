@@ -7,12 +7,12 @@ function ideasIndex(req, res) {
   });
 }
 
-function ideasNew(){
-
-}
-
-function ideasCreate(){
-
+function ideasCreate(req, res){
+  const idea = new Idea(req.body);
+  idea.save((err, idea) => {
+    if (err) return res.status(500).json({ message: 'Something went wrong.' });
+    return res.status(201).json(idea);
+  });
 }
 
 function ideasShow(req, res){
@@ -22,11 +22,7 @@ function ideasShow(req, res){
   });
 }
 
-function ideasEdit(){
-
-}
-
-function ideadsUpdate(req, res){
+function ideasUpdate(req, res){
   Idea.findByIdAndUpdate(req.params.id, req.body.idea, { new: true}, (err, idea) => {
     if (err) return res.status(500).json({message: 'Something went wrong trying update Idea'});
     if(!idea) return res.status(404).json({message: 'No Idea was found '});
@@ -43,10 +39,8 @@ function ideasDelete(req, res){
 
 module.exports = {
   index: ideasIndex,
-  new: ideasNew,
   create: ideasCreate,
   show: ideasShow,
-  edit: ideasEdit,
-  update: ideadsUpdate,
+  update: ideasUpdate,
   delete: ideasDelete
 };
