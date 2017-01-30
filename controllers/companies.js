@@ -13,6 +13,7 @@ function companiesCreate(req, res){
   });
   const company = new Company(req.body.company);
   company.save(err => {
+    company.push.user =req.body.user;
     if (err) return res.render('companies/new', { error: err.message });
     return res.redirect('/companies');
   )
@@ -20,8 +21,12 @@ function companiesCreate(req, res){
 }
 
 function companiesIndex(req, res) {
-
+  Company.find((err, companies) => {
+    if (err) return res.status(500).json({message: 'Something went wrong.'});
+    return res.status(200).json(companies);
+  });
 }
+
 function companiesShow(req, res) {
 
 }
