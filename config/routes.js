@@ -4,6 +4,12 @@ const router = express.Router();
 const staticsController = require('../controllers/statics');
 const usersController = require('../controllers/users');
 
+const authentications = require('../controllers/authentications');
+
+
+router.route('/login')
+  .post(authentications.login);
+
 router.route('/')
   .get(staticsController.home);
 
