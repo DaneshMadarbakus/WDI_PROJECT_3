@@ -1,9 +1,9 @@
 angular
 .module('clementine')
-.controller('registerCtrl', registerCtrl);
+.controller('RegisterCtrl', RegisterCtrl);
 
-registerCtrl.$inject = ['User'];
-function registerCtrl(User){
+RegisterCtrl.$inject = ['User'];
+function RegisterCtrl(User){
   const vm = this;
   vm.register = () => {
     User.register(vm.user)

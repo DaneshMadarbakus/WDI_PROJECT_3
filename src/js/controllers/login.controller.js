@@ -1,9 +1,9 @@
 angular
 .module('clementine')
-.controller('loginCtrl', loginCtrl);
+.controller('LoginCtrl', LoginCtrl);
 
-loginCtrl.$inject = ['User'];
-function loginCtrl(User) {
+LoginCtrl.$inject = ['User'];
+function LoginCtrl(User) {
   const vm = this;
 
   vm.login = () => {
