@@ -9,6 +9,8 @@ const authentications = require('../controllers/authentications');
 
 router.route('/login')
   .post(authentications.login);
+router.route('/register')
+  .post(authentications.register);
 
 router.route('/')
   .get(staticsController.home);

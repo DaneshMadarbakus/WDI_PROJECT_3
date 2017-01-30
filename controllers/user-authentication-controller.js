@@ -28,6 +28,6 @@ function userAuthenticationLogin(req, res){
 }
 
 module.exports = {
-  userRegister: userAuthenticationsRegister,
-  userLogin: userAuthenticationLogin
+  register: userAuthenticationsRegister,
+  login: userAuthenticationLogin
 };
