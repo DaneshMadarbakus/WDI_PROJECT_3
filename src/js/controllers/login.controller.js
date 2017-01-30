@@ -5,7 +5,7 @@ angular
 LoginCtrl.$inject = ['User'];
 function LoginCtrl(User) {
   const vm = this;
-
+  
   vm.login = () => {
     console.log('I work! Sort of.');
     User.login(vm.user)

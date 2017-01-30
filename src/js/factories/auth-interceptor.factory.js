@@ -10,6 +10,7 @@ function AuthInterceptor(API, TokenService){
     },
     response(res){
       if(res.config.url.indexOf(API) === 0 && res.data.token){
+
         TokenService.setToken(res.data.token);
       }
       return res;
