@@ -15,6 +15,7 @@ function companiesCreate(req, res){
   company.save(err => {
     if (err) return res.render('companies/new', { error: err.message });
     return res.redirect('/companies');
+  )
 });
 }
 
