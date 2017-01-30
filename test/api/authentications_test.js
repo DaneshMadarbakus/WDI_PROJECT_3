@@ -39,11 +39,34 @@ describe('Authentication tests', function() {
       api.post('/api/register')
       .set('Accept', 'application/json')
       .send({
-        email: 'test@test.com',
+        email: 'testuser@testuser.com',
         password: 'password'
       }).expect(400, done);
     });
   });
 
+  describe(' POST valid credentials to /api/login', () => {
+    it('should return a valid jwt token', done => {
+      const user = new User({
+        email: 'testuser@testuser.com',
+        password: 'password',
+        passwordConfirmation: 'password'
+      });
+
+      user.save((err, user) => {
+        if (err) console.log(err);
+        if (user) console.log(user);
+        api.post('/api/login')
+        .set('Accept', 'application/json')
+        .send({
+          email: 'testuser@testuser.com',
+          password: 'password'
+        }).end((err, res) => {
+          expect(res.body.token).to.be.a('string');
+          done();
+        });
+      });
+    });
+  });
 
 });
