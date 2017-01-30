@@ -36,7 +36,11 @@ function companiesShow(req, res) {
 }
 
 function companiesUpdate(req, res){
-
+  Company.findByIdAndUpdate(req.params.id, req.body.company, { new: true}, (err, company) => {
+    if (err) return res.status(500).json({message: 'Something went wrong trying update Company'});
+    if(!company) return res.status(404).json({message: 'No Company was found '});
+    return res.status(200).json(company);
+  });
 }
 
 function  companiesDelete(req, res){
