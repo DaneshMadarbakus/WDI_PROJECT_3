@@ -16,9 +16,9 @@ function companiesCreate(req, res){
     company.push.user =req.body.user;
     if (err) return res.render('companies/new', { error: err.message });
     return res.redirect('/companies');
-  )
-});
+  });
 }
+
 
 function companiesIndex(req, res) {
   Company.find((err, companies) => {
