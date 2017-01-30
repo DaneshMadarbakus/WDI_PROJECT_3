@@ -26,12 +26,19 @@ function ideasEdit(){
 
 }
 
-function ideadsUpdate(){
-
+function ideadsUpdate(req, res){
+  Idea.findByIdAndUpdate(req.params.id, req.body.idea, { new: true}, (err, idea) => {
+    if (err) return res.status(500).json({message: 'Something went wrong trying update Idea'});
+    if(!idea) return res.status(404).json({message: 'No Idea was found '});
+    return res.status(200).json(idea);
+  });
 }
 
-function ideasDelete(){
-
+function ideasDelete(req, res){
+  Idea.findByIdAndRemove(req.params.id, (err, idea) => {
+    if (err) return res.status(500).json({ message: 'Something went wrong with deleting this idea '});
+    if(!idea) return res.status(404).json({message: 'No Idea was found'});
+  });
 }
 
 module.exports = {
