@@ -7,13 +7,12 @@ function CurrentUserService(TokenService, $rootScope, User){
   const self = this;
   self.getUser = () => {
     const decoded = TokenService.decodeToken();
-    console.log(decoded);
-
-    if(decoded){
+    if (decoded) {
       User
-      .get({id: decoded}).$promise
+      .get({ id: decoded.id }).$promise
       .then(data => {
-        console.log(data);
+        self.currentUser = data;
+        $rootScope.$broadcast('loggedIn');
       });
     }
   };
