@@ -2,15 +2,16 @@ angular
 .module('clementine')
 .factory('AuthInterceptor', AuthInterceptor);
 
-AuthInterceptor.$inject = [];
-function AuthInterceptor(){
+AuthInterceptor.$inject = ['API'];
+function AuthInterceptor(API){
   return {
-    request: function(config){
-      console.log(config);
+    request(config){
       return config;
     },
-    response: function(res){
-      console.log(res);
+    response(res){
+      if(res.config.url.indexOf(API) === 0 && res.data.token){
+        console.log(res.data.token);
+      }
       return res;
     }
   };

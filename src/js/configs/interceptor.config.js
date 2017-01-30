@@ -1,6 +1,6 @@
 angular
   .module('clementine')
-  .config('Interceptor');
+  .config(Interceptor);
 
 Interceptor.$inject = ['$httpProvider'];
 
