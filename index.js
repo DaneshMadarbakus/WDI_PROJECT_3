@@ -20,8 +20,8 @@ app.use(express.static(`${__dirname}/public`));
 app.use('/api', expressJWT({ secret: config.secret })
   .unless({
     path: [
-      { url: '/register', methods: ['POST']},
-      { url: '/login', methods: ['POST']}
+      { url: '/api/register', methods: ['POST']},
+      { url: '/api/login', methods: ['POST']}
     ]
   }));
 app.use(jwtErrorHandler);
