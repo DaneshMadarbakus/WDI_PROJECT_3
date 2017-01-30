@@ -4,7 +4,7 @@ const router = express.Router();
 const staticsController = require('../controllers/statics');
 const usersController = require('../controllers/users');
 
-const authentications = require('../controllers/authentications');
+const authentications = require('../controllers/user-authentication-controller');
 
 
 router.route('/login')
