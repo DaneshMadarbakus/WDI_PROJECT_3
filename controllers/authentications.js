@@ -3,6 +3,7 @@ const jwt    = require('jsonwebtoken');
 const config = require('../config/config');
 
 function userAuthenticationsRegister(req, res){
+
   User.create(req.body.user, (err, user) => {
     if (err) return res.status(500).json({ message: 'Something went wrong with authenticating a new user', err});
     const token = jwt.sign({id: user.id}, config.secret, {expiresIn: 60*60*24*7});
@@ -14,6 +15,7 @@ function userAuthenticationsRegister(req, res){
 }
 
 function userAuthenticationLogin(req, res){
+  console.log('login', req.body);
   User.findOne({ email: req.body.email}, (err, user) => {
     if(err) return res.status(500).json({message: 'something went wrong with  authenticating user login'});
     if(!user || !user.validatePassword(req.body.password)){

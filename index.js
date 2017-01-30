@@ -14,6 +14,12 @@ mongoose.connect(config.db, () => {
   console.log(`Connected to ${config.db}`);
 });
 
+//testing
+const environment = app.get('env');
+if ('test' !== environment) {
+  app.use(require('morgan')('dev'));
+}
+
 app.use(morgan('dev'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
@@ -37,3 +43,5 @@ app.use('/api', routes);
 app.get('/*', (req, res) => res.sendFile(`${dest}/index.html`));
 
 app.listen(config.port, console.log(`app is listening on ${config.port}`));
+
+module.exports = app;
