@@ -20,12 +20,24 @@ function companiesIndex(req, res) {
   });
 }
 
+// function companiesShow(req, res) {
+//   Company.findById(req.params.id, (err, company) =>{
+//     if (err) return res.status(500).json({message: 'Something went wrong trying show Company'});
+//     if (!company) return res.status(404).json({message: 'No Company was found '});
+//     return res.status(200).json(company);
+//   });
+// }
+
 function companiesShow(req, res) {
-  Company.findById(req.params.id, (err, company) =>{
-    if (err) return res.status(500).json({message: 'Something went wrong trying show Company'});
-    if (!company) return res.status(404).json({message: 'No Company was found '});
-    return res.status(200).json(company);
-  });
+  Company
+    .findById(req.params.id)
+    .populate('ideas')
+    .exec((err, company) => {
+      if (err) return res.status(500).json({ message: 'Something went wrong.'});
+      if (!company) return res.status(404).json({ message: 'No Company found.'});
+
+      return res.status(200).json(company);
+    });
 }
 
 function companiesUpdate(req, res){
