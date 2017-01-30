@@ -24,7 +24,7 @@ router.route('/companies/:id')
   .get(companiesController.show)
   .put(companiesController.update)
   .delete(companiesController.delete);
-router.route('/companies/:id/edit')
-  .get(companiesController.edit);
+//router.route('/companies/:id/edit')
+//  .get(companiesController.edit);
 
 module.exports = router;
