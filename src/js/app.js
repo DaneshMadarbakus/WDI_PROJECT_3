@@ -1,2 +1,6 @@
 angular
-  .module('clementine', []);
+  .module('clementine', [
+    'ui.router',
+    'ngResource',
+    'angular-jwt'
+  ]);
