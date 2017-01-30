@@ -2,8 +2,8 @@ angular
   .module('clementine')
   .config('Interceptor');
 
-Interceptor.$inject = [];
+Interceptor.$inject = ['$httpProvider'];
 
-function Interceptor(){
-
+function Interceptor($httpProvider){
+  return $httpProvider.interceptors.push('AuthInterceptor');
 }
