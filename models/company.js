@@ -10,7 +10,7 @@ const companySchema = new mongoose.Schema({
   timestamps: true
 });
 
-companySchema.pre('save', (next) => {
+companySchema.pre('save', function(next) {
   return this.model('User').findByIdAndUpdate(this.owner, { $push: { companies: this._id }}, next);
 });
 

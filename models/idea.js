@@ -7,7 +7,7 @@ const ideaSchema = new mongoose.Schema({
   timestamps: true
 });
 
-ideaSchema.pre('save', (next) => {
+ideaSchema.pre('save', function(next) {
   return this.model('Company').findByIdAndUpdate(this.company, { $push: { ideas: this._id }}, next);
 });
 

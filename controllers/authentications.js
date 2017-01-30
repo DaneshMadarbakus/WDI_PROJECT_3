@@ -4,6 +4,7 @@ const config = require('../config/config');
 
 function userAuthenticationsRegister(req, res){
 
+
   User.create(req.body, (err, user) => {
     if (err) return res.status(400).json({ message: 'Something went wrong with authenticating a new user', err});
     const token = jwt.sign({id: user.id}, config.secret, {expiresIn: 60*60*24*7});
@@ -29,6 +30,7 @@ function userAuthenticationLogin(req, res){
 }
 
 function assign(req, res, next) {
+  console.log('firing');
   const token = req.headers['authorization'].split(' ')[1];
   jwt.verify(token, config.secret, (err, decoded) => {
     if (err) return res.status(401).json({ message: 'Incorrect payload provided.' });
