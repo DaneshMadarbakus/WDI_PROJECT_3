@@ -3,16 +3,16 @@ angular
 .controller('RegisterCtrl', RegisterCtrl);
 
 RegisterCtrl.$inject = ['User', 'CurrentUserService'];
-function RegisterCtrl(User){
+function RegisterCtrl(User, CurrentUserService){
   const vm = this;
-  vm.register = function(CurrentUserService) {
-    console.log(vm.user);
+
+  vm.register = () => {
     User
-    .register(vm.user).$promise
-    .then(() => {
-      CurrentUserService.getUser();
-    }, err => {
-      console.log(err);
-    });
+      .register(vm.user).$promise
+      .then(() => {
+        CurrentUserService.getUser();
+      }, err => {
+        console.log(err);
+      });
   };
 }
