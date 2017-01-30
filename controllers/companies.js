@@ -1,23 +1,12 @@
 const Company = require('../models/company');
 
-// function companiesNew(req, res){
-//   return res.render('companies/new', {error: null});
-// }
-
 function companiesCreate(req, res){
-  console.log('ping');
   const company = new Company(req.body);
   company.save((err) => {
-    // console.log(req.body.user);
-    // company.push.user = req.body.user;
-    // if (err) return res.render('companies/new', { error: err.message });
     if (err) console.log(err);
     return res.status(201).json(company);
-    // return res.redirect('/companies');
   });
 }
-
-
 
 function companiesIndex(req, res) {
   Company.find((err, companies) => {
