@@ -5,7 +5,11 @@ angular
 AuthInterceptor.$inject = ['API', 'TokenService'];
 function AuthInterceptor(API, TokenService){
   return {
-    request(config){
+    request(config) {
+      const token = TokenService.getToken();
+
+      console.log(token);
+
       return config;
     },
     response(res){
