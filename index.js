@@ -5,6 +5,7 @@ const expressJWT  = require('express-jwt');
 const mongoose    = require('mongoose');
 const cors        = require('cors');
 const app         = express();
+const dest        = `${__dirname}/public`;
 
 const routes      = require('./config/routes');
 const config      = require('./config/config');
@@ -30,6 +31,7 @@ function jwtErrorHandler(err, req, res, next){
   return res.status(401).json({ message: 'UnauthorizedRequest.' });
 }
 
-app.use('/', routes);
+app.use('/api', routes);
+app.get('/*', (req, res) => res.sendFile(`${dest}/index.html`));
 
 app.listen(config.port, console.log(`app is listening on ${config.port}`));
