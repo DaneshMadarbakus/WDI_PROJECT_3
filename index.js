@@ -10,7 +10,9 @@ const dest        = `${__dirname}/public`;
 const routes      = require('./config/routes');
 const config      = require('./config/config');
 
-mongoose.connect(config.db);
+mongoose.connect(config.db, () => {
+  console.log(`Connected to ${config.db}`);
+});
 
 app.use(morgan('dev'));
 app.use(bodyParser.json());

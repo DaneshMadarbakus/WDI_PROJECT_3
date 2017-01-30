@@ -1,9 +1,13 @@
 const Company = require('../models/company');
 
 function companiesCreate(req, res){
-  const company = new Company(req.body);
-  company.owner = req.user._id;
-  company.save((err) => {
+  console.log('companies create', req.user.id);
+  const company = new Company(req.body.company);
+  company.owner = req.user.id;
+  console.log(company);
+
+  company.save((err, company) => {
+    console.log('err', err);
     if (err) return res.status(500).json({ message: 'Something went wrong.' });
     return res.status(201).json(company);
   });
