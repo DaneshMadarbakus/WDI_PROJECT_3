@@ -6,8 +6,13 @@ const User = require('../../models/user.js');
 //The body of the test.
 describe('Authentication tests', function() {
 
+<<<<<<< HEAD
 
 const User = require('../../models/user');
+=======
+  
+  const User = require('../../models/user');
+>>>>>>> test
 
 //The body of the test.
 describe('Authentication tests', function() {
@@ -62,9 +67,11 @@ describe('Authentication tests', function() {
 
     describe('POST valid details to /api/register ', () =>  {
 
-      it('return a valid jwt token', (done) => {
+
+      it(' should return a valid jwt token', (done) => {
         api.post('/api/register')
         .set('Accept', 'application/json')
+<<<<<<< HEAD
         .send({
 
           email: 'testuser@testuser.com',
@@ -75,28 +82,21 @@ describe('Authentication tests', function() {
           done();
 
           user: {
+=======
+        .send(
+          {
+>>>>>>> test
             email: 'testuser@testuser.com',
             password: 'password',
             passwordConfirmation: 'password'
           }
-        });
-        it(' should return a valid jwt token', (done) => {
-          api.post('/api/register')
-          .set('Accept', 'application/json')
-          .send(
-            {
-              email: 'testuser@testuser.com',
-              password: 'password',
-              passwordConfirmation: 'password'
-            }
-
-          ).end((err, res) => {
-            console.log(res.body);
-            expect(res.body.token).to.be.a('string');
-            done();
-          });
+        ).end((err, res) => {
+          console.log('BLAAARGHHHH', res.body);
+          expect(res.body.token).to.be.a('string');
+          done();
         });
       });
+
 
       describe('POST invalid details to /api/register', () => {
         it(' should return a 400 status', (done) => {
@@ -135,7 +135,6 @@ describe('Authentication tests', function() {
             });
           });
         });
-
       });
     });
     it('should return a response of 401 on incorrect password', (done) => {
