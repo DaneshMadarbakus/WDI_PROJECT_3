@@ -1,0 +1,5 @@
+<h1>Companies</h1>
+<li ng-repeat="company in companiesIndex.companies">
+<p ui-sref="companyShow({id: company._id})">{{company.name}}</p>
+</li>
+<p>{{ companiesIndex.hiya }}</p>
