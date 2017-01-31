@@ -10,8 +10,8 @@ body{
 span {
   padding: 0 5px;
   border-radius: 5px;
-  background: gray;
-  color: #BADA55;
+  // background: gray;
+  color: $primary-color;
 }
 
 input {
@@ -33,7 +33,6 @@ margin-bottom: 0;
   }
 }
 
-
 .navbar-default{
   .navbar-nav{
     li{
@@ -46,9 +45,18 @@ margin-bottom: 0;
   }
 }
 
+
 .navbar-default {
-  .navbar-brand {
-  color: #ffb116;
+    .navbar-brand {
+    color: $main-orange;
+  }
+}
+
+.navbar-default {
+  &:hover{
+    .navbar-brand {
+    color: $main-orange;
+  }
   }
 }
 
@@ -78,7 +86,7 @@ h1.home {
  }
 
  h2 {
-   margin-bottom: 40px;
+   margin: 45px 0;
  }
 
 ul.bullet {
@@ -132,8 +140,9 @@ a.email {
 height:120px;
 text-align: center;
 }
-.col-md-3:hover{
-  background: #BADA55;
+.col-md-3:hover p {
+  background: $primary-color;
+  color: white;
 }
 .companyP {
   font-size:20px;
