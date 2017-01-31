@@ -1,20 +1,6 @@
-{{ companiesShow.company}}
-
+<p>{{companiesShow.company}}</p>
 <h1><span>{{companiesShow.company.name}}</span> ideas page</h1>
-<p>{{ companiesShow.company.description }}</p>
-<a href="">{{ companiesShow.company.website }}</a>
-
-<ul>
-  <li ng-repeat="idea in companiesShow.company.ideas">
-    <h2>{{ idea.idea }}</h2>
-  </li>
-</ul>
-
-<!-- <ul>
-  <li ng-repeat="idea in companyShow.company.ideas">
-  </li>
-</ul> -->
-<!-- <form ng-submit="i.login()">
+<form ng-submit="i.login()">
   <div>
     <input type="idea" name="idea" ng-model="login.user.password" placeholder="My suggestion for improvement is ...">
   </div>
@@ -31,4 +17,4 @@
       </button>
     </div>
   </li>
-</ul> -->
+</ul>
