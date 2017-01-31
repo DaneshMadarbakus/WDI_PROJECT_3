@@ -34,24 +34,28 @@ async.waterfall([
 function createUsers(done) {
   const users = [
     {
+      username: 'kenster',
       email: 'kenny@kenny.com',
       password: 'password',
       passwordConfirmation: 'password',
       companies: []
     },
     {
+      username: 'billsta',
       email: 'billy@billy.com',
       password: 'password',
       passwordConfirmation: 'password',
       companies: []
     },
     {
+      username: 'jen teh jester',
       email: 'jenny@jenny.com',
       password: 'password',
       passwordConfirmation: 'password',
       companies: []
     },
     {
+      username: 'shazzaaaster',
       email: 'sharron@sharron.com',
       password: 'password',
       passwordConfirmation: 'password',
