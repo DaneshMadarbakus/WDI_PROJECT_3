@@ -1,13 +1,10 @@
 <!DOCTYPE html>
 <html ng-app="clementine">
   <head>
-    <!-- <link rel="stylesheet" href="/angular-bootstrap/ui-bootstrap-csp.css"> -->
-    <link rel="stylesheet" href="/css/style.css">
-    <!-- <script src="/angular-bootstrap/ui-bootstrap-tpls.min.js" charset="utf-8"></script> -->
-
     <meta charset="utf-8">
     <title>Clementine</title>
     <base href="/" />
+
     <!-- inject:js -->
     <!-- endinject -->
     <!-- inject:css -->
@@ -24,9 +21,7 @@
             <li ng-hide="main.user">
               <a ui-sref="login">Login</a>
             </li>
-            <li ng-show="main.user">
               <a ng-click="main.logout()">Logout</a>
-            </li>
           </ul>
         </ul>
       </nav>
