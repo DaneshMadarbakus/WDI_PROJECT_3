@@ -33,8 +33,8 @@ function usersShowCtrl(User, Company, $stateParams, $http, API) {
 function createdOnParser(data) {
   console.log('ping');
   console.log(data, 'before');
-  var s = data.split('T');
-  var date = s[0];
-  var time = s[1].split('.')[0];
+  var str  = data.split('T');
+  var date = str[0];
+  var time = str[1].split('.')[0];
   return `${date} at ${time}`;
 }
