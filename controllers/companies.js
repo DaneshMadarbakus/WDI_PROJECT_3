@@ -21,6 +21,7 @@ function companiesIndex(req, res) {
 }
 
 function companiesShow(req, res) {
+
   Company
     .findById(req.params.id)
     .populate('ideas')

@@ -1,4 +1,6 @@
 const User = require('../models/user');
+const jwt    = require('jsonwebtoken');
+const config = require('../config/config');
 
 function usersIndex(req, res){
   User.find((err, users) => {
@@ -8,10 +10,15 @@ function usersIndex(req, res){
 }
 
 function usersShow(req, res){
-  User.findById(req.params.id, (err, user) =>{
-    if (err) return res.status(500).json({message: 'Something went wrong trying show User'});
-    if(!user) return res.status(404).json({message: 'No User was found '});
-    return res.status(200).json(user);
+  const token = req.headers['authorization'].split(' ')[1];
+
+  jwt.verify(token, config.secret, (err, decoded) => {
+    if (err) return res.status(401).json({ message: 'Incorrect payload provided.' });
+    User.findById(decoded.id, (err, user) =>{
+      if (err) return res.status(500).json({message: 'Something went wrong trying show User'});
+      if(!user) return res.status(404).json({message: 'No User was found '});
+      return res.status(200).json(user);
+    });
   });
 }
 
@@ -27,6 +34,20 @@ function usersDelete(req, res){
   User.findByIdAndRemove(req.params.id, (err, user) => {
     if (err) return res.status(500).json({ message: 'Something went wrong with deleting this user '});
     if(!user) return res.status(404).json({message: 'No User was found'});
+  });
+}
+
+function assign(req, res, next) {
+  console.log('firing');
+  const token = req.headers['authorization'].split(' ')[1];
+  jwt.verify(token, config.secret, (err, decoded) => {
+    if (err) return res.status(401).json({ message: 'Incorrect payload provided.' });
+    User
+      .findById(decoded.id, (err, user) => {
+        if (err) return res.status(500).json({ message: 'Something went wrong.' });
+        res.user = user;
+        next();
+      });
   });
 }
 
