@@ -1,10 +1,15 @@
 angular
   .module('clementine')
-  .controller('userShowCrtl', userShowCtrl);
+  .controller('usersShowCtrl', usersShowCtrl);
 
-userShowCtrl.$inject = ['User', '$stateParams'];
-function userShowCtrl(User, $stateParams) {
+usersShowCtrl.$inject = ['User', '$stateParams'];
+function usersShowCtrl(User, $stateParams) {
   const vm = this;
-  vm.User = User.get($stateParams);
-  console.log(vm.User);
+
+  User.get($stateParams, function(data) {
+    vm.user = data;
+  });
+
+  vm.lol  = 'lol';
+
 }

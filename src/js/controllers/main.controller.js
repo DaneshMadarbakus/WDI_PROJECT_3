@@ -5,11 +5,12 @@ angular
 MainCtrl.$inject = ['$rootScope', 'CurrentUserService', '$state'];
 function MainCtrl($rootScope, CurrentUserService, $state) {
   const vm = this;
+
   vm.user = CurrentUserService.getUser();
 
   $rootScope.$on('loggedIn', () => {
     console.log('logged in');
-    vm.user = CurrentUserService.user;
+    vm.user = CurrentUserService.getUser();
     $state.go('companyIndex');
   });
 
