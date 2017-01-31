@@ -1,10 +1,10 @@
-@import url('https://fonts.googleapis.com/css?family=Pangolin');
+@import url('https://fonts.googleapis.com/css?family=Lato');
 @import 'variables';
 
 
 body{
   background: #fafafa;
-  font-family: 'Pangolin', cursive;
+  font-family: 'Lato', sans-serif;;
 }
 
 span {
@@ -20,7 +20,7 @@ input {
 
 .navbar-default {
 height: 80px;
-background-color: #93c47d;
+background-color: #fafafa;
 border: none;
 margin-bottom: 0;
 }
@@ -50,19 +50,19 @@ a.navbar-brand {
 }
 
 .bg-middle {
-  background-color: $main-orange;
+  background-color: #009688;
   padding: 100px;
   color: white;
   font-size: 30px;
 }
 
 .bg-bottom {
-  background-color: #3abf8f;
+  background-color: #fafafa;
 }
 
  h1.home {
    font-size: 65px;
-   color: $main-orange;
+   color: #009688;
  }
 
  h2 {
@@ -111,7 +111,7 @@ text-align: center;
   font-size:20px;
   position: relative;
   margin:0;
-  color: #ff9707;
+  color: #009688;
   top:35%;
 }
 .ncf {
@@ -133,11 +133,11 @@ text-align: center;
   height:35px;
   margin-top: 0;
   width: 150px;
-  background-color:#ff9707;
+  background-color:#009688;
   border:none;
   font-size:20px;
 }
 .newCompSubmit:hover {
-  background-color:#ff9707;
+  background-color:#009688;
   color: $main-orange;
 }
