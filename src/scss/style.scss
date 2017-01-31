@@ -18,13 +18,16 @@ input {
 
 .navbar-default {
 height: 100px;
-background-color: #93c47d;
+background-color: #7d9e6e;
 border: none;
 margin-bottom: 0;
 }
 
-a.navbar-brand {
+.navbar-brand {
   font-size: 50px;
+}
+.navbar-default .navbar-brand {
+    color: #ffb116;
 }
 
 .bg-top {
@@ -82,4 +85,8 @@ a.navbar-brand {
   padding:70px 0;
   margin:0;
   color: #ff9707;
+}
+.ncf {
+  width:100px;
+  text-align:center;
 }
