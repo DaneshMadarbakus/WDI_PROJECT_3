@@ -8,6 +8,7 @@ function usersShowCtrl(User, $stateParams) {
 
   User.get($stateParams, function(data) {
     vm.user = data;
+    console.log(vm.user);
   });
 
   vm.lol  = 'lol';

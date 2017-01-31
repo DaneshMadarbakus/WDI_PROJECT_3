@@ -1,3 +1,4 @@
+
 const User = require('../models/user');
 const jwt    = require('jsonwebtoken');
 const config = require('../config/config');
@@ -37,19 +38,6 @@ function usersDelete(req, res){
   });
 }
 
-function assign(req, res, next) {
-  console.log('firing');
-  const token = req.headers['authorization'].split(' ')[1];
-  jwt.verify(token, config.secret, (err, decoded) => {
-    if (err) return res.status(401).json({ message: 'Incorrect payload provided.' });
-    User
-      .findById(decoded.id, (err, user) => {
-        if (err) return res.status(500).json({ message: 'Something went wrong.' });
-        res.user = user;
-        next();
-      });
-  });
-}
 
 module.exports = {
   index: usersIndex,
