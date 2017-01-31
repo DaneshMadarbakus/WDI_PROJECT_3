@@ -5,6 +5,12 @@ angular
 CurrentUserService.$inject = ['TokenService', '$rootScope', 'User'];
 function CurrentUserService(TokenService, $rootScope, User){
   const self = this;
+  self.removeUser = () => {
+    self.currentUser = null;
+    TokenService.removeToken();
+    $rootScope.$broadcast('loggedOut');
+  };
+
   self.getUser = () => {
     const decoded = TokenService.decodeToken();
     if (decoded) {
@@ -16,4 +22,5 @@ function CurrentUserService(TokenService, $rootScope, User){
       });
     }
   };
+  self.getUser();
 }
