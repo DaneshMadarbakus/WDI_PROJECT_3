@@ -48,6 +48,8 @@ a.navbar-brand {
 .bg-middle {
   background-color: $main-orange;
   padding: 100px;
+  color: white;
+  font-size: 30px;
 }
 
 .bg-bottom {
@@ -62,6 +64,11 @@ a.navbar-brand {
  h2 {
    margin-bottom: 40px;
  }
+
+ul.bullet {
+  list-style-type: square;
+}
+
 .companyHOne {
   text-align: center;
   color: $main-orange;
