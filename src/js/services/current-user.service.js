@@ -9,8 +9,7 @@ function CurrentUserService(TokenService, $rootScope){
   return {
     user: currentUser,
     saveUser(user){
-      console.log('saving user');
-      user.id = user.id? user.id : user._id;
+      user.id = user.id ? user.id : user._id;
       currentUser = user;
       $rootScope.$broadcast('loggedIn');
     },
