@@ -1,4 +1,6 @@
 @import url('https://fonts.googleapis.com/css?family=Pangolin');
+@import 'variables';
+
 
 body{
   background: #fafafa;
@@ -18,13 +20,26 @@ input {
 
 .navbar-default {
 height: 100px;
-background-color: #93c47d;
+background-color: #7d9e6e;
 border: none;
 margin-bottom: 0;
 }
 
-a.navbar-brand {
+.navbar-brand {
   font-size: 50px;
+  line-height: 60px;
+}
+
+a.navbar-brand {
+  font-size: 57px;
+}
+
+.navbar-default .navbar-nav > li > a {
+  font-size: 20px;
+  line-height: 65px;
+}
+.navbar-default .navbar-brand {
+    color: #ffb116;
 }
 
 .bg-top {
@@ -58,6 +73,10 @@ a.navbar-brand {
   display: block;
   text-align: center;
   font-style: italic;
+  border:1px dashed black;
+  width:130px;
+  margin: 0 auto;
+  margin-bottom: 10px;
 }
 .companyUl{
   width:600px;
@@ -65,21 +84,51 @@ a.navbar-brand {
   margin: 0 auto;
   padding:0;
 }
-.companyLi{
-  display: inline-block;
-  height: 200px;
-  width:200px;
-  text-align: center;
-  border-radius:10px;
-
+// .companyLi{
+//   display: inline-block;
+//   height: 200px;
+//   width:200px;
+//   text-align: center;
+//   border-radius:10px;
+//   padding: 1px;
+// }
+.col-md-3{
+height:120px;
+text-align: center;
 }
-.companyLi:hover{
+.col-md-3:hover{
   background: #BADA55;
 }
 .companyP {
-  font-size:30px;
+  font-size:20px;
   position: relative;
-  padding:70px 0;
   margin:0;
   color: #ff9707;
+  top:35%;
+}
+.ncf {
+  height: 40px;
+  width:100px;
+  text-align:center;
+  margin-top: 20px;
+
+}
+.ncfg {
+  text-align: center;
+}
+.newcompform{
+  width:300px;
+  margin: 0 auto;
+  margin-top: 30px;
+}
+.newCompSubmit {
+  height:35px;
+  margin-top: 0;
+  width: 150px;
+  background-color:#ff9707;
+  border:none;
+  font-size:20px;
+}
+.newCompSubmit:hover {
+  background-color:#ff9707;
 }
