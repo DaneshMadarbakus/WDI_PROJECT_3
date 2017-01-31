@@ -34,6 +34,12 @@ function Router($stateProvider, $locationProvider, $urlRouterProvider){
     controller: 'companiesIndexCtrl',
     controllerAs: 'companiesIndex'
   })
+  .state('companyNew', {
+    url: '/companies/new',
+    templateUrl: '/js/views/companies/new.html',
+    controller: 'companiesNewCtrl',
+    controllerAs: 'companiesNew'
+  })
   .state('companyShow', {
     url: '/companies/:id',
     templateUrl: '/js/views/companies/show.html',
