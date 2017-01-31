@@ -1,7 +1,15 @@
 <h1 class="username">{{ usersShow.user.username }}</h1>
 
+{{usersShow.companyData}}
+
 <div class="companies">
   <ul>
-    {{usersShow.companyData}}
+    <li ng-repeat="item in usersShow.items">
+      <h1>Business: {{item.name}}</h1>
+      <h3>description: {{item.description}}</h3>
+      <h3>website: {{ item.website }}</h3>
+
+    </li>
   </ul>
+
 </div>

@@ -24,10 +24,12 @@ function usersShowCtrl(User, Company, $stateParams, $http) {
       });
     }
     //assign the returned array to the function to access it in the view.
-    vm.companyData = returned;
+    vm.items = returned;
   });
 }
 
+
+//make sense of the timestamps.
 function createdOn() {
 
 }
