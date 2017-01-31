@@ -40,6 +40,7 @@ a.navbar-brand {
 .bg-bottom {
   background-color: #3abf8f;
 }
+
  h1.home {
    font-size: 65px;
  }
@@ -47,3 +48,36 @@ a.navbar-brand {
  h2 {
    margin-bottom: 40px;
  }
+.companyHOne {
+  text-align: center;
+  color: #ff9707;
+}
+.newCompanyBtn{
+  display: block;
+  text-align: center;
+  font-style: italic;
+}
+.companyUl{
+  width:600px;
+  height:600px;
+  margin: 0 auto;
+  padding:0;
+}
+.companyLi{
+  display: inline-block;
+  height: 200px;
+  width:200px;
+  text-align: center;
+  border-radius:10px;
+
+}
+.companyLi:hover{
+  background: #BADA55;
+}
+.companyP {
+  font-size:30px;
+  position: relative;
+  padding:70px 0;
+  margin:0;
+  color: #ff9707;
+}
