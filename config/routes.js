@@ -40,5 +40,10 @@ router.route('/companies/:company_id/ideas/:id')
   .get(ideas.show)
   .put(ideas.update)
   .delete(ideas.delete);
+router.route('/companies/:company_id/ideas/:id/upvote')
+  .put(ideas.upvote);
+router.route('/companies/:company_id/ideas/:id/downvote')
+  .put(ideas.downvote);
+
 
 module.exports = router;
