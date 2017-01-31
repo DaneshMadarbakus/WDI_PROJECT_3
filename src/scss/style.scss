@@ -19,8 +19,8 @@ input {
 }
 
 .navbar-default {
-height: 100px;
-background-color: #7d9e6e;
+height: 80px;
+background-color: #93c47d;
 border: none;
 margin-bottom: 0;
 }
@@ -36,7 +36,7 @@ a.navbar-brand {
 
 .navbar-default .navbar-nav > li > a {
   font-size: 20px;
-  line-height: 65px;
+  line-height: 52px;
 }
 .navbar-default .navbar-brand {
     color: #ffb116;
@@ -50,8 +50,10 @@ a.navbar-brand {
 }
 
 .bg-middle {
-  background-color: #ff9707;
+  background-color: $main-orange;
   padding: 100px;
+  color: white;
+  font-size: 30px;
 }
 
 .bg-bottom {
@@ -60,14 +62,20 @@ a.navbar-brand {
 
  h1.home {
    font-size: 65px;
+   color: $main-orange;
  }
 
  h2 {
    margin-bottom: 40px;
  }
+
+ul.bullet {
+  list-style-type: square;
+}
+
 .companyHOne {
   text-align: center;
-  color: #ff9707;
+  color: $main-orange;
 }
 .newCompanyBtn{
   display: block;
@@ -103,6 +111,7 @@ text-align: center;
   font-size:20px;
   position: relative;
   margin:0;
+<<<<<<< HEAD
   color: #ff9707;
   top:35%;
 }
@@ -131,4 +140,7 @@ text-align: center;
 }
 .newCompSubmit:hover {
   background-color:#ff9707;
+=======
+  color: $main-orange;
+>>>>>>> home
 }
