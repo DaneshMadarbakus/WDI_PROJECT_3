@@ -2,27 +2,25 @@ angular
   .module('clementine')
   .service('CurrentUserService', CurrentUserService);
 
-CurrentUserService.$inject = ['TokenService', '$rootScope', 'User'];
-function CurrentUserService(TokenService, $rootScope, User){
-  const self = this;
-  self.removeUser = () => {
-    self.currentUser = null;
-    TokenService.removeToken();
-    $rootScope.$broadcast('loggedOut');
-  };
+CurrentUserService.$inject = ['TokenService', '$rootScope'];
+function CurrentUserService(TokenService, $rootScope){
+  let currentUser = TokenService.decodeToken();
 
-  self.getUser = function() {
-    const decoded = TokenService.decodeToken();
-    if (decoded) {
-      User
-      .get({ id: decoded.id }).$promise
-      .then(data => {
-        console.log(data);
-        self.currentUser = data;
-        $rootScope.$broadcast('loggedIn');
-      });
+  return {
+    user: currentUser,
+    saveUser(user){
+      console.log('saving user');
+      user.id = user.id? user.id : user._id;
+      currentUser = user;
+      $rootScope.$broadcast('loggedIn');
+    },
+    getUser(){
+      return currentUser;
+    },
+    clearUser(){
+      currentUser = null;
+      TokenService.clearToken();
+      $rootScope.$broadcast('loggedOut');
     }
   };
-
-  self.getUser();
 }
