@@ -7,6 +7,10 @@ companiesShowCtrl.$inject = ['Company', '$stateParams'];
 function companiesShowCtrl(Company, $stateParams){
   const vm = this;
   vm.company = Company.get($stateParams);
+
+  vm.newIdea = () => {
+    
+  };
 }
 
 // IdeasNewCtrl.$inject = ['API', 'Idea','$stateParams'];
