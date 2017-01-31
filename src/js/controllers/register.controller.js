@@ -2,16 +2,17 @@ angular
 .module('clementine')
 .controller('RegisterCtrl', RegisterCtrl);
 
-RegisterCtrl.$inject = ['User'];
-function RegisterCtrl(User){
+RegisterCtrl.$inject = ['User', 'CurrentUserService'];
+function RegisterCtrl(User, CurrentUserService){
   const vm = this;
-  vm.register = function() {
-    console.log(vm.user);
-    User.register(vm.user)
-    .$promise
-    .then(data => {
-      console.log(data);
-  
-    });
+
+  vm.register = () => {
+    User
+      .register(vm.user).$promise
+      .then(() => {
+        CurrentUserService.getUser();
+      }, err => {
+        console.log(err);
+      });
   };
 }

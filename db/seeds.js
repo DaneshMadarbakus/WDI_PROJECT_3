@@ -16,5 +16,3 @@ const Idea   = require('../models/idea');
 User.collection.drop();
 Company.collection.drop();
 Idea.collection.drop();
-
-//
