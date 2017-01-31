@@ -40,6 +40,7 @@ margin-bottom: 0;
       a{
         font-size: 20px;
         line-height: 52px;
+        color: $primary-color;
       }
     }
   }
@@ -90,13 +91,19 @@ ul.bullet {
   border-color: $primary-color;
 }
 
+.btn-default:hover {
+  background-color: #68d8ce;
+  color: white;
+  border-color: #68d8ce;
+}
+
 a.email {
   color: $primary-color;
 }
 
 .companyHOne {
   text-align: center;
-  color: $main-orange;
+  color: $primary-color;
 }
 .newCompanyBtn{
   display: block;
