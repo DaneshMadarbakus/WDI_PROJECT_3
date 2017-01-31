@@ -1,4 +1,6 @@
 @import url('https://fonts.googleapis.com/css?family=Pangolin');
+@import 'variables';
+
 
 body{
   background: #fafafa;
@@ -23,8 +25,17 @@ border: none;
 margin-bottom: 0;
 }
 
+.navbar-brand {
+  line-height: 60px;
+}
+
 a.navbar-brand {
-  font-size: 50px;
+  font-size: 57px;
+}
+
+.navbar-default .navbar-nav > li > a {
+  font-size: 20px;
+  line-height: 65px;
 }
 
 .bg-top {
