@@ -1,9 +1,12 @@
 <div class="container">
 <h1 class="companyHOne">Companies</h1>
 <li class="newCompanyBtn" ui-sref="companyNew">Register company</li>
-<ul class="companyUl">
-<li class="companyLi" ng-repeat="company in companiesIndex.companies">
+
+<div class="companyList">
+<div class="row">
+<div class="col-md-3 col-xs-4" ng-repeat="company in companiesIndex.companies">
 <p class="companyP" ui-sref="companyShow({id: company._id})">{{company.name}}</p>
-</li>
-</ul>
+</div>
+</div>
+</div>
 </div>
