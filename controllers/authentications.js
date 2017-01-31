@@ -7,6 +7,7 @@ function userAuthenticationsRegister(req, res){
   User.create(req.body, (err, user) => {
     if (err) return res.status(400).json({ message: 'Something went wrong with authenticating a new user', err});
     const token = jwt.sign({id: user.id}, config.secret, {expiresIn: 60*60*24*7});
+    console.log(user);
     return res.status(201).json({
       user,
       token

@@ -1,0 +1,14 @@
+<h1>Create New Company</h1>
+
+<form ng-submit="companiesNew.create()">
+  <div class="form-group">
+    <input class="form-control" type="text" name="company name" ng-model="companiesNew.company.name" placeholder="Company Name">
+  </div>
+  <div class="form-group">
+    <input class="form-control" type="text" name="description" ng-model="companiesNew.company.description" placeholder="Company Description">
+  </div>
+  <div class="form-group">
+    <input class="form-control" type="text" name="website" ng-model="companiesNew.company.website" placeholder="Company website">
+  </div>
+  <input class="btn btn-primary" type="submit" value="Submit" />
+</form>
