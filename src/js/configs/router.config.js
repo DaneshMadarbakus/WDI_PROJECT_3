@@ -22,11 +22,11 @@ function Router($stateProvider, $locationProvider, $urlRouterProvider){
     controller: 'LoginCtrl',
     controllerAs: 'login'
   })
-  .state('usersIndex', {
-    url: '/users',
-    templateUrl: '/js/views/index.html',
-    controller: 'usersIndexCtrl',
-    controllerAs: 'usersIndex'
+  .state('usersShow', {
+    url: '/users/:id',
+    templateUrl: '/js/views/users/show.html',
+    controller: 'usersShowCtrl',
+    controllerAs: 'usersShow'
   })
   .state('companyIndex', {
     url: '/companies',
