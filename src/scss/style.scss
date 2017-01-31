@@ -28,18 +28,27 @@ margin-bottom: 0;
 .navbar-brand {
   font-size: 50px;
   line-height: 60px;
+  a {
+    font-size: 57px;
+  }
 }
 
-a.navbar-brand {
-  font-size: 57px;
+
+.navbar-default{
+  .navbar-nav{
+    li{
+      a{
+        font-size: 20px;
+        line-height: 52px;
+      }
+    }
+  }
 }
 
-.navbar-default .navbar-nav > li > a {
-  font-size: 20px;
-  line-height: 52px;
-}
-.navbar-default .navbar-brand {
-    color: #ffb116;
+.navbar-default {
+  .navbar-brand {
+  color: #ffb116;
+  }
 }
 
 .bg-top {
@@ -60,9 +69,11 @@ a.navbar-brand {
   background-color: #fafafa;
 }
 
- h1.home {
-   font-size: 65px;
-   color: $main-orange;
+.home {
+  h1  {
+    font-size: 65px;
+    color: $main-orange;
+  }
  }
 
  h2 {
@@ -137,6 +148,7 @@ text-align: center;
   border:none;
   font-size:20px;
 }
+
 .newCompSubmit:hover {
   background-color:rgba(0,150,136,0.6);
   color: $main-orange;
