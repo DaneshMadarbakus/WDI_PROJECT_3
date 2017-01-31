@@ -6,8 +6,6 @@ usersShowCtrl.$inject = ['User','Company', '$stateParams', '$http'];
 function usersShowCtrl(User, Company, $stateParams, $http) {
   const vm = this;
 
-  var times = [];
-
   User.get($stateParams, function(data) {
     vm.user = data;
     console.log(vm.user);
@@ -23,7 +21,7 @@ function usersShowCtrl(User, Company, $stateParams, $http) {
       }).then((data) => {
         console.log(data.data);
         returned.push(data.data);
-        timestampsToParse.push(data.data.createdAt);
+        times.push(data.data.createdAt);
       });
     }
     console.log(times);
@@ -34,8 +32,10 @@ function usersShowCtrl(User, Company, $stateParams, $http) {
 
 
 //make sense of the timestamps.
+var times       = [];
+var parsedTimes = [];
 function createdOnParser() {
-  for (var i = 0; i < array.length; i++) {
-    array[i]
+  for (var i = 0; i < times.length; i++) {
+    parsedTimes.push(times[i].split('T'));
   }
 }
