@@ -1,10 +1,8 @@
 const Company = require('../models/company');
 
-function companiesCreate(req, res){
-  console.log('companies create', req.user.id);
-  const company = new Company(req.body.company);
-  company.owner = req.user.id;
-  console.log(company);
+function companiesCreate(req, res) {
+  const company = new Company(req.body);
+  company.owner = res.user.id;
 
   company.save((err, company) => {
     console.log('err', err);
