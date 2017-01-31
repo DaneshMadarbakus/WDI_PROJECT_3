@@ -3,28 +3,35 @@ angular
   .controller('companiesShowCtrl', companiesShowCtrl);
 //  .controller('ideasNewCtrl',IdeasNewCtrl);
 
-companiesShowCtrl.$inject = ['Company', '$stateParams'];
-function companiesShowCtrl(Company, $stateParams){
-  const vm = this;
-  vm.company = Company.get($stateParams);
+companiesShowCtrl.$inject = ['Company', '$stateParams', '$http', 'API'];
+function companiesShowCtrl(Company, $stateParams, $http, API){
+  const vm     = this;
+  vm.company   = Company.get($stateParams);
+  vm.upvote    = upVote;
+  vm.downvote  = downVote;
+  vm.addIdea   = addIdea;
 
-  vm.newIdea = () => {
-    
-  };
+  function addIdea() {
+    $http
+      .post(`${API}/companies/${$stateParams.id}/ideas`, {idea: vm.idea})
+      .then((response) => {
+        vm.company.ideas.push(response.data);
+      });
+  }
+
+  function upVote(ideaId) {
+    $http
+      .put(`${API}/companies/${$stateParams.id}/ideas/${ideaId}/upvote`)
+      .then(() => {
+        vm.company   = Company.get($stateParams);
+      });
+  }
+
+  function downVote(ideaId) {
+    $http
+      .put(`${API}/companies/${$stateParams.id}/ideas/${ideaId}/downvote`)
+      .then(() => {
+        vm.company   = Company.get($stateParams);
+      });
+  }
 }
-
-// IdeasNewCtrl.$inject = ['API', 'Idea','$stateParams'];
-// function IdeasNewCtrl(API, $state, Idea) {
-//   const vm  = this;
-//
-//   vm.create = ideasCreate;
-//
-//   function ideasCreate(){
-//     return Idea
-//       .save(vm.idea)
-//       .$promise
-//       .then(() => {
-//         $state.go('companyShow');
-//       });
-//   }
-// }
