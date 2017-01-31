@@ -40,6 +40,11 @@ function Router($stateProvider, $locationProvider, $urlRouterProvider){
     controller: 'companiesShowCtrl',
     controllerAs: 'companiesShow'
   });
+  // .state('ideasShow', {
+  //   url: '/companies/:id/ideas',
+  //   templateUrl: '/js/views/ideas/ideasShow.html',
+  //   controller: 'IdeasShowCtrl as ideas'
+  // });
 
   $urlRouterProvider.otherwise('/');
 }
