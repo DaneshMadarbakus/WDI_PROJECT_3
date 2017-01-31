@@ -1,6 +1,9 @@
-<h1>Companies</h1>
-<a ui-sref="companyNew">New company</a>
-<li ng-repeat="company in companiesIndex.companies">
-<p ui-sref="companyShow({id: company._id})">{{company.name}}</p>
+<div class="container">
+<h1 class="companyHOne">Companies</h1>
+<li class="newCompanyBtn" ui-sref="companyNew">Register company</li>
+<ul class="companyUl">
+<li class="companyLi" ng-repeat="company in companiesIndex.companies">
+<p class="companyP" ui-sref="companyShow({id: company._id})">{{company.name}}</p>
 </li>
-<p>{{ companiesIndex.hiya }}</p>
+</ul>
+</div>
