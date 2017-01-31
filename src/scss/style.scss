@@ -67,13 +67,13 @@ margin-bottom: 0;
 
 .bg-bottom {
   background-color: #fafafa;
+  padding: 50px;
+  text-align: center;
 }
 
-.home {
-  h1  {
-    font-size: 65px;
-    color: $main-orange;
-  }
+h1.home {
+    font-size: 75px;
+    color: $primary-color;
  }
 
  h2 {
@@ -82,6 +82,16 @@ margin-bottom: 0;
 
 ul.bullet {
   list-style-type: square;
+}
+
+.btn-default {
+  background-color: $primary-color;
+  color: white;
+  border-color: $primary-color;
+}
+
+a.email {
+  color: $primary-color;
 }
 
 .companyHOne {
