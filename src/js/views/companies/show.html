@@ -1,6 +1,5 @@
-{{ companiesShow.company}}
-
-<h1><span>{{companiesShow.company.name}}</span> ideas page</h1>
+<!-- {{ companiesShow.company}} -->
+<!-- <h1><span>{{companiesShow.company.name}}</span> ideas page</h1>
 <p>{{ companiesShow.company.description }}</p>
 <a href="">{{ companiesShow.company.website }}</a>
 
@@ -8,27 +7,28 @@
   <li ng-repeat="idea in companiesShow.company.ideas">
     <h2>{{ idea.idea }}</h2>
   </li>
-</ul>
-
-<!-- <ul>
+</ul> -->
+<!--
+<ul>
   <li ng-repeat="idea in companyShow.company.ideas">
   </li>
 </ul> -->
-<!-- <form ng-submit="i.login()">
-  <div>
-    <input type="idea" name="idea" ng-model="login.user.password" placeholder="My suggestion for improvement is ...">
-  </div>
-  <input type="submit" value="New Idea">
+<h1><span>{{companiesShow.company.name}}</span> ideas page</h1>
+ <form ng-submit="companiesShow.addIdea()">
+   <input type="text" ng-model="companiesShow.idea.idea">
+   <input type="submit" value="Create Idea">
 </form>
 <hr />
 <ul class="list-unstyled">
-  <li ng-repeat="idea in companiesShow.company.idea">
-    <p ui-sref="Idea({id: idea._id})">{{idea}}</p>
+  <li ng-repeat="idea in companiesShow.company.ideas">
+    <p ui-sref="Idea({id: idea._id})">{{idea.idea}}</p>
+    <p>upvotes: <span>{{ idea.upvotes.length }}</span></p>
+    <p>downvotes: <span>{{ idea.downvotes.length }}</span></p>
     <div class="btn-group pull-right" role="group" aria-label="...">
-      <button class="btn btn-default" ng-click="count = count + 1" ng-init="count=0">Up<span>count: {{count}}</span>
+      <span>{{count}}</span>
+      <button class="btn btn-default" ng-click="companiesShow.upvote(idea._id)">Up
       </button>
-      <button class="btn btn-default" ng-click="count = count + 1" ng-init="count=0">Down<span>count: {{count}}</span>
-      </button>
+      <button class="btn btn-default" ng-click="companiesShow.downvote(idea._id)">Down</button>
     </div>
   </li>
-</ul> -->
+</ul>

@@ -6,7 +6,7 @@ companyFactory.$inject = ['API', '$resource'];
 function companyFactory(API, $resource) {
   return $resource(`${API}/companies/:id`, {id: '@_id'},
     {
-      'get': { method: 'GET', isArray: true },
+      'get': { method: 'GET', isArray: false },
       'save': { method: 'POST' },
       'query': { method: 'GET', isArray: true },
       'remove': { method: 'DELETE' },
