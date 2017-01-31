@@ -19,6 +19,15 @@
     "angular-jwt": "^0.1.9",
     "angular-ui-router": "^0.4.2",
     "angular-resource": "^1.6.1",
-    "angular-bootstrap": "^2.5.0"
-  }
+    "angular-bootstrap": "^2.5.0",
+    "bootstrap": "^3.3.7"
+  },
+  "overrides":{
+   "bootstrap" : {
+        "main": [
+           "dist/css/bootstrap.css",
+           "dist/js/bootstrap.js"
+         ]
+   }
+ }
 }

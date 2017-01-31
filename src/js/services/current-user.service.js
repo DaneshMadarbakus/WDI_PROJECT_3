@@ -11,23 +11,17 @@ function CurrentUserService(TokenService, $rootScope, User){
     $rootScope.$broadcast('loggedOut');
   };
 
-  self.getUser = () => {
+  self.getUser = function() {
     const decoded = TokenService.decodeToken();
     if (decoded) {
       User
       .get({ id: decoded.id }).$promise
       .then(data => {
+        console.log(data);
         self.currentUser = data;
         $rootScope.$broadcast('loggedIn');
       });
     }
-  };
-
-
-  self.removeUser = () => {
-    self.currentUser = null;
-    TokenService.removeToken();
-    $rootScope.$broadcast('loggedOut');
   };
 
   self.getUser();
