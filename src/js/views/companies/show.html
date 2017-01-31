@@ -14,13 +14,9 @@
   </li>
 </ul> -->
 <h1><span>{{companiesShow.company.name}}</span> ideas page</h1>
- <form ng-submit="companiesShow(newIdea)">
-  <div>
-    <input type="idea" name="idea" ng-model="companiesShow.company.ideas" placeholder="My suggestion for improvement is ...">
-  </div>
-  <button class="btn btn-default" ng-click="companiesShow.delete(character)">New Idea</button>
-
-  <!-- <input type="submit" value="New Idea"> -->
+ <form ng-submit="companiesShow.addIdea()">
+   <input type="text" ng-model="companiesShow.idea.idea">
+   <input type="submit" value="Create Idea">
 </form>
 <hr />
 <ul class="list-unstyled">

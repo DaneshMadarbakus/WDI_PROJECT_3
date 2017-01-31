@@ -7,10 +7,19 @@ companiesShowCtrl.$inject = ['Company', '$stateParams', '$http', 'API'];
 function companiesShowCtrl(Company, $stateParams, $http, API){
   const vm     = this;
   vm.company   = Company.get($stateParams);
-  vm.upvote    = upvote;
-  vm.downvote  = downvote;
+  vm.upvote    = upVote;
+  vm.downvote  = downVote;
+  vm.addIdea   = addIdea;
 
-  function upvote(ideaId) {
+  function addIdea() {
+    $http
+      .post(`${API}/companies/${$stateParams.id}/ideas`, {idea: vm.idea})
+      .then((response) => {
+        vm.company.ideas.push(response.data);
+      });
+  }
+
+  function upVote(ideaId) {
     $http
       .put(`${API}/companies/${$stateParams.id}/ideas/${ideaId}/upvote`)
       .then(() => {
@@ -18,7 +27,7 @@ function companiesShowCtrl(Company, $stateParams, $http, API){
       });
   }
 
-  function downvote(ideaId) {
+  function downVote(ideaId) {
     $http
       .put(`${API}/companies/${$stateParams.id}/ideas/${ideaId}/downvote`)
       .then(() => {
