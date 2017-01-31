@@ -15,5 +15,8 @@ function TokenService($window, jwtHelper){
     const token = self.getToken();
     return token ? jwtHelper.decodeToken(token) : null;
   };
+  self.removeToken = () => {
+    $window.localStorage.clear();
+  };
 
 }
