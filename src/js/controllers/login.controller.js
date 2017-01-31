@@ -11,8 +11,9 @@ function LoginCtrl(User, CurrentUserService) {
     User
       .login(vm.user)
       .$promise
-      .then(() => {
-        CurrentUserService.getUser();
+      .then(data => {
+        const user = data.user || null;
+        CurrentUserService.saveUser(user);
       }, err => {
         console.log(err);
       });
