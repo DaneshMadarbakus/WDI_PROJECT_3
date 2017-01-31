@@ -1,1 +1,29 @@
 {{companiesShow.company}}
+
+<h1><span>{{companiesShow.company.name}}</span> suggestions page</h1>
+<form ng-submit="show.login()">
+  <div>
+    <input type="idea" name="idea" ng-model="login.user.password" placeholder="My suggestion for improvement is ...">
+  </div>
+  <input type="submit" value="New Idea">
+</form>
+
+<li ng-repeat="idea in companiesShow.company.idea">
+<p ui-sref="companyShow({id: company._id})">{{companiesShow.company.idea}}</p>
+<button ng-click="count = count + 1" ng-init="count=0">
+Up
+<span>
+  count: {{count}}
+</span>
+</button>
+
+<span>
+  count: {{count}}
+</span>
+<button ng-click="count = count + 1" ng-init="count=0">
+Down
+<span>
+  count: {{count}}
+</span>
+</button>
+</li>
