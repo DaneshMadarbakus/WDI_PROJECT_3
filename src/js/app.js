@@ -2,5 +2,6 @@ angular
   .module('clementine', [
     'ui.router',
     'ngResource',
-    'angular-jwt'
+    'angular-jwt',
+    'ui-bootstrap-tpls'
   ]);
