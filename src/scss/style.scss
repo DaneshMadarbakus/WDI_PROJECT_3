@@ -1,5 +1,17 @@
-body {
-  background-color: #EEE;
+body{
+  background: orange;
+
+}
+
+span {
+  padding: 0 5px;
+  border-radius: 5px;
+  background: gray;
+  color: #BADA55;
+}
+
+input {
+  min-width: 300px;
 }
 
 .bg-top {
