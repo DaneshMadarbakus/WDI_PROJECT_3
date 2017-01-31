@@ -5,17 +5,13 @@ angular
 companiesNewCtrl.$inject = ['Company', '$state'];
 function companiesNewCtrl(Company, $state){
   const vm = this;
-
+  
   vm.create = () => {
-    Company.save(vm.company);
+    Company
+      .save(vm.company)
+      .$promise
+      .then(() => {
+        $state.go('companyIndex');
+      });
   };
-
-  // vm.create = () => {
-  //   Company
-  //     .save(vm.company)
-  //     .$promise
-  //     .then(() => {
-  //       $state.go('companyIndex');
-  //     });
-  // };
 }
