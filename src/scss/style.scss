@@ -59,7 +59,7 @@ margin-bottom: 0;
 }
 
 .bg-middle {
-  background-color: #009688;
+  background-color: $primary-color;
   padding: 100px;
   color: white;
   font-size: 30px;
@@ -122,7 +122,7 @@ text-align: center;
   font-size:20px;
   position: relative;
   margin:0;
-  color: #009688;
+  color: $primary-color;
   top:35%;
 }
 .ncf {
@@ -144,7 +144,7 @@ text-align: center;
   height:35px;
   margin-top: 0;
   width: 150px;
-  background-color:#009688;
+  background-color: $primary-color;
   border:none;
   font-size:20px;
 }
