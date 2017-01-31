@@ -2,40 +2,39 @@ angular
   .module('clementine')
   .controller('usersShowCtrl', usersShowCtrl);
 
-usersShowCtrl.$inject = ['User','Company', '$stateParams', '$http'];
-function usersShowCtrl(User, Company, $stateParams, $http) {
+usersShowCtrl.$inject = ['User','Company', '$stateParams', '$http', 'API'];
+function usersShowCtrl(User, Company, $stateParams, $http, API) {
   const vm = this;
 
   User.get($stateParams, function(data) {
     vm.user = data;
     console.log(vm.user);
-    // extract the companies array.
+    // extract the companies array, init returned array
     const c = data.companies;
-    // init an empty array for the returned companies objects.
     const returned = [];
     //loop over the ids, request relevant information and pass into returned array.
     for (var i = 0; i < c.length; i++) {
       $http({
         method: 'GET',
-        url: `http://localhost:3000/api/companies/${data.companies[i]}`
+        url: `${API}/companies/${data.companies[i]}`
       }).then((data) => {
-        console.log(data.data);
+        console.log(data.data.createdAt);
+        data.data.createdAt = createdOnParser(data.data.createdAt);
         returned.push(data.data);
-        times.push(data.data.createdAt);
       });
+      console.log(returned);
     }
-    console.log(times);
     //assign the returned array to the function to access it in the view.
     vm.items = returned;
   });
 }
 
-
 //make sense of the timestamps.
-var times       = [];
-var parsedTimes = [];
-function createdOnParser() {
-  for (var i = 0; i < times.length; i++) {
-    parsedTimes.push(times[i].split('T'));
-  }
+function createdOnParser(data) {
+  console.log('ping');
+  console.log(data, 'before');
+  var s = data.split('T');
+  var date = s[0];
+  var time = s[1].split('.')[0];
+  return `${date} at ${time}`;
 }

@@ -1,16 +1,50 @@
-<h1 class="username">{{ usersShow.user.username }}</h1>
+<div class="container">
+  <h1 class="username"> Welcome, <strong>{{ usersShow.user.username }}</strong></h1>
 
-{{usersShow.companyData}}
+  {{usersShow.companyData}}
 
-<div class="companies">
-  <ul>
-    <li ng-repeat="item in usersShow.items">
-      <h4>Business: {{item.name}}</h4>
-      <h4>description: {{item.description}}</h4>
-      <h4>website: {{ item.website }}</h4>
-      <h4>created on: {{item.createdAt }}</h4>
-    <!-- Will insert other data here, once ideas are seeded. -->
-    </li>
-  </ul>
+  <div class="companies">
+    <h2>Your businesses</h2>
+    <ul>
+      <li ng-repeat="item in usersShow.items">
+        <div class="row">
+          <div class="col-md-4">
+            <h4>Business:</h4>
+          </div>
+          <div class="col-md-4">
+            <h4>{{ item.name }}</h4>
+          </div>
+        </div>
 
+        <div class="row">
+          <div class="col-md-4">
+            <h4>Description:</h4>
+          </div>
+          <div class="col-md-4">
+            <h4>{{ item.description }}</h4>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-md-4">
+            <h4>Website:</h4>
+          </div>
+          <div class="col-md-4">
+            <h4>{{ item.website }}</h4>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-md-4">
+            <h4>Created on:</h4>
+          </div>
+          <div class="col-md-4">
+            <h4>{{ item.createdAt }}</h4>
+          </div>
+        </div>
+
+        <!-- Will insert other data here, once ideas are seeded. -->
+      </li>
+    </ul>
+  </div>
 </div>
