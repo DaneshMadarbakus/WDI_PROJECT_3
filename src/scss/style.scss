@@ -46,7 +46,7 @@ a.navbar-brand {
 }
 
 .bg-middle {
-  background-color: #ff9707;
+  background-color: $main-orange;
   padding: 100px;
 }
 
@@ -63,7 +63,7 @@ a.navbar-brand {
  }
 .companyHOne {
   text-align: center;
-  color: #ff9707;
+  color: $main-orange;
 }
 .newCompanyBtn{
   display: block;
@@ -92,5 +92,5 @@ a.navbar-brand {
   position: relative;
   padding:70px 0;
   margin:0;
-  color: #ff9707;
+  color: $main-orange;
 }
