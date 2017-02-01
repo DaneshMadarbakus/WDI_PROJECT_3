@@ -24,6 +24,7 @@
     "angular": "*",
     "angular-animate": "1.6.1",
     "angular-chart.js": "^1.1.1"
+    "animate.css": "^3.5.2"
   },
   "overrides": {
     "bootstrap": {

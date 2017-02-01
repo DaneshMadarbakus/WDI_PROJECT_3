@@ -83,15 +83,13 @@ h1.home {
    color: $secondary-color;
  }
 
- ul{
-   list-style: none;
- }
+ul{
+ list-style: none;
+}
 
 ul.bullet {
   list-style-type: square;
 }
-
-
 
 .btn-default {
   background-color: $secondary-color;
@@ -100,9 +98,9 @@ ul.bullet {
 }
 
 .btn-default:hover {
-  background-color: #42b2a6;
+  background-color: $primary-hover;
   color: white;
-  border-color: #42b2a6;
+  border-color: $primary-hover;
 }
 
 a.email {
@@ -172,10 +170,29 @@ text-align: center;
 }
 
 .createIdeaBtn {
-  width: 50px;
+  width: 250px;
+  height: 40px;
+  padding: -1px 0;
+  background-color: $primary-color;
+  border: none;
+  color: white;
+  font-size: 16px;
+  border-radius: 5px;
 }
 
-.ideas {
+.ideaAnon {
+  text-transform: capitalize;
+}
+
+.ideaPanel{
+  width: 800px;
+  height: auto;
+  overflow: hidden;
+  padding: 5px;
+  word-wrap: break-word;
+  p{
+    text-align: center;
+  }
 }
 
 .showPage {
@@ -183,6 +200,7 @@ text-align: center;
 }
 
 .login{
+  text-align: center;
   width: 980px;
 }
 
@@ -191,13 +209,39 @@ input {
   margin-top: 10px;
   width: 450px;
   height: 40px;
+  padding: 0 15px;
 }
 
-button.login {
+button.register, button.login {
   margin-top: 10px;
   width: 450px;
   padding: 20px 0;
+  background-color: $primary-color;
+  border: none;
+  color: $secondary-color;
+  font-size: 16px;
+  border-radius: 5px;
 }
+
+button.register:hover, button.login:hover, .createIdeaBtn:hover{
+  background-color: $primary-hover;
+  color: white;
+  border-color: $primary-hover;
+}
+
+.register {
+  text-align: center;
+}
+
+// button.register {
+//   margin-top: 10px;
+//   width: 450px;
+//   padding: 20px 0;
+//   background-color: $primary-color;
+//   border: none;
+//   color: $secondary-color;
+//   font-size: 16px;
+// }
 
 @media (max-width: 1399px){
     .homeImg{
