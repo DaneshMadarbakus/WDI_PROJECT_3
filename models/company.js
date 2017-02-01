@@ -5,7 +5,8 @@ const companySchema = new mongoose.Schema({
   description: {type: String, trim: true},
   website: {type: String, trim: true},
   owner: { type: mongoose.Schema.ObjectId, ref: 'User' },
-  ideas: [{ type: mongoose.Schema.ObjectId, ref: 'Idea' }]
+  ideas: [{ type: mongoose.Schema.ObjectId, ref: 'Idea' }],
+  image: { type: String }
 },{
   timestamps: true
 });
