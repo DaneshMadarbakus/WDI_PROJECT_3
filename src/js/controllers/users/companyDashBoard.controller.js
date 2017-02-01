@@ -8,8 +8,10 @@ function companyDashCtrl(User, Company, $stateParams, $http, API, $scope) {
   vm.kek = 'LOL';
   vm.company;
   vm.previewStringLength = 20;
-  vm.chartData   = [];
-  vm.chartLabels = [];
+  vm.sentChartData     = [];
+  vm.chartLabels       = [];
+  vm.engageChartData   = [];
+  vm.engageChartLabels = [];
   //fetch the user.
   $http({
     method: 'GET',
@@ -28,13 +30,15 @@ function companyDashCtrl(User, Company, $stateParams, $http, API, $scope) {
     console.log(vm.list[0].idea);
   }).then(() => {
     for (var i = 0; i < vm.list.length; i++) {
-      vm.chartData.push(vm.list[i].score);
-
+      //Push the engagement chart data.
+      vm.engageChartData.push(vm.list[i].engage);
+      //Push the average chart data.
+      vm.sentChartData.push(vm.list[i].score);
       vm.chartLabels.push(`
-        ${limitString(vm.list[i].username, vm.previewStringLength)}
+        ${limitString(vm.list[i].idea, vm.previewStringLength)}
         `);
     }
-    console.log(vm.chartLabels);
+    console.log(vm.sentChartLabels);
   });
 }
 
@@ -44,25 +48,6 @@ function limitString(string, length) {
   return `${str}...`;
 }
 
-
-function knuthShuffle(array) {
-  var a = array;
-  var n = a.length;
-  for (var i = n - 1; i > 0; i--) {
-    var j = Math.floor(Math.random() * (i + 1));
-    var tmp = a[i];
-    a[i] = a[j];
-    a[j] = tmp;
-  }
-  return a;
-}
-
-function setOrder(order, array) {
-  console.log('set order');
-  if (order === 'rand') {
-    return true;
-  }
-}
 
 //Work out the super clever 'ideaScore' rating of each idea lol.
 function ideaRanker(ideas) {
