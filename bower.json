@@ -24,13 +24,20 @@
     "angular": "*",
     "angular-animate": "1.6.1",
     "angular-chart.js": "^1.1.1",
-    "animate.css": "^3.5.2"
+    "animate.css": "^3.5.2",
+    "font-awesome": "^4.7.0"
   },
   "overrides": {
     "bootstrap": {
       "main": [
         "dist/css/bootstrap.css",
         "dist/js/bootstrap.js"
+      ]
+    },
+    "font-awesome": {
+      "main": [
+        "css/font-awesome.scss",
+        "fonts/*"
       ]
     }
   }

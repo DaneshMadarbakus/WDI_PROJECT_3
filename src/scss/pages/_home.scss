@@ -14,8 +14,13 @@ section.home {
   }
   .info {
     padding: 100px;
+    text-align: center;
+    h2 {
+      font-size: 2rem;
+    }
   }
   .contact {
     padding: 50px;
+    text-align: center;
   }
 }

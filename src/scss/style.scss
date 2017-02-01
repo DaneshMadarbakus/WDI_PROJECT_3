@@ -1,3 +1,5 @@
+@import "mixins";
+
 @import "variables";
 @import "structure";
 @import "typography";
@@ -8,8 +10,6 @@
 
 @import "pages/home";
 @import "pages/companies";
-
-
-@import "dash-animations";
-@import "mixins";
-// @import "misc";
+@import "pages/companiesShow";
+@import "pages/usersShow";
+@import "pages/login";

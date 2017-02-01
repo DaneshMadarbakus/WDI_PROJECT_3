@@ -1,35 +1,25 @@
-<div class="container">
-  <h1 class="username"> Welcome, <strong> {{ usersShow.user.username }}</strong></h1>
-
-  <div class="user">
+<section class="usersShow">
+  <div class="container">
+    <h1>Welcome, {{ usersShow.user.username }}</h1>
     <h3>Your information</h3>
     <img src="http://fillmurray.com/200/200" alt="">
     <p>Nickname - {{ usersShow.user.username }}</p>
     <p>Email - {{ usersShow.user.email }}</p>
     <p></p>
 
-    <button type="button" name="button">Edit Profile</button>
-    <button type="button" name="button">Delete Profile</button>
-  </div>
+    <button class="btn btn-primary" type="button" name="button">Edit Profile</button>
+    <button  class="btn btn-primary" type="button" name="button">Delete Profile</button>
 
-  <div class="companies">
-    <ul>
-      <h4>My companies</h4>
-      <li ng-repeat="item in usersShow.items">
-        <div class="business panel">
-          <div class="row">
-            <div class="col-md-6">
-                <h4>{{ item.name }}</h4>
-            </div>
-            <div class="col-md-6">
-                <h4>
-                  <a ui-sref="companyDashBoard( { id: item.owner, company_id: item._id})">View dashboard</a>
-                </h4>
-            </div>
+    <h2>My companies</h2>
+    <div class="companies">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-3 col-xs-4" ui-sref="companyDashBoard( { id: company.owner, company_id: company._id})" ng-repeat="company in usersShow.items">
+            <h3>{{company.name}}</h3>
+            <div class="companyFaded"></div>
+            <img src="{{company.image}}" alt="company image">
           </div>
         </div>
-        <!-- Will insert other data here, once ideas are seeded. -->
-      </li>
-    </ul>
-  </div>
-</div>
+      </div>
+    </div>
+</section>

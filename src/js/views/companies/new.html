@@ -1,24 +1,29 @@
 <section class="companiesNew">
   <div class="container">
-  <h1 class="companyHOne">Add Company</h1>
-  <form class="newcompform" ng-submit="companiesNew.create()">
-    <div class="form-group">
-      <label class="company_name">Company name</label>
-      <input id="company_name" class="form-control" type="text" name="company_name" ng-model="companiesNew.company.name" placeholder="Company Name">
+    <div class="row">
+      <div class="col-md-6 col-md-offset-3">
+
+        <h1 class="companyHOne">Add Company</h1>
+        <form class="newcompform" ng-submit="companiesNew.create()">
+          <div class="form-group">
+            <label class="company_name">Company name</label>
+            <input id="company_name" class="form-control" type="text" name="company_name" ng-model="companiesNew.company.name" placeholder="Company Name">
+          </div>
+          <div class="form-group">
+            <label class="company_description">Company description</label>
+            <textarea id="company_description" class="form-control" type="text" name="company_description" ng-model="companiesNew.company.description" placeholder="Company Description"></textarea>
+          </div>
+          <div class="form-group">
+            <label class="company_website">Company description</label>
+            <input id="company_website" class="form-control" type="text" name="company_website" ng-model="companiesNew.company.website" placeholder="Company website">
+          </div>
+          <div class="form-group">
+            <label class="company_image">Company description</label>
+            <input id="company_image" class="form-control" type="text" name="company_image" ng-model="companiesNew.company.image" placeholder="Company image url">
+          </div>
+          <input class="btn btn-primary btn-block" type="submit" value="Create company" />
+        </form>
+      </div>
     </div>
-    <div class="form-group">
-      <label class="company_description">Company description</label>
-      <textarea id="company_description" class="form-control" type="text" name="company_description" ng-model="companiesNew.company.description" placeholder="Company Description"></textarea>
-    </div>
-    <div class="form-group">
-      <label class="company_website">Company description</label>
-      <input id="company_website" class="form-control" type="text" name="company_website" ng-model="companiesNew.company.website" placeholder="Company website">
-    </div>
-    <div class="form-group">
-      <label class="company_image">Company description</label>
-      <input id="company_image" class="form-control" type="text" name="company_image" ng-model="companiesNew.company.image" placeholder="Company image url">
-    </div>
-    <input class="btn btn-primary btn-block" type="submit" value="Create company" />
-  </form>
   </div>
 </section>

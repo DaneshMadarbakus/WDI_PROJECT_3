@@ -1,85 +1,81 @@
+<section class="companyDash">
+  <div class="container">
+    <h1>{{ companyDash.company.data.name }}</h1>
 
-<h1>{{ companyDash.company.data.name }}</h1>
+    <div class="row">
+      <div class="col-md-6">
+        <h3>Average sentiment:</h3>
+        <div class="container doughnut">
+          <canvas id="sentdoughnut"
+          class="chart chart-doughnut"
+          chart-data="companyDash.sentChartData"
+          chart-labels="companyDash.chartLabels"
+          chart-options="{
+            responsive: false
+          }"
+          ></canvas>
+        </div>
+        <p>this is a number</p>
+      </div>
 
-<div class="row">
-  <div class="col-md-6">
-    <h3>Average sentiment:</h3>
-    <div class="container doughnut">
-      <canvas id="sentdoughnut"
-      class="chart chart-doughnut"
-      chart-data="companyDash.sentChartData"
-      chart-labels="companyDash.chartLabels"
-      chart-options="{
-        responsive: false
-      }"
-      >
-    </canvas>
-  </div>
-  <p>this is a number</p>
-</div>
-
-<div class="container doughnut">
-  <div class="col-md-6">
-    <h3>Engagements:</h3>
-    <canvas id="engagedoughnut"
-    class="chart chart-doughnut"
-    chart-data="companyDash.engageChartData"
-    chart-labels="companyDash.engageChartLabels"
-    chart-options="{
-      responsive: false
-    }"
-    >
-  </canvas>
-</div>
-</div>
-</div>
-
-<!-- <div class="row">
-  <div class="col-lg-6">
-    <p class="dash-full-description">{{ companyDash.company.data.description }}</p>
-  </div>
-</div> -->
-
-
-<div class="row">
-  <ul>
-    <!-- Ideas -->
-    <button type="button" name="button" ng-click="showideas=false">Show Ideas</button>
-    <button type="button" name="button" ng-click="showideas=true">Hide Ideas</button>
-    <div ng-show="showideas">
+      <div class="container doughnut">
+        <div class="col-md-6">
+          <h3>Engagements:</h3>
+          <canvas id="engagedoughnut"
+          class="chart chart-doughnut"
+          chart-data="companyDash.engageChartData"
+          chart-labels="companyDash.engageChartLabels"
+          chart-options="{
+            responsive: false
+          }"
+          ></canvas>
+        </div>
+      </div>
     </div>
-    <div class="ideas" ng-hide="showideas">
-    <form>
-      <select class="form-control" ng-model="sortBy">
-        <option value="None">-- Select --</option>
-        <option value="score">Score - Low to High</option>
-        <option value="-score">Score - High to Low</option>
-        <option value="-engage">Engagement</option>
-        <option value="-createdAt">Newest</option>
-        <option value="createdAt">Oldest</option>
-      </select>
-      <label for="show-number">Show Number</label>
-      <select value="show-number" class="form-control" ng-model="maxNum" placeholder="Ideas are hidden by default">
-        <option value="5" selected>5</option>
-        <option value="10">10</option>
-        <option value="20">20</option>
-        <option value="50">50</option>
-        <option value="0" placeholder="Ideas are hidden">Hide Ideas</option>
-      </select>
-    </form>
 
-    <ul id="list" ng-style="{height: ((myList.length * 40) + 'px')}">
-      <li
-        class="idea-info"
-        ng-animate="'animate'"
-        ng-enter
-        ng-repeat="idea in companyDash.company.data.ideas | orderBy: sortBy" ng-style="{top: ((item.order * 40) + 'px')}"
-        ng-show="$index < maxNum">
-        <h4>Title: {{idea.idea}}</h4>
-        <p>Score: {{ idea.score }}</p>
-        <p>Downvotes: {{ idea.downvotes }}</p>
-        <p>Upvotes: {{ idea.upvotes }}</p>
-      </li>
-    </ul>
-  </ul>
+    <div class="row">
+      <!-- Ideas -->
+      <button class="btn btn-primary" ng-click="showideas=false">Show Ideas</button>
+      <button class="btn btn-primary" ng-click="showideas=true">Hide Ideas</button>
+
+      <div ng-hide="showideas">
+        <form>
+          <div class="form-group">
+            <label for="sortBy">Sort</label>
+            <select class="form-control" ng-model="sortBy">
+              <option value="None">-- Select --</option>
+              <option value="score">Score - Low to High</option>
+              <option value="-score">Score - High to Low</option>
+              <option value="-engage">Engagement</option>
+              <option value="-createdAt">Newest</option>
+              <option value="createdAt">Oldest</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="show-number">Show Number</label>
+            <select id="show-number" value="show-number" class="form-control" ng-model="maxNum" placeholder="Ideas are hidden by default">
+              <option value="5" selected>5</option>
+              <option value="10">10</option>
+              <option value="20">20</option>
+              <option value="50">50</option>
+              <option value="0" placeholder="Ideas are hidden">Hide Ideas</option>
+            </select>
+          </div>
+        </form>
+
+        <ul id="list" ng-style="{height: ((myList.length * 40) + 'px')}">
+          <li class="idea-info"
+          ng-animate="'animate'"
+          ng-enter
+          ng-repeat="idea in companyDash.company.data.ideas | orderBy: sortBy" ng-style="{top: ((item.order * 40) + 'px')}"
+          ng-show="$index < maxNum">
+          <h4>Title: {{idea.idea}}</h4>
+          <p>Score: {{ idea.score }}</p>
+          <p>Downvotes: {{ idea.downvotes }}</p>
+          <p>Upvotes: {{ idea.upvotes }}</p>
+        </li>
+      </ul>
+    </div>
+  </div>
 </div>
+</section>

@@ -1,23 +1,29 @@
-<div class="container-fluid showPage">
-<h1><span class="companyName">{{companiesShow.company.name}}'s</span> ideas page</h1>
-  <img class="companyLogo" src="{{companiesShow.company.image}}">
- <form ng-submit="companiesShow.addIdea()">
-   <input class="ideaInput" type="text" placeholder="What's your idea?" ng-model="companiesShow.idea.idea">
-   <button type="submit" class="createIdeaBtn">Create Idea</button>
-</form>
-<hr />
-<ul class="list-unstyled">
-  <li ng-repeat="idea in companiesShow.company.ideas">
-    <div class = "panel ideaPanel pull-left">
-      <p class ="ideaAnon">{{ idea.randomUsername}} says ...</p>
-    <p class="ideas" ui-sref="Idea({id: idea._id})">{{idea.idea}}</p>
-    <div class="btn-group pull-right" role="group" aria-label="...">
-      <span class= "vote">{{count}}</span>
-      <button class="btn btn-default pull-right" ng-click="companiesShow.upvote(idea._id)">&#x21e9  ({{ idea.upvotes.length }})
-      </button>
-      <button class="btn btn-default pull-right" ng-click="companiesShow.downvote(idea._id)"> &#x21e7 ({{ idea.downvotes.length }})</button>
-    </div>
+<section class="companiesShow">
+  <div class="container">
+    <h1><span class="companyName">{{companiesShow.company.name}}</h1>
+    <img class="companyLogo" src="{{companiesShow.company.image}}">
+
+    <h2>Add an idea</h2>
+    <form ng-submit="companiesShow.addIdea()">
+      <div class="form-group">
+        <input class="form-control" type="text" placeholder="What's your idea?" ng-model="companiesShow.idea.idea">
+      </div>
+      <button type="submit" class="btn btn-primary btn-block">Create Idea</button>
+    </form>
+
+    <hr />
+    <ul class="list-unstyled">
+      <li ng-repeat="idea in companiesShow.company.ideas">
+        <p ui-sref="Idea({id: idea._id})">{{idea.idea}}</p>
+        <p>by {{ idea.randomUsername}} {{ idea.createdAt }}</p>
+
+        <div class="btn-group pull-right" role="group">
+          <span class= "vote">{{count}}</span>
+          <a class="btn btn-primary" ng-click="companiesShow.upvote(idea._id)"><i class="fa fa-arrow-up" aria-hidden="true"></i> ({{ idea.upvotes.length }})
+          </a>
+          <a class="btn btn-primary" ng-click="companiesShow.downvote(idea._id)"><i class="fa fa-arrow-down" aria-hidden="true"></i> ({{ idea.downvotes.length }})</a>
+        </div>
+      </li>
+    </ul>
   </div>
-  </li>
-</ul>
-</div>
+</section>
