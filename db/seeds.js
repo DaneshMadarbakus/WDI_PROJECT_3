@@ -110,21 +110,24 @@ function createCompanies(done) {
         description: 'this is a badass company',
         website: 'www.badass.com',
         owner: users[0],
-        ideas: []
+        ideas: [],
+        image: 'http://stevensegallery.com/g/200/300'
       },
       {
         name: 'general assembly',
         description: 'learn to code',
         website: 'www.generalassembly.com',
         owner: users[1],
-        ideas: []
+        ideas: [],
+        image: 'https://pbs.twimg.com/profile_images/813584000082214912/5U3iZVs-.jpg'
       },
       {
         name: 'costa',
         description: 'coffee and stuff',
         website: 'www.costa.com',
         owner: users[2],
-        ideas: []
+        ideas: [],
+        image: 'https://upload.wikimedia.org/wikipedia/en/thumb/4/42/CostaLogo.svg/1024px-CostaLogo.svg.png'
       }
     ];
 

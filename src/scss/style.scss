@@ -106,13 +106,6 @@ a.email {
   color: $primary-color;
 }
 
-.companyUl{
-  width:600px;
-  height:600px;
-  margin: 0 auto;
-  padding:0;
-}
-
 .col-md-3{
 height:120px;
 text-align: center;
@@ -127,6 +120,11 @@ text-align: center;
   margin:0;
   color: white;
   top:35%;
+}
+.companyImg{
+  
+  height:100px;
+  width:100px;
 }
 .ncf {
   height: 40px;
