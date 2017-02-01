@@ -1,13 +1,15 @@
 <div class="container">
-<h1 class="companyHOne">Companies</h1>
-<a class="btn btn-default newCompanyBtn" ui-sref="companyNew">Register company</a>
-
-<div class="companyList">
-<div class="row">
-<div class="col-md-3 col-xs-4" ng-repeat="company in companiesIndex.companies">
-<p class="companyP" ui-sref="companyShow({id: company._id})">{{company.name}}</p>
-<img class="companyImg" src="{{company.image}}" alt="company image">
-</div>
-</div>
-</div>
+  <div class="container companyHeadline">
+    <h1 class="companyHOne">Companies</h1>
+    <a class="btn btn-default newCompanyBtn" ui-sref="companyNew">Register company</a>
+  </div>
+  <div class="companyList">
+    <div class="row">
+      <div class="col-md-3 col-xs-4" ng-repeat="company in companiesIndex.companies">
+        <p class="companyP" ui-sref="companyShow({id: company._id})">{{company.name}}</p>
+        <div class="companyFaded"></div>
+        <img class="companyImg" src="{{company.image}}" alt="company image">
+      </div>
+    </div>
+  </div>
 </div>
