@@ -22,6 +22,7 @@
 <ul class="list-unstyled">
   <li ng-repeat="idea in companiesShow.company.ideas">
     <p ui-sref="Idea({id: idea._id})">{{idea.idea}}</p>
+    <p>Creator: <span>{{ idea.randomUsername}}</span> </p>
     <p>upvotes: <span>{{ idea.upvotes.length }}</span></p>
     <p>downvotes: <span>{{ idea.downvotes.length }}</span></p>
     <div class="btn-group pull-right" role="group" aria-label="...">
