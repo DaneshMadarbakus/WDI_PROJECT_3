@@ -1,18 +1,3 @@
-<!-- {{ companiesShow.company}} -->
-<!-- <h1><span>{{companiesShow.company.name}}</span> ideas page</h1>
-<p>{{ companiesShow.company.description }}</p>
-<a href="">{{ companiesShow.company.website }}</a>
-
-<ul>
-  <li ng-repeat="idea in companiesShow.company.ideas">
-    <h2>{{ idea.idea }}</h2>
-  </li>
-</ul> -->
-<!--
-<ul>
-  <li ng-repeat="idea in companyShow.company.ideas">
-  </li>
-</ul> -->
 <div class="container-fluid showPage">
 <h1><span class="companyName">{{companiesShow.company.name}}'s</span> ideas page</h1>
   <img class="companyLogo" src="{{companiesShow.company.image}}">
@@ -28,9 +13,9 @@
     <p class="ideas" ui-sref="Idea({id: idea._id})">{{idea.idea}}</p>
     <div class="btn-group pull-right" role="group" aria-label="...">
       <span class= "vote">{{count}}</span>
-      <button class="btn btn-default pull-right" ng-click="companiesShow.upvote(idea._id)"> &#x21e7 ({{ idea.upvotes.length }})
+      <button class="btn btn-default pull-right" ng-click="companiesShow.upvote(idea._id)">&#x21e9  ({{ idea.upvotes.length }})
       </button>
-      <button class="btn btn-default pull-right" ng-click="companiesShow.downvote(idea._id)"> &#x21e9 ({{ idea.downvotes.length }})</button>
+      <button class="btn btn-default pull-right" ng-click="companiesShow.downvote(idea._id)"> &#x21e7 ({{ idea.downvotes.length }})</button>
     </div>
   </div>
   </li>
