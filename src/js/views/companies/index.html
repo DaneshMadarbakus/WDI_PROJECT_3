@@ -5,8 +5,8 @@
   </div>
   <div class="companyList">
     <div class="row">
-      <div class="col-md-3 col-xs-4" ng-repeat="company in companiesIndex.companies">
-        <p class="companyP" ui-sref="companyShow({id: company._id})">{{company.name}}</p>
+      <div class="col-md-3 col-xs-4"  ui-sref="companyShow({id: company._id})" ng-repeat="company in companiesIndex.companies">
+        <p class="companyP">{{company.name}}</p>
         <div class="companyFaded"></div>
         <img class="companyImg" src="{{company.image}}" alt="company image">
       </div>
