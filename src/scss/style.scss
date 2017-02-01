@@ -194,8 +194,7 @@ body{
 span {
   padding: 0 5px;
   border-radius: 5px;
-  // background: gray;
-  color: $primary-color;
+  color: $secondary-color;
 }
 
 input {
@@ -278,9 +277,9 @@ ul.bullet {
 }
 
 .btn-default:hover {
-  background-color: #68d8ce;
+  background-color: #42b2a6;
   color: white;
-  border-color: #68d8ce;
+  border-color: #42b2a6;
 }
 
 a.email {
@@ -361,4 +360,20 @@ text-align: center;
 
 .showPage {
   width: 980px;
+}
+
+.login{
+  width: 980px;
+}
+
+input {
+  margin-top: 10px;
+  width: 450px;
+  height: 40px;
+}
+
+button.login {
+  margin-top: 10px;
+  width: 450px;
+  padding: 20px 0;
 }
