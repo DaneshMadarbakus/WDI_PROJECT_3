@@ -10,6 +10,9 @@ span {
   padding: 0 5px;
   border-radius: 5px;
   color: $secondary-color;
+  .vote {
+  color: red;
+  }
 }
 
 input {
@@ -170,7 +173,6 @@ text-align: center;
 }
 
 .ideas {
-  margin-top: 50px;
 }
 
 .showPage {
@@ -180,6 +182,7 @@ text-align: center;
 .login{
   width: 980px;
 }
+
 
 input {
   margin-top: 10px;
