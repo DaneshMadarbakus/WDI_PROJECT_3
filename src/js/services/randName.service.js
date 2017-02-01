@@ -4,7 +4,7 @@ angular
 
 
 
-randNameFactory.$inject = [];
+randNameService.$inject = [];
 function randNameService(){
   const self = this;
   const adjectives = ['beautiful', 'clean', 'drab', 'elegant', 'fancy', 'glamorous', 'handsome', 'long', 'magnificent', 'old-fashioned', 'plain', 'quaint', 'sparkling', 'ugliest', 'unsightly', 'wide-eyed', 'agreeable', 'brave', 'calm', 'delightful', 'eager','faithful', 'gentle', 'happy', 'jolly', 'kind', 'lively', 'nice', 'obedient', 'proud', 'relieved', 'silly', 'thankful', 'victorious', 'witty', 'zealous', 'ancient', 'brief', 'early', 'fast', 'late', 'long', 'modern', 'old', 'quick', 'rapid', 'short', 'slow', 'swift', 'young', 'bitter', 'delicious', 'fresh','greasy', 'juicy', 'hot', 'icy','loose', 'melted', 'nutritious', 'prickly', 'rainy', 'rotten', 'salty', 'sticky', 'strong', 'sweet', 'tart', 'tasteless', 'uneven', 'weak', 'wet', 'wooden','yummy'];
