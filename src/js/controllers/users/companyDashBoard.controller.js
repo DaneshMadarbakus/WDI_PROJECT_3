@@ -34,6 +34,7 @@ function companyDashCtrl(User, Company, $stateParams, $http, API, $scope) {
         ${limitString(vm.list[i].username, vm.previewStringLength)}
         `);
     }
+    console.log(vm.chartLabels);
   });
 }
 
