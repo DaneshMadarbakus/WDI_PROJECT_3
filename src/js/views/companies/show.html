@@ -24,8 +24,8 @@
 <ul class="list-unstyled">
   <li ng-repeat="idea in companiesShow.company.ideas">
     <div class = "panel">
+      <p class ="ideaAnon">{{ idea.randomUsername}} says ...</p>
     <p class="ideas" ui-sref="Idea({id: idea._id})">{{idea.idea}}</p>
-    <p>Creator: <span>{{ idea.randomUsername}}</span> </p>
     <div class="btn-group" role="group" aria-label="...">
       <span class= "vote">{{count}}</span>
       <button class="btn btn-default" ng-click="companiesShow.upvote(idea._id)">Up ({{ idea.upvotes.length }})

@@ -82,15 +82,13 @@ h1.home {
    color: $secondary-color;
  }
 
- ul{
-   list-style: none;
- }
+ul{
+ list-style: none;
+}
 
 ul.bullet {
   list-style-type: square;
 }
-
-
 
 .btn-default {
   background-color: $secondary-color;
@@ -129,7 +127,7 @@ text-align: center;
   top:35%;
 }
 .companyImg{
-  
+
   height:100px;
   width:100px;
 }
@@ -174,7 +172,8 @@ text-align: center;
   width: 50px;
 }
 
-.ideas {
+.ideaAnon {
+  text-transform: capitalize;
 }
 
 .showPage {
