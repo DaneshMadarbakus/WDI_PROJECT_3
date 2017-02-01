@@ -1,5 +1,5 @@
 <h1>{{ companyDash.company.data.name }}</h1>
-<ul id="list" ng-style="{height: ((myList.length * 40) + 'px')}">
+<ul>
   <!-- Ideas -->
   <h3>Sort ideas.</h3>
   <form>
@@ -13,7 +13,7 @@
     </select>
     <label for="show-number">Show Number</label>
     <select value="show-number" class="form-control" ng-model="maxNum" placeholder="Ideas are hidden by default">
-      <option value="5" selected="selected">5</option>
+      <option value="5" selected>5</option>
       <option value="10">10</option>
       <option value="20">20</option>
       <option value="50">50</option>
@@ -21,13 +21,14 @@
     </select>
   </form>
 
-
-  <li ng-repeat="idea in companyDash.company.data.ideas | orderBy: sortBy" ng-style="{top: ((item.order * 40) + 'px')}" ng-show="$index < maxNum">
-    <h4>Title: {{idea.idea}}</h4>
-    <p>Score: {{ idea.score }}</p>
-    <p>Downvotes: {{ idea.downvotes  }}</p>
-    <p>Upvotes: {{ idea.upvotes }}</p>
-  </li>
+  <ul id="list" ng-style="{height: ((myList.length * 40) + 'px')}">
+    <li class="idea-info" ng-repeat="idea in companyDash.company.data.ideas | orderBy: sortBy" ng-style="{top: ((item.order * 40) + 'px')}" ng-show="$index < maxNum">
+      <h4>Title: {{idea.idea}}</h4>
+      <p>Score: {{ idea.score }}</p>
+      <p>Downvotes: {{ idea.downvotes }}</p>
+      <p>Upvotes: {{ idea.upvotes }}</p>
+    </li>
+  </ul>
 </ul>
 
 <p class="dash-full-description">{{ companyDash.company.data.description }}</p>

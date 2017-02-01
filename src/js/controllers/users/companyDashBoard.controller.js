@@ -23,11 +23,42 @@ function companyDashCtrl(User, Company, $stateParams, $http, API) {
     console.log(data.data.ideas);
     ideaRanker(data.data.ideas);
   });
-  //
+
+  //Shuffle function  //Variable for shuffle
+  vm.order = 'none';
+  vm.$watch('order', () => {
+    setOrder(vm.order);
+  });
 
 }
 
+function split() {
+  console.log(workingString);
+  workingString.split(' ').map(function(word){
+    return Game.knuthArg(word);
+  }).join(' ');
+}
 
+function knuthShuffle(word) {
+  var a        = word.split('');
+  var char0    = a.shift();
+  var charLast = a.pop();
+  var n        = a.length;
+  for (var i = n - 1; i > 0; i--) {
+    var j = Math.floor(Math.random() * (i + 1));
+    var tmp = a[i];
+    a[i] = a[j];
+    a[j] = tmp;
+  }
+
+  return a;
+}
+
+function setOrder(order) {
+  if (order === 'rand') {
+
+  }
+}
 
 //Work out the super clever 'ideaScore' rating of each idea lol.
 function ideaRanker(ideas) {

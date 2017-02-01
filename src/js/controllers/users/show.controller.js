@@ -6,7 +6,7 @@ usersShowCtrl.$inject = ['User','Company', '$stateParams', '$http', 'API'];
 function usersShowCtrl(User, Company, $stateParams, $http, API) {
   const vm = this;
 
-  //fetch the user and companies. 
+  //fetch the user and companies.
   User
   .get($stateParams)
   .$promise
@@ -17,6 +17,8 @@ function usersShowCtrl(User, Company, $stateParams, $http, API) {
       item.createdAt = createdOnParser(item.createdAt);
     });
   });
+
+
 }
 
 //make sense of the timestamps.
