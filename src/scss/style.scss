@@ -178,6 +178,7 @@ text-align: center;
   border: none;
   color: white;
   font-size: 16px;
+  border-radius: 5px;
 }
 
 .ideas {
@@ -210,7 +211,7 @@ button.register, button.login {
   font-size: 16px;
 }
 
-button.register:hover, button.login:hover{
+button.register:hover, button.login:hover, .createIdeaBtn:hover{
   background-color: $primary-hover;
   color: white;
   border-color: $primary-hover;
