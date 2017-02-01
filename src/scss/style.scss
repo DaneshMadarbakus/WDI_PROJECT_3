@@ -48,17 +48,17 @@ margin-bottom: 0;
 
 .navbar-default {
     .navbar-brand {
-    color: $main-orange;
+    color: $secondary-color;
   }
 }
 
-.navbar-default {
-  &:hover{
-    .navbar-brand {
-    color: $main-orange;
-  }
-  }
-}
+// .navbar-default {
+//     .navbar-brand {
+//       &:hover{
+//     color: $secondary-color;
+//   }
+//   }
+// }
 
 .bg-top {
   width: 980px;
@@ -114,13 +114,19 @@ a.email {
   color: $primary-color;
 }
 .newCompanyBtn{
-  display: block;
-  text-align: center;
-  font-style: italic;
-  border:1px dashed black;
-  width:130px;
-  margin: 0 auto;
-  margin-bottom: 10px;
+  height:35px;
+  margin-top: 0;
+  width: 184px;
+  background-color: $primary-color;
+  border:none;
+  font-size:20px;
+  // display: block;
+  // text-align: center;
+  // font-style: italic;
+  // border:1px dashed black;
+  // width:130px;
+  // margin: 0 auto;
+  // margin-bottom: 10px;
 }
 .companyUl{
   width:600px;
@@ -177,5 +183,9 @@ text-align: center;
 
 .newCompSubmit:hover {
   background-color:rgba(0,150,136,0.6);
-  color: $main-orange;
+  color: white;
+}
+
+.createIdeaBtn {
+  width: 100px
 }
