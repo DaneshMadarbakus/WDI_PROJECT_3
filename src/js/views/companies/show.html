@@ -13,6 +13,7 @@
   <li ng-repeat="idea in companyShow.company.ideas">
   </li>
 </ul> -->
+<div class="container-fluid showPage">
 <h1><span>{{companiesShow.company.name}}</span> ideas page</h1>
  <form ng-submit="companiesShow.addIdea()">
    <input type="text" ng-model="companiesShow.idea.idea">
@@ -22,10 +23,10 @@
 <hr />
 <ul class="list-unstyled">
   <li ng-repeat="idea in companiesShow.company.ideas">
-    <p ui-sref="Idea({id: idea._id})">{{idea.idea}}</p>
+    <p class="ideas" ui-sref="Idea({id: idea._id})">{{idea.idea}}</p>
     <p>upvotes: <span>{{ idea.upvotes.length }}</span></p>
     <p>downvotes: <span>{{ idea.downvotes.length }}</span></p>
-    <div class="btn-group pull-right" role="group" aria-label="...">
+    <div class="btn-group" role="group" aria-label="...">
       <span>{{count}}</span>
       <button class="btn btn-default" ng-click="companiesShow.upvote(idea._id)">Up
       </button>
@@ -33,3 +34,4 @@
     </div>
   </li>
 </ul>
+</div>
