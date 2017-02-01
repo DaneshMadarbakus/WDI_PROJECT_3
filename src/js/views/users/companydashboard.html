@@ -40,10 +40,15 @@
   </div>
 </div> -->
 
+
 <div class="row">
   <ul>
     <!-- Ideas -->
-    <h3>Ideas</h3>
+    <button type="button" name="button" ng-click="showideas=false">Show Ideas</button>
+    <button type="button" name="button" ng-click="showideas=true">Hide Ideas</button>
+    <div ng-show="showideas">
+    </div>
+    <div class="ideas" ng-hide="showideas">
     <form>
       <select class="form-control" ng-model="sortBy">
         <option value="None">-- Select --</option>

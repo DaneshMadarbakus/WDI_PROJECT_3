@@ -31,13 +31,15 @@ function companyDashCtrl(User, Company, $stateParams, $http, API, $scope) {
   }).then(() => {
     for (var i = 0; i < vm.list.length; i++) {
       //Push the sent chart data.
-      vm.sentChartData.push(`
-        ${removeNegativeValue(vm.list[i].score)}
-        `);
+      console.log(vm.list[i].score);
+      vm.sentChartData.push(vm.list[i].score);
+      // (`
+      //   ${removeNegativeValue(vm.list[i].score)}
+      //   `);
 
       //Push the engagement chart data.
       vm.engageChartData.push(vm.list[i].engage);
-      vm.engagechartLabels.push(`
+      vm.engageChartLabels.push(`
         ${limitString(vm.list[i].idea, vm.previewStringLength)}
         `);
     }
@@ -46,7 +48,8 @@ function companyDashCtrl(User, Company, $stateParams, $http, API, $scope) {
 }
 
 function removeNegativeValue(val) {
-  if (val < 1) return true;
+  console.log(val);
+  if (val < 1) console.log(val);
   else return val;
 }
 
