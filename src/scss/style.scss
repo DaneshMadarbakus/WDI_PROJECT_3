@@ -1,5 +1,6 @@
 @import url('https://fonts.googleapis.com/css?family=Lato');
 @import 'variables';
+@import 'mixins';
 
 
 body{
@@ -197,7 +198,7 @@ text-align: center;
 }
 
 .createIdeaBtn {
-  width: 250px;
+  width: 100px;
   height: 40px;
   padding: -1px 0;
   background-color: $primary-color;
@@ -237,6 +238,7 @@ input {
   width: 450px;
   height: 40px;
   padding: 0 15px;
+  @include border-radius(5px);
 }
 
 button.register, button.login {
