@@ -5,7 +5,7 @@ angular
 companiesNewCtrl.$inject = ['Company', '$state'];
 function companiesNewCtrl(Company, $state){
   const vm = this;
-  
+
   vm.create = () => {
     Company
       .save(vm.company)

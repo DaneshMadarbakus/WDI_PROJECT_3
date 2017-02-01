@@ -2,15 +2,16 @@
 @import 'variables';
 @import 'dash-animations';
 
+
 body{
-  background: $primary-color;
+  background: $secondary-color;
   font-family: 'Lato', sans-serif;;
 }
 
 span {
   padding: 0 5px;
   border-radius: 5px;
-  color: $secondary-color;
+  color: $primary-color;
 }
 
 input {
@@ -53,7 +54,7 @@ margin-bottom: 0;
 
 .bg-top {
   background-color: $primary-color;
-  width: 980px;
+  width: 100%;
   text-align: center;
   margin: auto;
   padding: 105px 0;
@@ -82,9 +83,15 @@ h1.home {
    color: $secondary-color;
  }
 
+ ul{
+   list-style: none;
+ }
+
 ul.bullet {
   list-style-type: square;
 }
+
+
 
 .btn-default {
   background-color: $secondary-color;
@@ -107,13 +114,6 @@ a.email {
   color: $primary-color;
 }
 
-.companyUl{
-  width:600px;
-  height:600px;
-  margin: 0 auto;
-  padding:0;
-}
-
 .col-md-3{
 height:120px;
 text-align: center;
@@ -126,8 +126,13 @@ text-align: center;
   font-size:20px;
   position: relative;
   margin:0;
-  color: white;
+  color: $primary-color;
   top:35%;
+}
+.companyImg{
+  
+  height:100px;
+  width:100px;
 }
 .ncf {
   height: 40px;
@@ -167,11 +172,10 @@ text-align: center;
 }
 
 .createIdeaBtn {
-  width: 100px
+  width: 50px;
 }
 
 .ideas {
-  margin-top: 50px;
 }
 
 .showPage {
@@ -181,6 +185,7 @@ text-align: center;
 .login{
   width: 980px;
 }
+
 
 input {
   margin-top: 10px;
@@ -192,4 +197,10 @@ button.login {
   margin-top: 10px;
   width: 450px;
   padding: 20px 0;
+}
+
+@media (max-width: 1399px){
+    .homeImg{
+      display: none;
+    }
 }
