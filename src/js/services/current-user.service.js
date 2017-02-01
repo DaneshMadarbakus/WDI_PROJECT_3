@@ -5,12 +5,13 @@ angular
 CurrentUserService.$inject = ['TokenService', '$rootScope', 'randNameService'];
 function CurrentUserService(TokenService, $rootScope, randNameService){
   let currentUser = TokenService.decodeToken();
-  const randomUsername = randNameService.rndName();
   return {
     user: currentUser,
     saveUser(user){
+      const randomUsername = randNameService.rndName();
       user.id = user.id ? user.id : user._id;
-      // user.username = randomUsername;
+      user.username = randomUsername;
+      console.log(user.username);
       currentUser = user;
       $rootScope.$broadcast('loggedIn');
     },

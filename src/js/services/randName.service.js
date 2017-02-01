@@ -2,8 +2,6 @@ angular
   .module('clementine')
   .service('randNameService', randNameService);
 
-
-
 randNameService.$inject = [];
 function randNameService(){
   const self = this;
