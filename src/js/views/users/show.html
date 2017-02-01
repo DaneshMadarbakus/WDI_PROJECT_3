@@ -1,10 +1,8 @@
 <div class="container">
-  <h1 class="username"> Welcome, <strong>{{ usersShow.user.username }}</strong></h1>
-
-  {{items.companyData.id}}
+  <h1 class="username"> Welcome, <strong> {{ usersShow.user.username }}</strong></h1>
 
   <div class="companies">
-    <h2>Your businesses:</h2>
+
     <ul>
       <li ng-repeat="item in usersShow.items">
         <div class="business panel">

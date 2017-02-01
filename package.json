@@ -58,6 +58,7 @@
     }
   },
   "dependencies": {
+    "angular-animate": "^1.6.1",
     "async": "^2.1.4",
     "bcrypt": "^0.8.7",
     "bluebird": "^3.4.7",

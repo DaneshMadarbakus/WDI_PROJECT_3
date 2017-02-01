@@ -1,34 +1,56 @@
-<h1>{{ companyDash.company.data.name }}</h1>
-<ul>
-  <!-- Ideas -->
-  <h3>Sort ideas.</h3>
-  <form>
-    <select class="form-control" ng-model="sortBy">
-      <option value="None">-- Select --</option>
-      <option value="score">Score - Low to High</option>
-      <option value="-score">Score - High to Low</option>
-      <option value="-engage">Engagement</option>
-      <option value="-createdAt">Newest</option>
-      <option value="createdAt">Oldest</option>
-    </select>
-    <label for="show-number">Show Number</label>
-    <select value="show-number" class="form-control" ng-model="maxNum" placeholder="Ideas are hidden by default">
-      <option value="5" selected>5</option>
-      <option value="10">10</option>
-      <option value="20">20</option>
-      <option value="50">50</option>
-      <option value="0" placeholder="Ideas are hidden">Hide Ideas</option>
-    </select>
-  </form>
 
-  <ul id="list" ng-style="{height: ((myList.length * 40) + 'px')}">
-    <li class="idea-info" ng-repeat="idea in companyDash.company.data.ideas | orderBy: sortBy" ng-style="{top: ((item.order * 40) + 'px')}" ng-show="$index < maxNum">
-      <h4>Title: {{idea.idea}}</h4>
-      <p>Score: {{ idea.score }}</p>
-      <p>Downvotes: {{ idea.downvotes }}</p>
-      <p>Upvotes: {{ idea.upvotes }}</p>
-    </li>
+  <h1>{{ companyDash.company.data.name }}</h1>
+
+<div class="row">
+  <div class="col-md-4">
+    <h3>Vital stats</h3>
+    Average sentiment:
+  </div>
+
+  <div class="col-md-4">
+    <h3>Engagements in the last day:</h3>
+  </div>
+</div>
+
+<div class="row">
+  <p class="dash-full-description">{{ companyDash.company.data.description }}</p>
+</div>
+
+<div class="row">
+  <ul>
+    <!-- Ideas -->
+    <h3>Ideas</h3>
+    <form>
+      <select class="form-control" ng-model="sortBy">
+        <option value="None">-- Select --</option>
+        <option value="score">Score - Low to High</option>
+        <option value="-score">Score - High to Low</option>
+        <option value="-engage">Engagement</option>
+        <option value="-createdAt">Newest</option>
+        <option value="createdAt">Oldest</option>
+      </select>
+      <label for="show-number">Show Number</label>
+      <select value="show-number" class="form-control" ng-model="maxNum" placeholder="Ideas are hidden by default">
+        <option value="5" selected>5</option>
+        <option value="10">10</option>
+        <option value="20">20</option>
+        <option value="50">50</option>
+        <option value="0" placeholder="Ideas are hidden">Hide Ideas</option>
+      </select>
+    </form>
+
+    <ul id="list" ng-style="{height: ((myList.length * 40) + 'px')}">
+      <li
+        class="idea-info"
+        ng-animate="'animate'"
+        ng-enter
+        ng-repeat="idea in companyDash.company.data.ideas | orderBy: sortBy" ng-style="{top: ((item.order * 40) + 'px')}"
+        ng-show="$index < maxNum">
+        <h4>Title: {{idea.idea}}</h4>
+        <p>Score: {{ idea.score }}</p>
+        <p>Downvotes: {{ idea.downvotes }}</p>
+        <p>Upvotes: {{ idea.upvotes }}</p>
+      </li>
+    </ul>
   </ul>
-</ul>
-
-<p class="dash-full-description">{{ companyDash.company.data.description }}</p>
+</div>

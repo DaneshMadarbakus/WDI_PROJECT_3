@@ -2,10 +2,11 @@ angular
   .module('clementine')
   .controller('companyDashCtrl', companyDashCtrl);
 
-companyDashCtrl.$inject = ['User','Company', '$stateParams', '$http', 'API'];
-function companyDashCtrl(User, Company, $stateParams, $http, API) {
+companyDashCtrl.$inject = ['User','Company', '$stateParams', '$http', 'API', '$scope'];
+function companyDashCtrl(User, Company, $stateParams, $http, API, $scope) {
   const vm = this;
   vm.kek = 'LOL';
+  vm.company;
   //fetch the user.
   $http({
     method: 'GET',
@@ -18,45 +19,30 @@ function companyDashCtrl(User, Company, $stateParams, $http, API) {
     method: 'GET',
     url: `${API}/companies/${$stateParams.company_id}`
   }).then((data)=> {
-
     vm.company = data;
-    console.log(data.data.ideas);
     ideaRanker(data.data.ideas);
-  });
-
-  //Shuffle function  //Variable for shuffle
-  vm.order = 'none';
-  vm.$watch('order', () => {
-    setOrder(vm.order);
+    $scope.list = data.data.ideas;
+    console.log($scope.list);
   });
 
 }
 
-function split() {
-  console.log(workingString);
-  workingString.split(' ').map(function(word){
-    return Game.knuthArg(word);
-  }).join(' ');
-}
-
-function knuthShuffle(word) {
-  var a        = word.split('');
-  var char0    = a.shift();
-  var charLast = a.pop();
-  var n        = a.length;
+function knuthShuffle(array) {
+  var a = array;
+  var n = a.length;
   for (var i = n - 1; i > 0; i--) {
     var j = Math.floor(Math.random() * (i + 1));
     var tmp = a[i];
     a[i] = a[j];
     a[j] = tmp;
   }
-
   return a;
 }
 
-function setOrder(order) {
+function setOrder(order, array) {
+  console.log('set order');
   if (order === 'rand') {
-
+    return true;
   }
 }
 
@@ -65,7 +51,6 @@ function ideaRanker(ideas) {
   if (typeof(ideas) !== 'object') throw 'Ideas should be an object';
   for (var i = 0; i < ideas.length; i++) {
     emptyChecker(ideas[i]);
-    console.log(ideas[i]);
     ideas[i].engage = ideas[i].upvotes + ideas[i].downvotes;
     ideas[i].score  = ideas[i].upvotes - ideas[i].downvotes;
   }
