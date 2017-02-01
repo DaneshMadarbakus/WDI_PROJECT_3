@@ -1,0 +1,21 @@
+section.home {
+  .intro {
+    background-color: $primary-color;
+    color: $white;
+    text-align: center;
+    margin: auto;
+    padding: 105px 0;
+    h1 {
+      font-size: 3rem;
+    }
+    h2 {
+      font-size: 2rem;
+    }
+  }
+  .info {
+    padding: 100px;
+  }
+  .contact {
+    padding: 50px;
+  }
+}

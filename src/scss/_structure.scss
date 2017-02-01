@@ -1,0 +1,13 @@
+html, body {
+  height: 100%;
+}
+
+body {
+  background: $primary-color;
+  font-family: $body-font;
+}
+
+main {
+  background: $white;
+  min-height: 100%;
+}

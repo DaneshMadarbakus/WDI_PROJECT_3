@@ -1,0 +1,205 @@
+// span {
+//   padding: 0 5px;
+//   border-radius: 5px;
+//   color: $primary-color;
+// }
+//
+//
+//
+// ul{
+//   list-style: none;
+// }
+//
+// ul.bullet {
+//   list-style-type: square;
+// }
+//
+// .btn-default {
+//   background-color: $primary-color;
+//   color: $primary-color;
+//   border-color: $primary-color;
+// }
+//
+// .btn-default:hover {
+//   background-color: $primary-color;
+//   color: white;
+//   border-color: $primary-color;
+// }
+//
+// a.email {
+//   color: $primary-color;
+// }
+// .companyHeadline{
+//   height:110px;
+// }
+//
+// .companyHOne {
+//   text-align: center;
+//   color: $primary-color;
+//
+// }
+//
+// .companyP {
+//   font-size: 20px;
+//   margin:0;
+//   position: absolute;
+//   top: 50%;
+//   left: 50%;
+//   transform: translate(-50%,-50%);
+//   // position: relative;
+//   z-index: -2;
+//   color: $primary-color;
+//   width:220px;
+//
+// }
+// .col-md-3 {
+//   height:242.5px;
+//   text-align: center;
+// }
+// .col-md-3:hover{
+//   img{
+//     filter: opacity(20%);
+//     -webkit-box-shadow: 0px 0px 25px 6px rgba(0,0,0,0.75);
+//     -moz-box-shadow: 0px 0px 25px 6px rgba(0,0,0,0.75);
+//     box-shadow: 0px 0px 25px 6px rgba(0,0,0,0.75);
+//   }
+//   p {
+//     // background: $primary-color;
+//     color: black;
+//     filter: opacity(100%);
+//     z-index: 2;
+//     font-weight: bold;
+//     text-transform: capitalize;
+//     color: $primary-color;
+//
+//   }
+// }
+// .companyImg{
+//   height:220px;
+//   width:220px;
+//   border-radius: 5px;
+// }
+// .ncf {
+//   height: 40px;
+//   width:100px;
+//   text-align:center;
+//   margin-top: 20px;
+//
+// }
+// .ncfg {
+//   text-align: center;
+// }
+// .newcompform{
+//   width:300px;
+//   margin: 0 auto;
+//   margin-top: 30px;
+// }
+// .newCompanyBtn {
+//   height:35px;
+//   margin-top: 0;
+//   width:184px;
+//   color:white;
+//   background-color:$primary-color;
+//   z-index:2;
+//   float:right;
+//   margin-right: 7px;
+//   border:none;
+// }
+// .newCompSubmit{
+//   height:35px;
+//   width: 150px;
+//   color: white;
+//   margin-top: 0;
+//   background-color: $primary-color;
+//   border:none;
+// }
+//
+// .createIdeaBtn {
+//   width: 100px;
+//   height: 40px;
+//   padding: -1px 0;
+//   background-color: $primary-color;
+//   border: none;
+//   color: white;
+//   font-size: 16px;
+//   border-radius: 5px;
+// }
+//
+// .companyLogo{
+//   width: 50px;
+//   height: 50px;
+// }
+// .companyName{
+//   text-transform: capitalize;
+// }
+//
+// .ideaAnon {
+//   text-transform: capitalize;
+// }
+// .ideaPanel{
+//   width: 800px;
+//   height: auto;
+//   overflow: hidden;
+//   padding: 5px;
+//   word-wrap: break-word;
+//   p{
+//     text-align: center;
+//   }
+// }
+// .ideaInput {
+//   width: 700px;
+// }
+// .showPage {
+//   width: 980px;
+// }
+// .login{
+//   text-align: center;
+//   width: 980px;
+// }
+// .register {
+//   text-align: center;
+// }
+//
+// input {
+//   margin-top: 10px;
+//   width: 450px;
+//   height: 40px;
+//   padding: 0 15px;
+//   border: none;
+//   @include border-radius(5px);
+// }
+//
+// button.register, button.login {
+//   margin-top: 10px;
+//   width: 450px;
+//   padding: 20px 0;
+//   background-color: $primary-color;
+//   border: none;
+//   color: $primary-color;
+//   font-size: 16px;
+//   border-radius: 5px;
+// }
+//
+// button.register:hover, button.login:hover, .createIdeaBtn:hover{
+//   background-color: $primary-color;
+//   color: white;
+//   border-color: $primary-color;
+// }
+//
+//
+//
+// // button.register {
+// //   margin-top: 10px;
+// //   width: 450px;
+// //   padding: 20px 0;
+// //   background-color: $primary-color;
+// //   border: none;
+// //   color: $primary-color;
+// //   font-size: 16px;
+// // }
+//
+// @media (max-width: 1399px){
+//   .homeImg{
+//     display: none;
+//   }
+// }

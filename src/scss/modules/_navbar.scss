@@ -1,0 +1,37 @@
+.navbar {
+  border-radius: 0;
+  border: 1px solid #BADA55
+}
+
+.navbar-default {
+  height: 80px;
+  background-color: transparent;
+  border: none;
+  margin-bottom: 0;
+
+  .navbar-brand {
+    color: $white;
+    line-height: 80px;
+    height: 80px;
+    display: inline-block;
+    vertical-align: middle;
+    padding: 0 15px;
+    margin-top: -4px;
+    font-family: $heading-font;
+    font-size: 2rem;
+    font-weight: 700;
+    &:hover, &:active, &:focus {
+      color: $white;
+    }
+  }
+  .navbar-nav{
+    li {
+      a {
+        font-size: 20px;
+        line-height: 80px;
+        color: $white;
+        padding: 0 15px;
+      }
+    }
+  }
+}
