@@ -9,10 +9,7 @@ body{
 span {
   padding: 0 5px;
   border-radius: 5px;
-  color: $secondary-color;
-  .vote {
-  color: red;
-  }
+  color: $primary-color;
 }
 
 input {
@@ -84,9 +81,15 @@ h1.home {
    color: $secondary-color;
  }
 
+ ul{
+   list-style: none;
+ }
+
 ul.bullet {
   list-style-type: square;
 }
+
+
 
 .btn-default {
   background-color: $secondary-color;
@@ -169,7 +172,7 @@ text-align: center;
 }
 
 .createIdeaBtn {
-  width: 100px
+  width: 50px;
 }
 
 .ideas {
