@@ -193,7 +193,7 @@ input {
   height: 40px;
 }
 
-button.login {
+button.register, button.login {
   margin-top: 10px;
   width: 450px;
   padding: 20px 0;
@@ -202,6 +202,20 @@ button.login {
   color: $secondary-color;
   font-size: 16px;
 }
+
+.register {
+  text-align: center;
+}
+
+// button.register {
+//   margin-top: 10px;
+//   width: 450px;
+//   padding: 20px 0;
+//   background-color: $primary-color;
+//   border: none;
+//   color: $secondary-color;
+//   font-size: 16px;
+// }
 
 @media (max-width: 1399px){
     .homeImg{
