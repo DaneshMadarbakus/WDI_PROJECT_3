@@ -10,7 +10,7 @@ function companiesIndexCtrl(Company, TokenService, $state){
   vm.companies = Company.query();
 
   if (!TokenService.getToken()){
-    $state.go('/');
+    $state.go('login');
   }
 
 }
