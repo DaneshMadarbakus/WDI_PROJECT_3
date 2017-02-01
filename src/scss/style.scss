@@ -1,6 +1,7 @@
 @import url('https://fonts.googleapis.com/css?family=Lato');
 @import 'variables';
 
+
 body{
   background: $secondary-color;
   font-family: 'Lato', sans-serif;;
@@ -197,4 +198,10 @@ button.login {
   margin-top: 10px;
   width: 450px;
   padding: 20px 0;
+}
+
+@media (max-width: 1399px){
+    .homeImg{
+      display: none;
+    }
 }
