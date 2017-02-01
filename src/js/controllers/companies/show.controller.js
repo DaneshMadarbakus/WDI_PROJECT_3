@@ -3,8 +3,8 @@ angular
   .controller('companiesShowCtrl', companiesShowCtrl);
 //  .controller('ideasNewCtrl',IdeasNewCtrl);
 
-companiesShowCtrl.$inject = ['Company', '$stateParams', '$http', 'API'];
-function companiesShowCtrl(Company, $stateParams, $http, API){
+companiesShowCtrl.$inject = ['Company', '$stateParams', '$http', 'API', 'randNameService'];
+function companiesShowCtrl(Company, $stateParams, $http, API, randNameService){
   const vm     = this;
   vm.company   = Company.get($stateParams);
   vm.upvote    = upVote;
@@ -12,9 +12,11 @@ function companiesShowCtrl(Company, $stateParams, $http, API){
   vm.addIdea   = addIdea;
 
   function addIdea() {
+    vm.idea.randomUsername = randNameService.rndName();
     $http
       .post(`${API}/companies/${$stateParams.id}/ideas`, {idea: vm.idea})
       .then((response) => {
+        console.log(response.data);
         vm.company.ideas.push(response.data);
       });
   }
