@@ -99,9 +99,9 @@ ul.bullet {
 }
 
 .btn-default:hover {
-  background-color: #42b2a6;
+  background-color: $primary-hover;
   color: white;
-  border-color: #42b2a6;
+  border-color: $primary-hover;
 }
 
 a.email {
@@ -201,6 +201,12 @@ button.register, button.login {
   border: none;
   color: $secondary-color;
   font-size: 16px;
+}
+
+button.register:hover, button.login:hover{
+  background-color: $primary-hover;
+  color: white;
+  border-color: $primary-hover;
 }
 
 .register {
