@@ -209,6 +209,7 @@ button.register, button.login {
   border: none;
   color: $secondary-color;
   font-size: 16px;
+  border-radius: 5px;
 }
 
 button.register:hover, button.login:hover, .createIdeaBtn:hover{
