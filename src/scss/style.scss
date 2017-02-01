@@ -181,12 +181,9 @@ text-align: center;
   height: auto;
   overflow: hidden;
   padding: 5px;
+  word-wrap: break-word;
   p{
     text-align: center;
-  }
-  button{
-    position: relative;
-    left: 530%;
   }
 }
 

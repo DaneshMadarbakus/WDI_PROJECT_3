@@ -26,7 +26,7 @@
     <div class = "panel ideaPanel col-xs-6 col-sm-4">
       <p class ="ideaAnon">{{ idea.randomUsername}} says ...</p>
     <p class="ideas" ui-sref="Idea({id: idea._id})">{{idea.idea}}</p>
-    <div class="btn-group" role="group" aria-label="...">
+    <div class="btn-group pull-right" role="group" aria-label="...">
       <span class= "vote">{{count}}</span>
       <button class="btn btn-default pull-right" ng-click="companiesShow.upvote(idea._id)"> &#x21e7 ({{ idea.upvotes.length }})
       </button>
