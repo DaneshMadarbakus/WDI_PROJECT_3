@@ -7,6 +7,9 @@ function companyDashCtrl(User, Company, $stateParams, $http, API, $scope) {
   const vm = this;
   vm.kek = 'LOL';
   vm.company;
+  vm.previewStringLength = 20;
+  vm.chartData   = [];
+  vm.chartLabels = [];
   //fetch the user.
   $http({
     method: 'GET',
@@ -21,11 +24,25 @@ function companyDashCtrl(User, Company, $stateParams, $http, API, $scope) {
   }).then((data)=> {
     vm.company = data;
     ideaRanker(data.data.ideas);
-    $scope.list = data.data.ideas;
-    console.log($scope.list);
-  });
+    vm.list = data.data.ideas;
+    console.log(vm.list[0].idea);
+  }).then(() => {
+    for (var i = 0; i < vm.list.length; i++) {
+      vm.chartData.push(vm.list[i].score);
 
+      vm.chartLabels.push(`
+        ${limitString(vm.list[i].username, vm.previewStringLength)}
+        `);
+    }
+  });
 }
+
+
+function limitString(string, length) {
+  const str = string.substring(0, length);
+  return `${str}...`;
+}
+
 
 function knuthShuffle(array) {
   var a = array;
@@ -51,8 +68,10 @@ function ideaRanker(ideas) {
   if (typeof(ideas) !== 'object') throw 'Ideas should be an object';
   for (var i = 0; i < ideas.length; i++) {
     emptyChecker(ideas[i]);
+
     ideas[i].engage = ideas[i].upvotes + ideas[i].downvotes;
     ideas[i].score  = ideas[i].upvotes - ideas[i].downvotes;
+    //and some other chart related arrays
   }
 }
 
