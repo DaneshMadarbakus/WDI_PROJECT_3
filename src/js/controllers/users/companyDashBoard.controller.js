@@ -30,11 +30,14 @@ function companyDashCtrl(User, Company, $stateParams, $http, API, $scope) {
     console.log(vm.list[0].idea);
   }).then(() => {
     for (var i = 0; i < vm.list.length; i++) {
+      //Push the sent chart data.
+      vm.sentChartData.push(`
+        ${removeNegativeValue(vm.list[i].score)}
+        `);
+
       //Push the engagement chart data.
       vm.engageChartData.push(vm.list[i].engage);
-      //Push the average chart data.
-      vm.sentChartData.push(vm.list[i].score);
-      vm.chartLabels.push(`
+      vm.engagechartLabels.push(`
         ${limitString(vm.list[i].idea, vm.previewStringLength)}
         `);
     }
@@ -42,12 +45,15 @@ function companyDashCtrl(User, Company, $stateParams, $http, API, $scope) {
   });
 }
 
+function removeNegativeValue(val) {
+  if (val < 1) return true;
+  else return val;
+}
 
 function limitString(string, length) {
   const str = string.substring(0, length);
   return `${str}...`;
 }
-
 
 //Work out the super clever 'ideaScore' rating of each idea lol.
 function ideaRanker(ideas) {
