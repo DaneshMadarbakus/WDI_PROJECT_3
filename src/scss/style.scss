@@ -1,17 +1,15 @@
 @import url('https://fonts.googleapis.com/css?family=Lato');
 @import 'variables';
 
-
 body{
-  background: #fafafa;
+  background: $primary-color;
   font-family: 'Lato', sans-serif;;
 }
 
 span {
   padding: 0 5px;
   border-radius: 5px;
-  background: gray;
-  color: #BADA55;
+  color: $secondary-color;
 }
 
 input {
@@ -20,7 +18,7 @@ input {
 
 .navbar-default {
 height: 80px;
-background-color: #fafafa;
+background-color: $primary-color;
 border: none;
 margin-bottom: 0;
 }
@@ -28,21 +26,32 @@ margin-bottom: 0;
 .navbar-brand {
   font-size: 50px;
   line-height: 60px;
+  a {
+    font-size: 57px;
+  }
 }
 
-a.navbar-brand {
-  font-size: 57px;
+.navbar-default{
+  .navbar-nav{
+    li{
+      a{
+        font-size: 20px;
+        line-height: 52px;
+        color: white;
+      }
+    }
+  }
 }
 
-.navbar-default .navbar-nav > li > a {
-  font-size: 20px;
-  line-height: 52px;
-}
-.navbar-default .navbar-brand {
-    color: #ffb116;
+
+.navbar-default {
+    .navbar-brand {
+    color: $secondary-color;
+  }
 }
 
 .bg-top {
+  background-color: $primary-color;
   width: 980px;
   text-align: center;
   margin: auto;
@@ -50,68 +59,73 @@ a.navbar-brand {
 }
 
 .bg-middle {
-  background-color: #009688;
+  background-color: $secondary-color;
   padding: 100px;
-  color: white;
+  color: $primary-color;
   font-size: 30px;
 }
 
 .bg-bottom {
   background-color: #fafafa;
+  padding: 50px;
+  text-align: center;
 }
 
- h1.home {
-   font-size: 65px;
-   color: $main-orange;
+h1.home {
+    font-size: 75px;
+    color: $secondary-color;
  }
 
  h2 {
-   margin-bottom: 40px;
+   margin: 45px 0;
+   color: $secondary-color;
  }
 
 ul.bullet {
   list-style-type: square;
 }
 
+.btn-default {
+  background-color: $secondary-color;
+  color: $primary-color;
+  border-color: $secondary-color;
+}
+
+.btn-default:hover {
+  background-color: #42b2a6;
+  color: white;
+  border-color: #42b2a6;
+}
+
+a.email {
+  color: $primary-color;
+}
+
 .companyHOne {
   text-align: center;
-  color: $main-orange;
+  color: $primary-color;
 }
-.newCompanyBtn{
-  display: block;
-  text-align: center;
-  font-style: italic;
-  border:1px dashed black;
-  width:130px;
-  margin: 0 auto;
-  margin-bottom: 10px;
-}
+
 .companyUl{
   width:600px;
   height:600px;
   margin: 0 auto;
   padding:0;
 }
-// .companyLi{
-//   display: inline-block;
-//   height: 200px;
-//   width:200px;
-//   text-align: center;
-//   border-radius:10px;
-//   padding: 1px;
-// }
+
 .col-md-3{
 height:120px;
 text-align: center;
 }
-.col-md-3:hover{
-  background: #BADA55;
+.col-md-3:hover p {
+  background: $primary-color;
+  color: white;
 }
 .companyP {
   font-size:20px;
   position: relative;
   margin:0;
-  color: #009688;
+  color: white;
   top:35%;
 }
 .ncf {
@@ -129,15 +143,52 @@ text-align: center;
   margin: 0 auto;
   margin-top: 30px;
 }
-.newCompSubmit {
+
+.newCompanyBtn {
+ width: 184px;
+}
+
+.newCompanyBtn .newCompSubmit{
   height:35px;
   margin-top: 0;
-  width: 150px;
-  background-color:#009688;
+  background-color: $primary-color;
   border:none;
   font-size:20px;
 }
+
+.newCompSubmit {
+  width: 150px;
+}
+
 .newCompSubmit:hover {
   background-color:rgba(0,150,136,0.6);
-  color: $main-orange;
+  color: white;
+}
+
+.createIdeaBtn {
+  width: 100px
+}
+
+.ideas {
+  margin-top: 50px;
+}
+
+.showPage {
+  width: 980px;
+}
+
+.login{
+  width: 980px;
+}
+
+input {
+  margin-top: 10px;
+  width: 450px;
+  height: 40px;
+}
+
+button.login {
+  margin-top: 10px;
+  width: 450px;
+  padding: 20px 0;
 }

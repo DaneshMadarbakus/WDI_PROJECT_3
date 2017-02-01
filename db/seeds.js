@@ -77,15 +77,18 @@ function createIdeas(done) {
     const ideas = [
       {
         idea: 'More coffee',
-        company: companies[2]
+        company: companies[2],
+        randomUsername: 'sticky quail'
       },
       {
         idea: 'More code',
-        company: companies[1]
+        company: companies[1],
+        randomUsername: 'quiet owl'
       },
       {
         idea: 'More badass',
-        company: companies[0]
+        company: companies[0],
+        randomUsername: 'brave wolverine'
       }
     ];
 
