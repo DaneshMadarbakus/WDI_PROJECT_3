@@ -63,7 +63,6 @@ function ideaRanker(ideas) {
   if (typeof(ideas) !== 'object') throw 'Ideas should be an object';
   for (var i = 0; i < ideas.length; i++) {
     emptyChecker(ideas[i]);
-
     ideas[i].engage = ideas[i].upvotes + ideas[i].downvotes;
     ideas[i].score  = ideas[i].upvotes - ideas[i].downvotes;
     //and some other chart related arrays
