@@ -16,7 +16,7 @@ function userAuthenticationsRegister(req, res){
 }
 
 function userAuthenticationLogin(req, res){
-
+  
   User.findOne({ email: req.body.email}, (err, user) => {
     if(err) return res.status(500).json({message: 'something went wrong with  authenticating user login'});
     if(!user || !user.validatePassword(req.body.password)){

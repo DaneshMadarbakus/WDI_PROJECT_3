@@ -7,9 +7,10 @@ function CurrentUserService(TokenService, $rootScope, randNameService){
   let currentUser = TokenService.decodeToken();
   return {
     user: currentUser,
-    saveUser(user){
+    saveUser(user, token){
       user.id = user.id ? user.id : user._id;
       currentUser = user;
+      TokenService.setToken(token);
       $rootScope.$broadcast('loggedIn');
     },
     getUser(){
