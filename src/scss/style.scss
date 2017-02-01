@@ -2,7 +2,7 @@
 @import 'variables';
 
 body{
-  background: $primary-color;
+  background: $secondary-color;
   font-family: 'Lato', sans-serif;;
 }
 
@@ -52,7 +52,7 @@ margin-bottom: 0;
 
 .bg-top {
   background-color: $primary-color;
-  width: 980px;
+  width: 100%;
   text-align: center;
   margin: auto;
   padding: 105px 0;
