@@ -232,7 +232,7 @@ margin-bottom: 0;
 
 .navbar-default {
     .navbar-brand {
-    color: #eee;
+    color: $secondary-color;
   }
 }
 
@@ -245,7 +245,7 @@ margin-bottom: 0;
 }
 
 .bg-middle {
-  background-color: #eee;
+  background-color: $secondary-color;
   padding: 100px;
   color: $primary-color;
   font-size: 30px;
@@ -259,12 +259,12 @@ margin-bottom: 0;
 
 h1.home {
     font-size: 75px;
-    color: #eee;
+    color: $secondary-color;
  }
 
  h2 {
    margin: 45px 0;
-   color: #eee;
+   color: $secondary-color;
  }
 
 ul.bullet {
@@ -272,9 +272,9 @@ ul.bullet {
 }
 
 .btn-default {
-  background-color: #eee;
+  background-color: $secondary-color;
   color: $primary-color;
-  border-color: #eee;
+  border-color: $secondary-color;
 }
 
 .btn-default:hover {
