@@ -21,7 +21,8 @@
     "angular-resource": "^1.6.1",
     "angular-bootstrap": "^2.5.0",
     "bootstrap": "^3.3.7",
-    "angular": "*"
+    "angular": "*",
+    "animate.css": "^3.5.2"
   },
   "overrides": {
     "bootstrap": {
