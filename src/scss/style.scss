@@ -113,21 +113,7 @@ a.email {
   text-align: center;
   color: $primary-color;
 }
-.newCompanyBtn{
-  height:35px;
-  margin-top: 0;
-  width: 184px;
-  background-color: $primary-color;
-  border:none;
-  font-size:20px;
-  // display: block;
-  // text-align: center;
-  // font-style: italic;
-  // border:1px dashed black;
-  // width:130px;
-  // margin: 0 auto;
-  // margin-bottom: 10px;
-}
+
 .companyUl{
   width:600px;
   height:600px;
@@ -172,13 +158,21 @@ text-align: center;
   margin: 0 auto;
   margin-top: 30px;
 }
-.newCompSubmit {
+
+.newCompanyBtn {
+ width: 184px;
+}
+
+.newCompanyBtn .newCompSubmit{
   height:35px;
   margin-top: 0;
-  width: 150px;
   background-color: $primary-color;
   border:none;
   font-size:20px;
+}
+
+.newCompSubmit {
+  width: 150px;
 }
 
 .newCompSubmit:hover {
