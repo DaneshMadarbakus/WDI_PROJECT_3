@@ -22,7 +22,7 @@
 <hr />
 <ul class="list-unstyled">
   <li ng-repeat="idea in companiesShow.company.ideas">
-    <div class = "panel ideaPanel col-xs-6 col-sm-4">
+    <div class = "panel ideaPanel pull-left">
       <p class ="ideaAnon">{{ idea.randomUsername}} says ...</p>
     <p class="ideas" ui-sref="Idea({id: idea._id})">{{idea.idea}}</p>
     <div class="btn-group pull-right" role="group" aria-label="...">

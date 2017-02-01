@@ -7,13 +7,13 @@ function LoginCtrl(User, CurrentUserService) {
   const vm = this;
 
   vm.login = () => {
-    console.log(vm.user);
     User
       .login(vm.user)
       .$promise
       .then(data => {
+        console.log(data.token);
         const user = data.user || null;
-        CurrentUserService.saveUser(user);
+        CurrentUserService.saveUser(user, data.token);
       }, err => {
         console.log(err);
       });
