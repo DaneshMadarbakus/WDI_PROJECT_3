@@ -1,12 +1,16 @@
 <div class="container">
   <h1 class="username"> Welcome, <strong> {{ usersShow.user.username }}</strong></h1>
 
-  
+  <div class="user">
+    <h3>Your information</h3>
+    <img src="http://fillmurray.com/200/200" alt="">
+    <p>Nickname - {{ usersShow.user.username }}</p>
+    <p>Email - {{ usersShow.user.email }}</p>
+    <p></p>
 
-
-
-
-
+    <button type="button" name="button">Edit Profile</button>
+    <button type="button" name="button">Delete Profile</button>
+  </div>
 
   <div class="companies">
     <ul>
