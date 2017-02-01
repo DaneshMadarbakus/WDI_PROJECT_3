@@ -14,7 +14,8 @@
   </li>
 </ul> -->
 <div class="container-fluid showPage">
-<h1><span>{{companiesShow.company.name}}</span> ideas page</h1>
+<h1><span class="companyName">{{companiesShow.company.name}}'s</span> ideas page</h1>
+  <img class="companyLogo" src="{{companiesShow.company.image}}">
  <form ng-submit="companiesShow.addIdea()">
    <input type="text" ng-model="companiesShow.idea.idea">
    <button type="submit" class="createIdeaBtn">Create Idea</button>
