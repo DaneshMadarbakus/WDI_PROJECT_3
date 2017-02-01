@@ -176,6 +176,20 @@ text-align: center;
   text-transform: capitalize;
 }
 
+.ideaPanel{
+  width: 800px;
+  height: auto;
+  overflow: hidden;
+  padding: 5px;
+  p{
+    text-align: center;
+  }
+  button{
+    position: relative;
+    left: 530%;
+  }
+}
+
 .showPage {
   width: 980px;
 }
