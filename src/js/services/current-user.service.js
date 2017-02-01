@@ -2,10 +2,9 @@ angular
   .module('clementine')
   .service('CurrentUserService', CurrentUserService);
 
-CurrentUserService.$inject = ['TokenService', '$rootScope'];
-function CurrentUserService(TokenService, $rootScope){
+CurrentUserService.$inject = ['TokenService', '$rootScope', 'randNameService'];
+function CurrentUserService(TokenService, $rootScope, randNameService){
   let currentUser = TokenService.decodeToken();
-
   return {
     user: currentUser,
     saveUser(user){
