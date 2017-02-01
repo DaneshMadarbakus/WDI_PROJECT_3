@@ -238,6 +238,7 @@ input {
   width: 450px;
   height: 40px;
   padding: 0 15px;
+  border: none;
   @include border-radius(5px);
 }
 
