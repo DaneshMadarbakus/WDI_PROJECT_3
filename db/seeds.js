@@ -235,8 +235,53 @@ function createIdeas(done) {
       },
       {
         idea: 'Wafer cake marzipan croissant liquorice. Pudding sweet chupa chups. Sesame snaps danish danish dragée. Fruitcake cookie chocolate bar icing cookie.',
-        company: companies[1],
+        company: companies[3],
         randomUsername: 'witty donkey'
+      },
+      {
+        idea: 'Wafer cake marzipan croissant liquorice. Pudding sweet chupa chups. Sesame snaps danish danish dragée. Fruitcake cookie chocolate bar icing cookie.',
+        company: companies[3],
+        randomUsername: 'witty donkey'
+      },
+      {
+        idea: 'Wafer cake marzipan croissant liquorice. Pudding sweet chupa chups. Sesame snaps danish danish dragée. Fruitcake cookie chocolate bar icing cookie.',
+        company: companies[3],
+        randomUsername: 'intelligent monkey'
+      },
+      {
+        idea: 'Wafer cake marzipan croissant liquorice. Pudding sweet chupa chups. Sesame snaps danish danish dragée. Fruitcake cookie chocolate bar icing cookie.',
+        company: companies[3],
+        randomUsername: 'furious narwahl'
+      },
+      {
+        idea: 'Wafer cake marzipan croissant liquorice. Pudding sweet chupa chups. Sesame snaps danish danish dragée. Fruitcake cookie chocolate bar icing cookie.',
+        company: companies[3],
+        randomUsername: 'crucified owl'
+      },
+      {
+        idea: 'Wafer cake marzipan croissant liquorice. Pudding sweet chupa chups. Sesame snaps danish danish dragée. Fruitcake cookie chocolate bar icing cookie.',
+        company: companies[3],
+        randomUsername: 'creamed starfish'
+      },
+      {
+        idea: 'Wafer cake marzipan croissant liquorice. Pudding sweet chupa chups. Sesame snaps danish danish dragée. Fruitcake cookie chocolate bar icing cookie.',
+        company: companies[3],
+        randomUsername: 'fresh fish'
+      },
+      {
+        idea: 'Wafer cake marzipan croissant liquorice. Pudding sweet chupa chups. Sesame snaps danish danish dragée. Fruitcake cookie chocolate bar icing cookie.',
+        company: companies[3],
+        randomUsername: 'overwhelming snail'
+      },
+      {
+        idea: 'Wafer cake marzipan croissant liquorice. Pudding sweet chupa chups. Sesame snaps danish danish dragée. Fruitcake cookie chocolate bar icing cookie.',
+        company: companies[3],
+        randomUsername: 'upmarket zebra'
+      },
+      {
+        idea: 'Wafer cake marzipan croissant liquorice. Pudding sweet chupa chups. Sesame snaps danish danish dragée. Fruitcake cookie chocolate bar icing cookie.',
+        company: companies[3],
+        randomUsername: 'antiquated rhinocerous'
       }
     ];
 
@@ -254,15 +299,7 @@ function createCompanies(done) {
 
     const companies = [
       {
-        name: 'badass',
-        description: 'this is a badass company',
-        website: 'www.badass.com',
-        owner: users[0],
-        ideas: [],
-        image: 'http://stevensegallery.com/g/200/300'
-      },
-      {
-        name: 'general assembly',
+        name: 'General Assembly',
         description: 'learn to code',
         website: 'www.generalassembly.com',
         owner: users[1],
@@ -270,12 +307,68 @@ function createCompanies(done) {
         image: 'https://pbs.twimg.com/profile_images/813584000082214912/5U3iZVs-.jpg'
       },
       {
-        name: 'costa',
+        name: 'Costa Coffee',
         description: 'coffee and stuff',
         website: 'www.costa.com',
         owner: users[2],
         ideas: [],
         image: 'https://upload.wikimedia.org/wikipedia/en/thumb/4/42/CostaLogo.svg/1024px-CostaLogo.svg.png'
+      },
+      {
+        name: 'Reginald B Bobcat Industries',
+        description: 'Aniamls are us, any make, any model',
+        website: 'www.reginaldsmenagerie.com',
+        owner: users[5],
+        ideas: [],
+        image: 'https://images.duckduckgo.com/iu/?u=http%3A%2F%2Fwww.freshcharacters.com%2Fwp-content%2Fuploads%2F2009%2F11%2FMenagerie_Coloured.jpg&f=1'
+      },
+      {
+        name: 'AbleCable Ties',
+        description: 'cable ties r us',
+        website: 'www.cableties.com',
+        owner: users[3],
+        ideas: [],
+        image: 'http://s7g3.scene7.com/is/image//ae235?src=ae235/53684_P&$prodImageMedium$'
+      },
+      {
+        name: 'Coke',
+        description: 'Life\'s good!',
+        website: 'www.coke.com',
+        owner: users[5],
+        ideas: [],
+        image: 'http://vignette4.wikia.nocookie.net/logopedia/images/5/59/Coca-Cola_logo_2007.jpg/revision/latest?cb=20150801090518'
+      },
+      {
+        name: 'Cokeaine',
+        description: 'Life\'s really good!',
+        website: 'www.cokeaine.com',
+        owner: users[6],
+        ideas: [],
+        image: 'http://images.clipartpanda.com/smiley-face-clip-art-niXoRMbiB.png'
+      },
+      {
+        name: 'Unilever',
+        description: 'Everything',
+        website: 'www.unilever.com',
+        owner: users[7],
+        ideas: [],
+        image: 'http://www.logodesignlove.com/images/brands/unilever-logo.jpg'
+      },
+      {
+        name: 'RBS Six Nations',
+        description: 'Rugby',
+        website: 'www.sixnations.com',
+        owner: users[9],
+        ideas: [],
+        image: 'http://maggiealphonsi.co.uk/wp-content/uploads/2016/01/6-Nations-logo-300x300.jpeg'
+      },
+      {
+        name: 'RBS Six Nations',
+        description: 'Rugby',
+        website: 'www.sixnations.com',
+        owner: users[9],
+        ideas: [],
+        image: 'http://maggiealphonsi.co.uk/wp-content/uploads/2016/01/6-Nations-logo-300x300.jpeg'
       }
     ];
 
