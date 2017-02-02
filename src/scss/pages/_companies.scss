@@ -1,4 +1,5 @@
 section.companies {
+<<<<<<< HEAD
   img {
     height: 220px;
     width: 220px;
@@ -12,5 +13,22 @@ section.companies {
 section.companies {
   img:hover {
     filter: opacity(50%);
+=======
+  .companyLogo{
+      width: 200px;
+      height: 200px;
+      display: block;
+      background-size: cover;
+      background-repeat: no-repeat;
+      border-radius: 50%;
+    }
+  .UserLogo{
+    width: 200px !important;
+    height: 200px !important;
+    display: block;
+    background-size: cover;
+    background-repeat: no-repeat;
+    border-radius: 50%;
+>>>>>>> 9f421bf3b72b3068c4037d7ba0fe71ec46f8786e
   }
 }

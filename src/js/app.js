@@ -6,5 +6,6 @@ angular
     'ngAnimate',
     'ngMaterial',
     'chart.js',
-    'typer'
+    'typer',
+    'ngFileUpload'
   ]);
