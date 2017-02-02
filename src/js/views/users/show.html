@@ -7,8 +7,8 @@
         <img class="userLogo" ng-if="usersShow.user.image" ng-src="{{usersShow.user.image}}" alt="">
         <h4>Nickname - {{ usersShow.user.username }}</h4>
         <h4>Email - {{ usersShow.user.email }}</h4>
-        <md-button class="btn btn-primary" ui-sref ="usersUpdate({id: usersShow.user._id})" type="button" name="button">Edit Profile</md-button>
-        <md-button class="btn btn-primary" ui-sref ="usersDelete({ id: usersShow.user._id})" type="button" name="button">Delete Profile</md-button>
+        <button class="btn btn-primary" ui-sref ="usersUpdate({id: usersShow.user._id})" type="button" name="button">Edit Profile</button>
+        <button class="btn btn-primary" ui-sref ="usersDelete({ id: usersShow.user._id})" type="button" name="button">Delete Profile</button>
       </div>
 
       <div class="col-md-6">

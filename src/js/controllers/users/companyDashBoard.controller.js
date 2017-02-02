@@ -71,11 +71,6 @@ function companyDashCtrl(User, Company, $stateParams, $http, API) {
   };
 }
 
-function removeNegativeValue(val) {
-  console.log(val);
-  if (val < 1) console.log(val);
-  else return val;
-}
 
 function limitString(string, length) {
   const str = string.substring(0, length);

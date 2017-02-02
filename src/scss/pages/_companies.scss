@@ -1,18 +1,41 @@
 section.companies {
+.CompanyBanding{
+  padding-top: 20px;
+  clear: both;
   .companyLogo{
-      width: 200px;
-      height: 200px;
+      width: 250px;
+      height: 250px;
       display: block;
       background-size: cover;
       background-repeat: no-repeat;
       border-radius: 50%;
+      transition: filter 1s;
     }
-  .UserLogo{
-    width: 200px !important;
-    height: 200px !important;
-    display: block;
-    background-size: cover;
-    background-repeat: no-repeat;
-    border-radius: 50%;
+    .company-info {
+      width: 250px;
+      text-align: center;
+      position: relative;
+      top: -150px;
+      z-index: 2;
+      color: rgba(0,0,0,0);
+    }
+  }
+  .CompanyBanding:hover{
+    .companyLogo{
+      filter: grayscale(100%) blur(1.5px);
+    }
+    .company-info {
+      text-align: center;
+      position: relative;
+      top: -157px;
+      z-index: 2;
+      word-wrap: normal;
+      color: $white;
+      text-shadow: 3px 2px black;
+      font-weight: 700;
+      font-size: 30px;
+      font-family: $heading-font;
+      text-transform: capitalize;
+    }
   }
 }

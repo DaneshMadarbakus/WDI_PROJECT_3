@@ -108,10 +108,11 @@
     <ul id="list" ng-style="{height: ((myList.length * 40) + 'px')}">
       <li class="idea-info"
       ng-animate="'animate'"
-      ng-repeat="idea in companyDash.company.data.ideas | orderBy: companyDash.sortBy" ng-style="{top: ((item.order * 40) + 'px')}"
+      ng-repeat="idea in companyDash.company.data.ideas | orderBy: companyDash.sortBy"
+      ng-style="{top: ((item.order * 40) + 'px')}"
       ng-show="$index < companyDash.toShow"
       ng-hide="!showIdeas">
-      <div class="md-padding md-dialog">
+      <div class="panel panel-default">
         <h4>We think...  {{idea.idea}}</h4>
         <p>Score: {{ idea.score }}</p>
         <p>Downvotes: {{ idea.downvotes }}</p>
