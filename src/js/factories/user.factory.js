@@ -9,6 +9,8 @@ function userFactory(API, $resource) {
   return $resource(`${API}/users/:id`, {id: '@_id'},
     {'register': {method: 'POST', url: `${API}/register`},
       'login': { method: 'POST', url: `${API}/login` },
-      'get': { method: 'GET', url: `${API}/users/:id`, isArray: false}
+      'get': { method: 'GET', url: `${API}/users/:id`, isArray: false},
+      'delete': {method: 'DELETE', url: `${API}/users/:id`},
+      'edit': {method: 'PUT', url: `${API}/users/:id` }
     });
 }

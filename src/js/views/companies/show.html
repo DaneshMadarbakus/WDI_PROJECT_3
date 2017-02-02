@@ -12,10 +12,14 @@
       <button type="submit" class="btn btn-primary btn-block">Create Idea</button>
     </form>
 
-    <div class="row md-menu">
+    <div class="row">
+      <div class="col-md-6">
+        <h3>Sort Options</h3>
+      </div>
+      <div class="col-md-3 md-menu">
       <div class="md-menu-container" layout-align="center center" layout="column">
         <md-menu ng-model="toShow">
-          <md-button aria-label="Open Sort options menu" ng-click="companiesShow.openMenu($mdMenu, $event)">Sort Options</md-button>
+          <md-button aria-label="Open Sort options menu" ng-click="companiesShow.openMenu($mdMenu, $event)">Number Showing</md-button>
           <md-menu-content width="4">
             <md-menu-item>
               <md-button ng-click="companiesShow.maxNum(5)" value="5">5</md-button>
@@ -28,22 +32,48 @@
             </md-menu-item>
             <md-menu-divider></md-menu-divider>
             <md-menu-item>
-                <md-button ng-click="companiesShow.maxNum(0)">All</md-button>
+                <md-button ng-click="companiesShow.maxNum(1000000000)">All</md-button>
             </md-menu-item>
           </md-menu-content>
         </md-menu>
       </div>
     </div>
+    <div class="col-md-3">
+      <div class="md-menu-container" layout-align="center center" layout="column">
+        <md-menu ng-model="toShow">
+          <md-button aria-label="Open Sort options menu" ng-click="companiesShow.openMenu($mdMenu, $event)">Sort Options</md-button>
+          <md-menu-content width="4">
+            <md-menu-item>
+              <md-button ng-click="companiesShow.sortMethod('score')">Score - Low to High</md-button>
+            </md-menu-item>
+            <md-menu-item>
+                <md-button ng-click="companiesShow.sortMethod('-score')">Score - High to Low</md-button>
+            </md-menu-item>
+            <md-menu-item>
+                <md-button ng-click="companiesShow.sortMethod('engage')">Popular</md-button>
+            </md-menu-item>
+            <md-menu-divider></md-menu-divider>
+            <md-menu-item>
+                <md-button ng-click="companiesShow.sortMethod('-createdAt')">Newest First</md-button>
+            </md-menu-item>
+            <md-menu-item>
+                <md-button ng-click="companiesShow.sortMethod('createdAt')">Oldest First</md-button>
+            </md-menu-item>
+          </md-menu-content>
+        </md-menu>
+      </div>
+    </div>
+    </div>
     <hr />
 
     <ul class="list-unstyled">
-      <li ng-repeat="idea in companiesShow.company.ideas | orderBy: sortBy"
+      <li ng-repeat="idea in companiesShow.company.ideas | orderBy:  comapniesShow.sortBy"
           ng-animate="'animate'"
           ng-show="$index < companiesShow.toShow">
-
-        <p ui-sref="Idea({id: idea._id})">{{idea.idea}}</p>
+<!-- ui-sref="Idea({id: idea._id})" DOES THIS WORK/DO ANYTHING -->
+        <p >{{idea.idea}}</p>
         <p>by {{ idea.randomUsername}} {{ idea.createdAt }}</p>
-
+      
         <div class="btn-group pull-right" role="group">
           <span class= "vote">{{count}}</span>
           <a class="btn btn-primary" ng-click="companiesShow.upvote(idea._id)"><i class="fa fa-arrow-up" aria-hidden="true"></i> ({{ idea.upvotes.length }})
