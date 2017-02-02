@@ -11,6 +11,7 @@ function usersShowCtrl(User, Company, $stateParams, API) {
   .get($stateParams)
   .$promise
   .then(response => {
+    console.log(response);
     vm.user = response;
     vm.items = response.companies;
     vm.items.forEach(item => {
