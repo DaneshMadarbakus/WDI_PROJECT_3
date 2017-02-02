@@ -1,4 +1,5 @@
 section.home {
+  text-align: center;
   .intro {
     background-color: $primary-color;
     color: $white;
@@ -22,5 +23,8 @@ section.home {
   .contact {
     padding: 50px;
     text-align: center;
+  }
+  h4 {
+    text-align: left;
   }
 }
