@@ -3,13 +3,23 @@ angular
   .controller('usersUpdateCtrl', usersUpdateCtrl);
 
 usersUpdateCtrl.$inject = ['User', '$state', '$stateParams'];
-function usersUpdateCtrl(User, $state) {
+function usersUpdateCtrl(User, $state, $stateParams) {
   const vm = this;
+  User
+  .get($stateParams)
+  .$promise
+  .then(response => {
+    vm.user = response;
+  });
+
+
   vm.update = () => {
-    User.edit('$stateParams')
+    User
+    .update($stateParams, { user: vm.user })
     .$promise
-    .then(
-      $state.go('usersShow')
-    );
+    .then(data => {
+      //need to put stateparamas to get user back to page as we need the id for the revelant page.
+      $state.go('usersShow', $stateParams);
+    });
   };
 }

@@ -11,6 +11,6 @@ function userFactory(API, $resource) {
       'login': { method: 'POST', url: `${API}/login` },
       'get': { method: 'GET', url: `${API}/users/:id`, isArray: false},
       'delete': {method: 'DELETE', url: `${API}/users/:id`},
-      'edit': {method: 'PUT', url: `${API}/users/:id` }
+      'update': {method: 'PUT' }
     });
 }
