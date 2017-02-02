@@ -5,8 +5,13 @@ angular
 
 companiesShowCtrl.$inject = ['Company', '$stateParams', '$http', 'API', 'randNameService'];
 function companiesShowCtrl(Company, $stateParams, $http, API, randNameService){
-  const vm      = this;
-  vm.company    = Company.get($stateParams);
+  const vm        = this;
+  Company.get($stateParams).$promise.then((data) => {
+    console.log(data);
+    ideaRanker(data.ideas);
+    vm.company = data;
+  });
+
   console.log(vm.company);
   vm.idea = {};
   vm.upvote     = upVote;
@@ -14,6 +19,7 @@ function companiesShowCtrl(Company, $stateParams, $http, API, randNameService){
   vm.addIdea    = addIdea;
   vm.toShow     = 10;
   vm.sortBy     = '-createdAt';
+
 
   //Menu functionality
   vm.originatorEvent = null;
@@ -39,18 +45,19 @@ function companiesShowCtrl(Company, $stateParams, $http, API, randNameService){
   function ideaRanker(ideas) {
     if (typeof(ideas) !== 'object') throw 'Ideas should be an object';
     for (var i = 0; i < ideas.length; i++) {
-      emptyChecker(ideas[i]);
+      ideas[i].createdAt = createdOnParser(ideas[i].createdAt);
       ideas[i].score  = ideas[i].upvotes - ideas[i].downvotes;
-      //and some other chart related arrays
+      ideas[i].engage = ideas[i].upvotes + ideas[i].downvotes;
     }
   }
 
-  //test for empty array and rpelace with 0, else assign no votes.
-  function emptyChecker(idea) {
-    if (idea.upvotes.length === 0) idea.upvotes = 0;
-    else idea.upvotes = idea.upvotes.length;
-    if (idea.downvotes.length === 0) idea.downvotes = 0;
-    else idea.downvotes = idea.downvotes.length;
+
+  //make sense of the timestamps.
+  function createdOnParser(data) {
+    var str  = data.split('T');
+    var date = str[0];
+    var time = str[1].split('.')[0];
+    return `${date} at ${time}`;
   }
 
 
