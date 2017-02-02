@@ -44,20 +44,30 @@
           <md-button aria-label="Open Sort options menu" ng-click="companiesShow.openMenu($mdMenu, $event)">Sort Options</md-button>
           <md-menu-content width="4">
             <md-menu-item>
-              <md-button ng-click="companiesShow.sortMethod('score')">Score - Low to High</md-button>
+              <md-button ng-click="companiesShow.sortMethod('score')">
+                Score - Low to High
+              </md-button>
             </md-menu-item>
             <md-menu-item>
-                <md-button ng-click="companiesShow.sortMethod('-score')">Score - High to Low</md-button>
+                <md-button ng-click="companiesShow.sortMethod('-score')">
+                  Score - High to Low
+                </md-button>
             </md-menu-item>
             <md-menu-item>
-                <md-button ng-click="companiesShow.sortMethod('engage')">Popular</md-button>
+                <md-button ng-click="companiesShow.sortMethod('engage')">
+                  Popular
+                </md-button>
             </md-menu-item>
             <md-menu-divider></md-menu-divider>
             <md-menu-item>
-                <md-button ng-click="companiesShow.sortMethod('-createdAt')">Newest First</md-button>
+                <md-button ng-click="companiesShow.sortMethod('-createdAt')">
+                  Newest First
+                </md-button>
             </md-menu-item>
             <md-menu-item>
-                <md-button ng-click="companiesShow.sortMethod('createdAt')">Oldest First</md-button>
+                <md-button ng-click="companiesShow.sortMethod('createdAt')">
+                  Oldest First
+                </md-button>
             </md-menu-item>
           </md-menu-content>
         </md-menu>
@@ -70,10 +80,11 @@
       <li ng-repeat="idea in companiesShow.company.ideas | orderBy:  comapniesShow.sortBy"
           ng-animate="'animate'"
           ng-show="$index < companiesShow.toShow">
+
 <!-- ui-sref="Idea({id: idea._id})" DOES THIS WORK/DO ANYTHING -->
         <p >{{idea.idea}}</p>
         <p>by {{ idea.randomUsername}} {{ idea.createdAt }}</p>
-      
+
         <div class="btn-group pull-right" role="group">
           <span class= "vote">{{count}}</span>
           <a class="btn btn-primary" ng-click="companiesShow.upvote(idea._id)"><i class="fa fa-arrow-up" aria-hidden="true"></i> ({{ idea.upvotes.length }})
