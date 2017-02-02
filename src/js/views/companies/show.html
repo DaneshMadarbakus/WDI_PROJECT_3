@@ -1,8 +1,8 @@
 <section class="companiesShow">
   <div class="container">
     <div class="row">
-      <h1><span class="companyName">{{companiesShow.company.name}}</span></h1>
-      <img class="companyLogo" src="{{companiesShow.company.image}}">
+      <h1 class=><span class="companyName">{{companiesShow.company.name}}</span></h1>
+      <div class="companyLogo pull-right" style="background-image: url('{{companiesShow.company.image}}')"></div>
     </div>
     <h2>Add an idea</h2>
     <form ng-submit="companiesShow.addIdea()">
@@ -82,7 +82,7 @@
     ng-show="$index < companiesShow.toShow">
       <div class="md-padding md-dialog">
       <h2>  {{idea.idea}}  </h2>
-      <p>by {{ idea.randomUsername}} {{ idea.createdAt }}</p>
+      <p class="ideasAuthor">by {{ idea.randomUsername}} {{ idea.createdAt }}</p>
       <div layout="row">
         <div class="md-panel-content">
           <md-button class="md-primary md-raised dialog-open-button"
@@ -100,29 +100,5 @@
   </div>
 </div>
 </li>
-
-
-
-    <!-- <ul class="list-unstyled">
-
-      <li ng-repeat="idea in companiesShow.company.ideas | orderBy:  comapniesShow.sortBy"
-      ng-animate="'animate'"
-      ng-show="$index < companiesShow.toShow">
-      <div class="panel panel-default">
-
-      <p >{{idea.idea}}</p>
-      <p>by {{ idea.randomUsername}} {{ idea.createdAt }}</p>
-
-      <div class="btn-group pull-right" role="group">
-        <span class= "vote">{{count}}</span>
-        <a class="btn btn-primary" ng-click="companiesShow.upvote(idea._id)"><i class="fa fa-arrow-up" aria-hidden="true"></i> ({{ idea.upvotes.length }})
-        </a>
-        <a class="btn btn-primary" ng-click="companiesShow.downvote(idea._id)"><i class="fa fa-arrow-down" aria-hidden="true"></i> ({{ idea.downvotes.length }})</a>
-      </div>
-      </div>
-    </li>
-  </ul> -->
-
-
 </div>
 </section>
