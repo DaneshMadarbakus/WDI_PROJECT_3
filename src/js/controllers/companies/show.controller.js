@@ -7,6 +7,8 @@ companiesShowCtrl.$inject = ['Company', '$stateParams', '$http', 'API', 'randNam
 function companiesShowCtrl(Company, $stateParams, $http, API, randNameService){
   const vm      = this;
   vm.company    = Company.get($stateParams);
+  console.log(vm.company);
+  vm.idea = {};
   vm.upvote     = upVote;
   vm.downvote   = downVote;
   vm.addIdea    = addIdea;

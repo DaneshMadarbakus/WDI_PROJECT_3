@@ -24,6 +24,7 @@ function usersShow(req, res){
 }
 
 function usersUpdate(req, res){
+  console.log(req.body);
   User.findByIdAndUpdate(req.params.id, req.body.user, { new: true}, (err, user) => {
     if (err) return res.status(500).json({message: 'Something went wrong trying update User'});
     if(!user) return res.status(404).json({message: 'No User was found '});

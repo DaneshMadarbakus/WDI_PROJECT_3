@@ -8,7 +8,6 @@ function companiesIndexCtrl(Company, TokenService, $state){
   const vm = this;
   vm.hiya = 'yh mate';
   vm.companies = Company.query();
-
   if (!TokenService.getToken()){
     $state.go('login');
   }

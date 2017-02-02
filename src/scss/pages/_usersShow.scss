@@ -1,12 +1,14 @@
 section.usersShow {
   text-align: center;
 
-  // Almost duplicat of the layout for companies Index
+  // Almost duplicate of the layout for companies Index
   .companies {
-    img {
-      height: 220px;
-      width: 220px;
-      border-radius: 5px;
+    .companyLogo{
+      height: 200px;
+      width: 200px;
+      border-radius: 50%;
+      background-repeat: no-repeat;
+      background-size: contain;
     }
   }
   margin: 0 auto;
