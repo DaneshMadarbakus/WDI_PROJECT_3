@@ -1,9 +1,18 @@
 section.companies {
-  .companyLogo {
+  .companyLogo{
       width: 200px;
       height: 200px;
       display: block;
-      background-size: contain;
+      background-size: cover;
+      background-repeat: no-repeat;
       border-radius: 50%;
     }
+  .UserLogo{
+    width: 200px !important;
+    height: 200px !important;
+    display: block;
+    background-size: cover;
+    background-repeat: no-repeat;
+    border-radius: 50%;
+  }
 }
