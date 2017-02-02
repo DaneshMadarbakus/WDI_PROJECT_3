@@ -2,8 +2,8 @@ angular
   .module('clementine')
   .controller('usersShowCtrl', usersShowCtrl);
 
-usersShowCtrl.$inject = ['User','Company', '$stateParams', '$http', 'API'];
-function usersShowCtrl(User, Company, $stateParams, $http, API) {
+usersShowCtrl.$inject = ['User','Company', '$stateParams','API'];
+function usersShowCtrl(User, Company, $stateParams, API) {
   const vm = this;
 
   //fetch the user and companies.
