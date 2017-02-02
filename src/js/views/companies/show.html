@@ -12,9 +12,11 @@
       <button type="submit" class="btn btn-primary btn-block">Create Idea</button>
     </form>
 
+
+    <hr />
     <div class="row">
       <div class="col-md-6">
-        <h3>Sort Options</h3>
+        <h2>Ideas</h2>
       </div>
       <div class="col-md-3 md-menu">
       <div class="md-menu-container" layout-align="center center" layout="column">
@@ -41,7 +43,7 @@
     <div class="col-md-3">
       <div class="md-menu-container" layout-align="center center" layout="column">
         <md-menu ng-model="toShow">
-          <md-button aria-label="Open Sort options menu" ng-click="companiesShow.openMenu($mdMenu, $event)">Sort Options</md-button>
+          <md-button aria-label="Open Sort options menu" ng-click="companiesShow.openMenu($mdMenu, $event)">Sort By</md-button>
           <md-menu-content width="4">
             <md-menu-item>
               <md-button ng-click="companiesShow.sortMethod('score')">Score - Low to High</md-button>
@@ -64,23 +66,34 @@
       </div>
     </div>
     </div>
-    <hr />
 
     <ul class="list-unstyled">
-      <li ng-repeat="idea in companiesShow.company.ideas | orderBy:  comapniesShow.sortBy"
-          ng-animate="'animate'"
-          ng-show="$index < companiesShow.toShow">
-<!-- ui-sref="Idea({id: idea._id})" DOES THIS WORK/DO ANYTHING -->
-        <p >{{idea.idea}}</p>
-        <p>by {{ idea.randomUsername}} {{ idea.createdAt }}</p>
-      
-        <div class="btn-group pull-right" role="group">
-          <span class= "vote">{{count}}</span>
-          <a class="btn btn-primary" ng-click="companiesShow.upvote(idea._id)"><i class="fa fa-arrow-up" aria-hidden="true"></i> ({{ idea.upvotes.length }})
-          </a>
-          <a class="btn btn-primary" ng-click="companiesShow.downvote(idea._id)"><i class="fa fa-arrow-down" aria-hidden="true"></i> ({{ idea.downvotes.length }})</a>
-        </div>
-      </li>
-    </ul>
+      <li>
+      <div class="md-padding" ng-repeat="idea in companiesShow.company.ideas | orderBy:  comapniesShow.sortBy"
+              ng-animate="'animate'"
+              ng-show="$index < companiesShow.toShow">
+              <h2>  {{idea.idea}}  </h2>
+                <p>by {{ idea.randomUsername}} {{ idea.createdAt }}</p>
+              <div layout="row">
+                <div flex="33">
+      <!-- <md-checkbox ng-model="ctrl.disableParentScroll">Yes</md-checkbox>
+            <md-checkbox ng-model="ctrl.disableParentScroll">No</md-checkbox> -->
+    </div>
+
+  <div class="demo-md-panel-content">
+    <md-button class="md-primary md-raised demo-dialog-open-button"
+               ng-click="companiesShow.upvote(idea._id)">
+      Upvote<i class="fa fa-arrow-up" aria-hidden="true"></i> ({{ idea.upvotes.length }})
+    </md-button>
+    <md-button class="md-primary md-raised demo-menu-open-button"
+               ng-click="companiesShow.downvote(idea._id)">
+      Downvote <i class="fa fa-arrow-down" aria-hidden="true"></i> ({{ idea.downvotes.length }})</a>
+    </md-button>
+
+  </div>
+</div>
+</li>
+</ul>
+
   </div>
 </section>
