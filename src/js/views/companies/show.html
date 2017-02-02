@@ -1,8 +1,15 @@
 <section class="companiesShow">
   <div class="container">
     <div class="row">
-      <h1 class=><span class="companyName">{{companiesShow.company.name}}</span></h1>
+
+
       <div class="companyLogo pull-right" style="background-image: url('{{companiesShow.company.image}}')"></div>
+      <h1 class=><span class="companyName">{{companiesShow.company.name}}</span></h1>
+<<<<<<< HEAD
+      <div class="companyLogo pull-right" style="background-image: url('{{companiesShow.company.image}}')"></div>
+=======
+      <h3><span class="companyDescription">{{companiesShow.company.description}}</span></h3>
+>>>>>>> e3f27e6def0f0de3c14d62635ed46a40bbb1d49f
     </div>
     <h2>Add an idea</h2>
     <form ng-submit="companiesShow.addIdea()">
