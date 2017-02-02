@@ -1,18 +1,47 @@
 section.companies {
   .companyLogo{
-      width: 200px;
-      height: 200px;
+      width: 250px;
+      height: 250px;
       display: block;
       background-size: cover;
       background-repeat: no-repeat;
       border-radius: 50%;
+      transition: filter 1s;
     }
-  .UserLogo{
-    width: 200px !important;
-    height: 200px !important;
-    display: block;
-    background-size: cover;
-    background-repeat: no-repeat;
-    border-radius: 50%;
-  }
+    .companyLogo:hover{
+      filter: grayscale(100%) opacity(0.6);
+
+      .company-info {
+        text-align: center;
+        position: relative;
+        top: -150px;
+        z-index: 2;
+        font-size: 30px;
+        word-wrap: normal;
+        color: rgba(255,255,255,1);
+        font-weight: bolder;
+        text-transform: capitalize;
+        text-shadow: 3px 2px #000000;
+        filter:opacity(100) !important;
+      }
+
+      h3{
+        font-size: 30px;
+        word-wrap: normal;
+        color: rgba(255,255,255,1);
+        font-weight: bolder;
+        text-transform: capitalize;
+        text-shadow: 3px 2px #000000;
+        filter:opacity(100) !important;
+      }
+
+    }
+}
+
+.company-info {
+  text-align: center;
+  position: relative;
+  top: -150px;
+  z-index: 2;
+  color: rgba(0,0,0,0);
 }

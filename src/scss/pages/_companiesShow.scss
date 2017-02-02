@@ -5,11 +5,14 @@ section.companiesShow {
   text-transform: capitalize;
 }
 .companyLogo {
-    width: 100px;
-    height: 100px;
+    width: 150px;
+    height: 150px;
     display: block;
     background-size: contain;
     border-radius: 50%;
+    h1{
+      text-align: center;
+    }
   }
   .ideasAuthor{
     text-transform: capitalize;
