@@ -1,8 +1,9 @@
 <section class="companiesShow">
   <div class="container">
-    <h1><span class="companyName">{{companiesShow.company.name}}</h1>
-    <img class="companyLogo" src="{{companiesShow.company.image}}">
-
+    <div class="row">
+      <h1><span class="companyName">{{companiesShow.company.name}}</span></h1>
+      <img class="companyLogo" src="{{companiesShow.company.image}}">
+    </div>
     <h2>Add an idea</h2>
     <form ng-submit="companiesShow.addIdea()">
       <div class="form-group">
@@ -11,9 +12,26 @@
       <button type="submit" class="btn btn-primary btn-block">Create Idea</button>
     </form>
 
+    <div class="row md-menu">
+      <div class="md-menu-container" layout-align="center center" layout="column">
+        <h2 class="md-title">Sort Options</h2>
+        <md-menu>
+          <md-button aria-label="Open Sort options menu" ng-click="companiesShow.openMenu($mdMenu, $event)"></md-button>
+          <md-menu-content width="4">
+            <md-menu-item>
+              <md-button ng-click="">
+                5
+              </md-button>
+            </md-menu-item>
+          </md-menu-content>
+        </md-menu>
+      </div>
+    </div>
+
     <hr />
+
     <ul class="list-unstyled">
-      <li ng-repeat="idea in companiesShow.company.ideas">
+      <li ng-repeat="idea in companiesShow.company.ideas" ng-animate="'animate'">
         <p ui-sref="Idea({id: idea._id})">{{idea.idea}}</p>
         <p>by {{ idea.randomUsername}} {{ idea.createdAt }}</p>
 

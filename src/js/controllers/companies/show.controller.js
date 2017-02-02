@@ -11,6 +11,14 @@ function companiesShowCtrl(Company, $stateParams, $http, API, randNameService){
   vm.downvote  = downVote;
   vm.addIdea   = addIdea;
 
+  //Menu functionality
+  //vars
+  vm.originatorEvent;
+  vm.openMenu = function($mdMenu, e) {
+    vm.originatorEvent = e;
+    $mdMenu.open(e);
+  };
+
   function addIdea() {
     vm.idea.randomUsername = randNameService.rndName();
     $http

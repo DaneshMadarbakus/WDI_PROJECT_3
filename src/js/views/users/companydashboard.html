@@ -66,7 +66,6 @@
         <ul id="list" ng-style="{height: ((myList.length * 40) + 'px')}">
           <li class="idea-info"
           ng-animate="'animate'"
-          ng-enter
           ng-repeat="idea in companyDash.company.data.ideas | orderBy: sortBy" ng-style="{top: ((item.order * 40) + 'px')}"
           ng-show="$index < maxNum">
           <h4>Title: {{idea.idea}}</h4>

@@ -8,5 +8,10 @@ function usersUpdateCtrl() {
 
   vm.update = () => {
     User
+      .save(vm.user)
+      .$promise
+      .then(() => {
+        $state.go('companyIndex');
+      });
   };
 }
