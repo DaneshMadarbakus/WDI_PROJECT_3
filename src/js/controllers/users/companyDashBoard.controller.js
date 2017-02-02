@@ -13,6 +13,7 @@ function companyDashCtrl(User, Company, $stateParams, $http, API) {
   vm.engageChartData   = [];
   vm.engageChartLabels = [];
   vm.ideaButtonText    = 'Toggle Ideas';
+  vm.toShow            = 10;
   //fetch the user.
   $http({
     method: 'GET',
