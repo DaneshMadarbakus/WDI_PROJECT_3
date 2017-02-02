@@ -4,9 +4,12 @@ angular
 
 usersUpdateCtrl.$inject = ['User', '$state', '$stateParams'];
 function usersUpdateCtrl(User, $state) {
-  User.edit('$stateParams')
+  const vm = this;
+  vm.update = () => {
+    User.edit('$stateParams')
     .$promise
     .then(
       $state.go('usersShow')
     );
+  };
 }
