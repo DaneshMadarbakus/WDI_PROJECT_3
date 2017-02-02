@@ -14,24 +14,33 @@
 
     <div class="row md-menu">
       <div class="md-menu-container" layout-align="center center" layout="column">
-        <h2 class="md-title">Sort Options</h2>
-        <md-menu>
-          <md-button aria-label="Open Sort options menu" ng-click="companiesShow.openMenu($mdMenu, $event)"></md-button>
+        <md-menu ng-model="toShow">
+          <md-button aria-label="Open Sort options menu" ng-click="companiesShow.openMenu($mdMenu, $event)">Sort Options</md-button>
           <md-menu-content width="4">
             <md-menu-item>
-              <md-button ng-click="">
-                5
-              </md-button>
+              <md-button ng-click="companiesShow.maxNum(5)" value="5">5</md-button>
+            </md-menu-item>
+            <md-menu-item>
+                <md-button ng-click="companiesShow.maxNum(10)">10</md-button>
+            </md-menu-item>
+            <md-menu-item>
+                <md-button ng-click="companiesShow.maxNum(25)">25</md-button>
+            </md-menu-item>
+            <md-menu-divider></md-menu-divider>
+            <md-menu-item>
+                <md-button ng-click="companiesShow.maxNum(0)">All</md-button>
             </md-menu-item>
           </md-menu-content>
         </md-menu>
       </div>
     </div>
-
     <hr />
 
     <ul class="list-unstyled">
-      <li ng-repeat="idea in companiesShow.company.ideas" ng-animate="'animate'">
+      <li ng-repeat="idea in companiesShow.company.ideas | orderBy: sortBy"
+          ng-animate="'animate'"
+          ng-show="$index < companiesShow.toShow">
+
         <p ui-sref="Idea({id: idea._id})">{{idea.idea}}</p>
         <p>by {{ idea.randomUsername}} {{ idea.createdAt }}</p>
 
