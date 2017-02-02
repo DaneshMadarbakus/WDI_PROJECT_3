@@ -1,8 +1,8 @@
 <section class="companiesShow">
   <div class="container">
     <div class="row">
-      <h1><span class="companyName">{{companiesShow.company.name}}</span></h1>
-      <img class="companyLogo" src="{{companiesShow.company.image}}">
+      <h1 class=><span class="companyName">{{companiesShow.company.name}}</span></h1>
+      <div class="companyLogo pull-right" style="background-image: url('{{companiesShow.company.image}}')"></div>
     </div>
     <h2>Add an idea</h2>
     <form ng-submit="companiesShow.addIdea()">
@@ -81,7 +81,7 @@
     ng-show="$index < companiesShow.toShow">
       <div class="md-padding md-dialog">
       <h2>  {{idea.idea}}  </h2>
-      <p>by {{ idea.randomUsername}} {{ idea.createdAt }}</p>
+      <p class="ideasAuthor">by {{ idea.randomUsername}} {{ idea.createdAt }}</p>
       <img ng-if="idea.image" ng-src="{{idea.image}}" alt="">
       <div layout="row">
         <div class="md-panel-content">
