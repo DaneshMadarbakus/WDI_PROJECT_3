@@ -4,7 +4,7 @@
 
     <div class="row">
       <div class="col-md-6">
-        <h3>Average sentiment:</h3>
+        <h3>Most Popular:</h3>
         <div class="container doughnut">
           <canvas id="sentdoughnut"
           class="chart chart-doughnut"
@@ -19,15 +19,15 @@
 
       <div class="container doughnut">
         <div class="col-md-6">
-          <h3>Engagements:</h3>
+          <h3>Most Engagements:</h3>
           <canvas id="engagedoughnut"
           class="chart chart-doughnut"
           chart-data="companyDash.engageChartData"
           chart-labels="companyDash.engageChartLabels"
           chart-options="{
             responsive: false
-          }"
-          ></canvas>
+          }">
+        </canvas>
         </div>
       </div>
     </div>
@@ -109,7 +109,7 @@
       <ul id="list" ng-style="{height: ((myList.length * 40) + 'px')}">
         <li class="idea-info"
           ng-animate="'animate'"
-          ng-repeat="idea in companyDash.company.data.ideas | orderBy: sortBy" ng-style="{top: ((item.order * 40) + 'px')}"
+          ng-repeat="idea in companyDash.company.data.ideas | orderBy: companyDash.sortBy" ng-style="{top: ((item.order * 40) + 'px')}"
           ng-show="$index < companyDash.toShow"
           ng-hide="!showIdeas">
           <h4>Title: {{idea.idea}}</h4>

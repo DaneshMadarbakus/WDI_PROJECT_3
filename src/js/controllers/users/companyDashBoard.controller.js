@@ -14,6 +14,7 @@ function companyDashCtrl(User, Company, $stateParams, $http, API) {
   vm.engageChartLabels = [];
   vm.ideaButtonText    = 'Toggle Ideas';
   vm.toShow            = 10;
+  vm.sortBy            = '-createdAt';
   //fetch the user.
   $http({
     method: 'GET',
@@ -52,8 +53,6 @@ function companyDashCtrl(User, Company, $stateParams, $http, API) {
   vm.openMenu = function($mdMenu, e) {
     vm.originatorEvent = e;
     $mdMenu.open(e);
-
-    //set max number of ideas to be shown
   };
   vm.maxNum = function(int) {
     vm.toShow = int;
