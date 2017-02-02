@@ -2,10 +2,12 @@
   <div class="container">
     <div class="row">
       <div class="col-md-3 col-xs-4" ui-sref="companyShow({id: company._id})" ng-repeat="company in companiesIndex.companies">
-        <div class="companyLogo" style="background-image: url('{{company.image}}')" alt="company image">
-        </div>
-        <div class="company-info">
-          <h3>{{company.name}}</h3>
+        <div class="CompanyBanding">
+          <div class="companyLogo" style="background-image: url('{{company.image}}')" alt="company image">
+          </div>
+          <div class="company-info">
+          {{company.name}}
+          </div>
         </div>
       </div>
     </div>
