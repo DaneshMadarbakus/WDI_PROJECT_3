@@ -84,7 +84,7 @@
               </md-button>
             </md-menu-item>
             <md-menu-item>
-              <md-button ng-click="companyDash.sortMethod('engage')">
+              <md-button ng-click="companyDash.sortMethod('-engage')">
                 Popular
               </md-button>
             </md-menu-item>
@@ -112,7 +112,7 @@
       ng-show="$index < companyDash.toShow"
       ng-hide="!showIdeas">
       <div class="md-padding md-dialog">
-        <h4>Title: {{idea.idea}}</h4>
+        <h4>We think...  {{idea.idea}}</h4>
         <p>Score: {{ idea.score }}</p>
         <p>Downvotes: {{ idea.downvotes }}</p>
         <p>Upvotes: {{ idea.upvotes }}</p>

@@ -46,8 +46,9 @@ function ideasDelete(req, res){
 function ideasUpvote(req, res) {
   Idea.findById(req.params.id, (err, idea) => {
     if(idea.downvotes.indexOf(req.user.id) === -1) {
-      Idea.findByIdAndUpdate(req.params.id, { $addToSet: { upvotes: req.user.id }}, () => {
-        return res.status(200).json({ message: 'Upvote has been successfully made'});
+      Idea.findByIdAndUpdate(req.params.id, { $addToSet: { upvotes: req.user.id }}, { new: true}, (err, idea) => {
+        if (err) return res.status(500).json({ message: 'Something went wrong with upvoting this idea '});
+        return res.status(200).json(idea);
       });
     }
   });
@@ -56,8 +57,9 @@ function ideasUpvote(req, res) {
 function ideasDownvote(req, res) {
   Idea.findById(req.params.id, (err, idea) => {
     if(idea.upvotes.indexOf(req.user.id) === -1) {
-      Idea.findByIdAndUpdate(req.params.id, { $addToSet: { downvotes: req.user.id }}, () => {
-        return res.status(200).json({ message: 'Downvote has been successfully made'});
+      Idea.findByIdAndUpdate(req.params.id, { $addToSet: { downvotes: req.user.id }}, { new: true}, (err, idea) => {
+        if (err) return res.status(500).json({ message: 'Something went wrong with downvoting this idea '});
+        return res.status(200).json(idea);
       });
     }
   });

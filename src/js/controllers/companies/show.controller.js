@@ -3,23 +3,29 @@ angular
   .controller('companiesShowCtrl', companiesShowCtrl);
 //  .controller('ideasNewCtrl',IdeasNewCtrl);
 
-companiesShowCtrl.$inject = ['Company', '$stateParams', '$http', 'API', 'randNameService'];
-function companiesShowCtrl(Company, $stateParams, $http, API, randNameService){
-  const vm        = this;
+companiesShowCtrl.$inject = ['Company', '$stateParams', '$http', 'API', 'randNameService', '$moment'];
+function companiesShowCtrl(Company, $stateParams, $http, API, randNameService, $moment){
+  const vm = this;
   Company.get($stateParams).$promise.then((data) => {
     console.log(data);
-    ideaRanker(data.ideas);
+    ideaUpdater(data.ideas);
     vm.company = data;
+  }).then(() => {
+    var x = vm.company.ideas;
+    console.log(x);
+    for (var i = 0; i < x.length; i++) {
+      x[i].sinceWhen = $moment(x[i].createdAt).fromNow();
+    }
+    console.log(x);
   });
 
   console.log(vm.company);
   vm.idea = {};
-  vm.upvote     = upVote;
-  vm.downvote   = downVote;
-  vm.addIdea    = addIdea;
-  vm.toShow     = 10;
-  vm.sortBy     = '-createdAt';
-
+  vm.upvote   = upVote;
+  vm.downvote = downVote;
+  vm.addIdea  = addIdea;
+  vm.toShow   = 10;
+  vm.sortBy   = '-createdAt';
 
   //Menu functionality
   vm.originatorEvent = null;
@@ -42,12 +48,13 @@ function companiesShowCtrl(Company, $stateParams, $http, API, randNameService){
 
 
   //Idea functions
-  function ideaRanker(ideas) {
+  function ideaUpdater(ideas) {
     if (typeof(ideas) !== 'object') throw 'Ideas should be an object';
     for (var i = 0; i < ideas.length; i++) {
       ideas[i].createdAt = createdOnParser(ideas[i].createdAt);
-      ideas[i].score  = ideas[i].upvotes - ideas[i].downvotes;
-      ideas[i].engage = ideas[i].upvotes + ideas[i].downvotes;
+      ideas[i].score     = ideas[i].upvotes - ideas[i].downvotes;
+      ideas[i].engage    = ideas[i].upvotes + ideas[i].downvotes;
+      console.log(ideas[i].createdAt);
     }
   }
 
@@ -66,24 +73,25 @@ function companiesShowCtrl(Company, $stateParams, $http, API, randNameService){
     $http
       .post(`${API}/companies/${$stateParams.id}/ideas`, {idea: vm.idea})
       .then((response) => {
-        console.log(response.data);
         vm.company.ideas.push(response.data);
       });
   }
 
-  function upVote(ideaId) {
+  function upVote(ideaId, $event) {
     $http
       .put(`${API}/companies/${$stateParams.id}/ideas/${ideaId}/upvote`)
       .then(() => {
-        vm.company   = Company.get($stateParams);
+        vm.company = Company.get($stateParams);
+        // console.log(angular.element($event.target).children('.upvotes'));
       });
   }
 
-  function downVote(ideaId) {
+  function downVote(ideaId, $event) {
     $http
       .put(`${API}/companies/${$stateParams.id}/ideas/${ideaId}/downvote`)
       .then(() => {
-        vm.company   = Company.get($stateParams);
+        vm.company = Company.get($stateParams);
+        // console.log($event.target);
       });
   }
 }
