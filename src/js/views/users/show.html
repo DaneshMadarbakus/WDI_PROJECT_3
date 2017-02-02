@@ -5,10 +5,10 @@
         <h1>Welcome, {{ usersShow.user.username }}</h1>
         <h3>Your information</h3>
         <img class="userLogo" ng-if="usersShow.user.image" ng-src="{{usersShow.user.image}}" alt="">
-        <h4>Nickname - {{ usersShow.user.username }}</h4>
-        <h4>Email - {{ usersShow.user.email }}</h4>
-        <button class="btn btn-primary" ui-sref ="usersUpdate({id: usersShow.user._id})" type="button" name="button">Edit Profile</button>
-        <button class="btn btn-primary" ui-sref ="usersDelete({ id: usersShow.user._id})" type="button" name="button">Delete Profile</button>
+        <h4><b>Nickname</b> - {{ usersShow.user.username }}</h4>
+        <h4><b>Email</b> - {{ usersShow.user.email }}</h4>
+        <button class="btn btn-primary userShowBtn" ui-sref ="usersUpdate({id: usersShow.user._id})" type="button" name="button">Edit Profile</button>
+        <button class="btn btn-primary userShowBtn" ui-sref ="usersDelete({ id: usersShow.user._id})" type="button" name="button">Delete Profile</button>
       </div>
 
       <div class="col-md-6">
