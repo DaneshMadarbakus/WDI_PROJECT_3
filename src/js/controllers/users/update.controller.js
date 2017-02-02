@@ -2,11 +2,13 @@ angular
   .module('clementine')
   .controller('usersUpdateCtrl', usersUpdateCtrl);
 
-usersUpdateCtrl.$inject = ['Company', '$state'];
-function usersUpdateCtrl() {
+usersUpdateCtrl.$inject = ['User', '$state'];
+function usersUpdateCtrl(User, $state) {
   const vm = this;
-
-  vm.update = () => {
-    User
-  };
+  User
+    .edit(vm.user)
+    .$promise
+    .then(
+      $state.go('usersShow')
+    );
 }
