@@ -4,5 +4,6 @@ angular
     'ngResource',
     'angular-jwt',
     'ngAnimate',
+    'ngMaterial',
     'chart.js'
   ]);
