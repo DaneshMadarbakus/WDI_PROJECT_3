@@ -2,7 +2,7 @@
 <section class="users-update">
 <div class="container">
   <h1>Edit Your Profile</h1>
-  <form ng-submit="edit.edit()">
+  <form ng-submit="usersUpdate.edit({user})">
     <div class="form-group ncfg">
       <input class="form-control ncf" type="text" name="name" ng-model="edit.user.username" placeholder="Username">
     </div>
@@ -10,6 +10,8 @@
       <input class="form-control ncf" type="text" name="description" ng-model="edit.user.email" placeholder="email">
     </div>
     <input class="btn btn-default newCompSubmit" type="submit" value="Submit" />
+    <button class="btn btn-default newCompSubmit" ui-sref ="usersShow({id: main.user.id})" type="button" name="button">Back</button>
   </form>
 </div>
+
 </section>
