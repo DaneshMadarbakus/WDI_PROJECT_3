@@ -9,10 +9,9 @@
       <div class="form-group">
         <input class="form-control" type="text" placeholder="What's your idea?" ng-model="companiesShow.idea.idea">
       </div>
+      <image-selector></image-selector>
       <button type="submit" class="btn btn-primary btn-block">Create Idea</button>
     </form>
-
-
     <hr />
     <div class="row">
       <div class="col-md-6">
@@ -21,7 +20,7 @@
       <div class="col-md-3 md-menu">
         <div class="md-menu-container" layout-align="center center" layout="column">
           <md-menu ng-model="toShow">
-            <md-button aria-label="Open Sort options menu" ng-click="companiesShow.openMenu($mdMenu, $event)">Number Showing</md-button>
+            <md-button aria-label="Open Sort options menu" ng-click="companiesShow.openMenu($mdMenu, $event)">Limit Ideas Showing</md-button>
             <md-menu-content width="4">
               <md-menu-item>
                 <md-button ng-click="companiesShow.maxNum(5)" value="5">5</md-button>
@@ -83,6 +82,7 @@
       <div class="md-padding md-dialog">
       <h2>  {{idea.idea}}  </h2>
       <p class="ideasAuthor">by {{ idea.randomUsername}} {{ idea.createdAt }}</p>
+      <img ng-if="idea.image" ng-src="{{idea.image}}" alt="">
       <div layout="row">
         <div class="md-panel-content">
           <md-button class="md-primary md-raised dialog-open-button"

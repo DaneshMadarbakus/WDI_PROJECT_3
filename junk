@@ -1,0 +1,38 @@
+angular
+  .module('clementine')
+  .controller('companiesUserShowCtrl', companiesUserShowCtrl);
+//  .controller('ideasNewCtrl',IdeasNewCtrl);
+
+companiesUserShowCtrl.$inject = ['Company', '$stateParams', '$http', 'API'];
+function companiesUserShowCtrl(Company, $stateParams, $http, API){
+  const vm     = this;
+  vm.company   = Company.get($stateParams);
+  vm.addUser  = addUser;
+
+  function addUser() {
+    $http
+      .post(`${API}/companies/${$stateParams.id}/member`, {member: vm.member})
+      .then((response) => {
+        vm.company.members.push(response.data);
+      });
+  }
+}
+
+
+
+    <ul class="list-unstyled">
+      <li ng-repeat="idea in companiesShow.company.ideas | orderBy:  comapniesShow.sortBy"
+          ng-animate="'animate'"
+          ng-show="$index < companiesShow.toShow">
+<!-- ui-sref="Idea({id: idea._id})" DOES THIS WORK/DO ANYTHING -->
+        <p >{{idea.idea}}</p>
+        <p>by {{ idea.randomUsername}} {{ idea.createdAt }}</p>
+
+        <div class="btn-group pull-right" role="group">
+          <span class= "vote">{{count}}</span>
+          <a class="btn btn-primary" ng-click="companiesShow.upvote(idea._id)"><i class="fa fa-arrow-up" aria-hidden="true"></i> ({{ idea.upvotes.length }})
+          </a>
+          <a class="btn btn-primary" ng-click="companiesShow.downvote(idea._id)"><i class="fa fa-arrow-down" aria-hidden="true"></i> ({{ idea.downvotes.length }})</a>
+        </div>
+      </li>
+    </ul>
