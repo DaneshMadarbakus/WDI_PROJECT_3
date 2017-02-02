@@ -1,21 +1,27 @@
 <section class="usersShow">
   <div class="container">
-    <h1>Welcome, {{ usersShow.user.username }}</h1>
-    <h3>Your information</h3>
-    <img src="http://fillmurray.com/200/200" alt="">
-    <p>Nickname - {{ usersShow.user.username }}</p>
-    <p>Email - {{ usersShow.user.email }}</p>
-    <button class="btn btn-primary" ui-sref ="usersUpdate({id: usersShow.user._id})" type="button" name="button">Edit Profile</button>
-    <button class="btn btn-primary" ui-sref ="usersDelete({ id: usersShow.user._id})" type="button" name="button">Delete Profile</button>
+    <div class="row">
+      <div class="col-md-6">
+        <h1>Welcome, {{ usersShow.user.username }}</h1>
+        <h3>Your information</h3>
+        <img src="http://fillmurray.com/200/200" alt="">
+        <h4>Nickname - {{ usersShow.user.username }}</h4>
+        <h4>Email - {{ usersShow.user.email }}</h4>
+        <md-button class="btn btn-primary" ui-sref ="usersUpdate({id: usersShow.user._id})" type="button" name="button">Edit Profile</md-button>
+        <md-button class="btn btn-primary" ui-sref ="usersDelete({ id: usersShow.user._id})" type="button" name="button">Delete Profile</md-button>
+      </div>
 
-    <h2>My companies</h2>
-    <div class="companies">
-      <div class="container">
-        <div class="row">
-          <div class="col-md-3 col-xs-4" ui-sref="companyDashBoard( { id: company.owner, company_id: company._id})" ng-repeat="company in usersShow.items">
-            <h3>{{company.name}}</h3>
-            <div class="companyFaded"></div>
-            <img src="{{company.image}}" alt="company image">
+      <div class="col-md-6">
+        <h2>My companies</h2>
+        <div class="companies">
+          <div class="container">
+            <div class="row">
+              <div class="col-md-3 col-xs-4" ui-sref="companyDashBoard( { id: company.owner, company_id: company._id})" ng-repeat="company in usersShow.items">
+                <h3>{{company.name}}</h3>
+                <div class="companyFaded"></div>
+                <img src="{{company.image}}" alt="company image">
+              </div>
+            </div>
           </div>
         </div>
       </div>
