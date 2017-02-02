@@ -177,68 +177,67 @@ function createIdeas(done) {
         idea: 'Wafer cake marzipan croissant liquorice. Pudding sweet chupa chups. Sesame snaps danish danish dragée. Fruitcake cookie chocolate bar icing cookie.',
         company: companies[2],
         randomUsername: 'thankful donkey'
-      }
+      },
       {
         idea: 'Wafer cake marzipan croissant liquorice. Pudding sweet chupa chups. Sesame snaps danish danish dragée. Fruitcake cookie chocolate bar icing cookie.',
         company: companies[0],
         randomUsername: 'brief baboon'
-      }
+      },
       {
         idea: 'Wafer cake marzipan croissant liquorice. Pudding sweet chupa chups. Sesame snaps danish danish dragée. Fruitcake cookie chocolate bar icing cookie.',
         company: companies[1],
         randomUsername: 'early badger'
-      }
+      },
       {
         idea: 'Wafer cake marzipan croissant liquorice. Pudding sweet chupa chups. Sesame snaps danish danish dragée. Fruitcake cookie chocolate bar icing cookie.',
         company: companies[1],
         randomUsername: 'fast barracuda'
-      }
+      },
       {
         idea: 'Wafer cake marzipan croissant liquorice. Pudding sweet chupa chups. Sesame snaps danish danish dragée. Fruitcake cookie chocolate bar icing cookie.',
         company: companies[2],
         randomUsername: 'late bat'
-      }
+      },
       {
         idea: 'Wafer cake marzipan croissant liquorice. Pudding sweet chupa chups. Sesame snaps danish danish dragée. Fruitcake cookie chocolate bar icing cookie.',
         company: companies[0],
         randomUsername: 'long bear'
-      }
+      },
       {
         idea: 'Wafer cake marzipan croissant liquorice. Pudding sweet chupa chups. Sesame snaps danish danish dragée. Fruitcake cookie chocolate bar icing cookie.',
         company: companies[1],
         randomUsername: 'modern beaver'
-      }
+      },
       {
         idea: 'Wafer cake marzipan croissant liquorice. Pudding sweet chupa chups. Sesame snaps danish danish dragée. Fruitcake cookie chocolate bar icing cookie.',
         company: companies[2],
         randomUsername: 'old bee'
-      }
+      },
       {
         idea: 'Wafer cake marzipan croissant liquorice. Pudding sweet chupa chups. Sesame snaps danish danish dragée. Fruitcake cookie chocolate bar icing cookie.',
         company: companies[0],
         randomUsername: 'quick bison'
-      }
+      },
       {
         idea: 'Wafer cake marzipan croissant liquorice. Pudding sweet chupa chups. Sesame snaps danish danish dragée. Fruitcake cookie chocolate bar icing cookie.',
         company: companies[1],
         randomUsername: 'rapid guanaco'
-      }
+      },
       {
         idea: 'Wafer cake marzipan croissant liquorice. Pudding sweet chupa chups. Sesame snaps danish danish dragée. Fruitcake cookie chocolate bar icing cookie.',
         company: companies[2],
         randomUsername: 'short guinea-fowl'
-      }
+      },
       {
         idea: 'Wafer cake marzipan croissant liquorice. Pudding sweet chupa chups. Sesame snaps danish danish dragée. Fruitcake cookie chocolate bar icing cookie.',
         company: companies[0],
         randomUsername: 'victorious donkey'
-      }
+      },
       {
         idea: 'Wafer cake marzipan croissant liquorice. Pudding sweet chupa chups. Sesame snaps danish danish dragée. Fruitcake cookie chocolate bar icing cookie.',
         company: companies[1],
         randomUsername: 'witty donkey'
       }
-
     ];
 
     bluebird.map(ideas, idea => {

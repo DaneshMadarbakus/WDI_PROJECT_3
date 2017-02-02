@@ -3,7 +3,7 @@ angular
   .controller('companyDashCtrl', companyDashCtrl);
 
 companyDashCtrl.$inject = ['User','Company', '$stateParams', '$http', 'API', '$scope'];
-function companyDashCtrl(User, Company, $stateParams, $http, API, $scope) {
+function companyDashCtrl(User, Company, $stateParams, $http, API) {
   const vm = this;
   vm.kek = 'LOL';
   vm.company = null;
@@ -12,6 +12,9 @@ function companyDashCtrl(User, Company, $stateParams, $http, API, $scope) {
   vm.chartLabels       = [];
   vm.engageChartData   = [];
   vm.engageChartLabels = [];
+  vm.ideaButtonText    = 'Toggle Ideas';
+  vm.toShow            = 10;
+  vm.sortBy            = '-createdAt';
   //fetch the user.
   $http({
     method: 'GET',
@@ -45,6 +48,27 @@ function companyDashCtrl(User, Company, $stateParams, $http, API, $scope) {
     }
     console.log(vm.sentChartLabels);
   });
+
+  vm.originatorEvent;
+  vm.openMenu = function($mdMenu, e) {
+    vm.originatorEvent = e;
+    $mdMenu.open(e);
+  };
+  vm.maxNum = function(int) {
+    vm.toShow = int;
+    console.log(vm.toShow);
+  };
+
+  vm.sortMethod = function(sortType) {
+    vm.sortBy = sortType;
+  };
+
+
+  vm.toggleIdeaText = function() {
+    if (vm.ideaButtonText === 'Show Ideas') vm.ideaButtonText = 'Hide Ideas';
+    if (vm.ideaButtonText === 'Hide Ideas') vm.ideaButtonText = 'Show Ideas';
+    return true;
+  };
 }
 
 function removeNegativeValue(val) {
