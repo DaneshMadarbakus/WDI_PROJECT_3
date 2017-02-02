@@ -28,6 +28,19 @@ function Router($stateProvider, $locationProvider, $urlRouterProvider){
     controller: 'usersShowCtrl',
     controllerAs: 'usersShow'
   })
+  .state('usersUpdate', {
+    url: '/users/:id/update',
+    templateUrl: '/js/views/users/update.html',
+    controller: 'usersShowCtrl',
+    controllerAs: 'usersShow'
+  })
+  .state('usersDelete', {
+    url: '/users/:id/delete',
+    templateUrl: '/js/views/users/delete.html',
+    controller: 'usersShowCtrl',
+    controllerAs: 'usersShow'
+  })
+
   .state('companyDashBoard', {
     url: '/users/:id/company/:company_id',
     templateUrl: '/js/views/users/companyDashBoard.html',
