@@ -20,7 +20,7 @@ section.companies {
   }
   .CompanyBanding:hover{
     .companyLogo{
-      filter: grayscale(100%);
+      filter: grayscale(100%) blur(1.5px);
     }
     .company-info {
       text-align: center;
