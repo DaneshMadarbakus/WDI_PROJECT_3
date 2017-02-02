@@ -4,5 +4,13 @@ section.companies {
     width: 220px;
     border-radius: 5px;
     margin-top: 50px;
+    position: relative;
+    bottom: 50;
+  }
+}
+
+section.companies {
+  img:hover {
+    filter: opacity(50%);
   }
 }
