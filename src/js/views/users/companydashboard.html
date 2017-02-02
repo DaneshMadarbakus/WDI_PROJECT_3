@@ -110,7 +110,7 @@
         <li class="idea-info"
           ng-animate="'animate'"
           ng-repeat="idea in companyDash.company.data.ideas | orderBy: sortBy" ng-style="{top: ((item.order * 40) + 'px')}"
-          ng-show="$index < maxNum"
+          ng-show="$index < companyDash.toShow"
           ng-hide="!showIdeas">
           <h4>Title: {{idea.idea}}</h4>
           <p>Score: {{ idea.score }}</p>
