@@ -17,7 +17,7 @@
           <div class="container">
             <div class="row">
               <div class="col-md-3 col-xs-4" ui-sref="companyDashBoard( { id: company.owner, company_id: company._id})" ng-repeat="company in usersShow.items">
-                <h3>{{company.name}}</h3>
+                <h3><strong>{{company.name}}</strong></h3>
                 <div class="companyFaded"></div>
                 <div class="companyLogo" style ="background-image: url('{{company.image}}')"></div>
               </div>
