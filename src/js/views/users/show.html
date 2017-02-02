@@ -4,8 +4,7 @@
       <div class="col-md-6">
         <h1>Welcome, {{ usersShow.user.username }}</h1>
         <h3>Your information</h3>
-        <img ng-if="usersShow.user.image" ng-src="{{usersShow.user.image}}" alt="">
-        <!-- <img src="http://fillmurray.com/200/200" alt=""> -->
+        <img class="userLogo" ng-if="usersShow.user.image" ng-src="{{usersShow.user.image}}" alt="">
         <h4>Nickname - {{ usersShow.user.username }}</h4>
         <h4>Email - {{ usersShow.user.email }}</h4>
         <md-button class="btn btn-primary" ui-sref ="usersUpdate({id: usersShow.user._id})" type="button" name="button">Edit Profile</md-button>
@@ -20,7 +19,7 @@
               <div class="col-md-3 col-xs-4" ui-sref="companyDashBoard( { id: company.owner, company_id: company._id})" ng-repeat="company in usersShow.items">
                 <h3>{{company.name}}</h3>
                 <div class="companyFaded"></div>
-                <img src="{{company.image}}" alt="company image">
+                <div class="companyLogo" style ="background-image: url('{{company.image}}')"></div>
               </div>
             </div>
           </div>

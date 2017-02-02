@@ -1,8 +1,18 @@
 section.companiesShow {
-  img {
-    max-width: 100px;
+.companyName{
+  position: relative;
+  text-align: center;
+  text-transform: capitalize;
+}
+.companyLogo {
+    width: 100px;
+    height: 100px;
     display: block;
-    margin: 0 auto;
+    background-size: contain;
+    border-radius: 50%;
+  }
+  .ideasAuthor{
+    text-transform: capitalize;
   }
   li {
     list-style-type: none;
