@@ -31,14 +31,14 @@ function Router($stateProvider, $locationProvider, $urlRouterProvider){
   .state('usersUpdate', {
     url: '/users/:id/update',
     templateUrl: '/js/views/users/update.html',
-    controller: 'usersShowCtrl',
-    controllerAs: 'usersShow'
+    controller: 'usersUpdateCtrl',
+    controllerAs: 'usersUpdate'
   })
   .state('usersDelete', {
     url: '/users/:id/delete',
     templateUrl: '/js/views/users/delete.html',
-    controller: 'usersShowCtrl',
-    controllerAs: 'usersShow'
+    controller: 'usersDeleteCtrl',
+    controllerAs: 'usersDelete'
   })
 
   .state('companyDashBoard', {

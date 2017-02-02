@@ -1,8 +1,9 @@
 <section class="companiesShow">
   <div class="container">
-    <h1><span class="companyName">{{companiesShow.company.name}}</h1>
-    <img class="companyLogo" src="{{companiesShow.company.image}}">
-
+    <div class="row">
+      <h1><span class="companyName">{{companiesShow.company.name}}</span></h1>
+      <img class="companyLogo" src="{{companiesShow.company.image}}">
+    </div>
     <h2>Add an idea</h2>
     <form ng-submit="companiesShow.addIdea()">
       <div class="form-group">
@@ -11,9 +12,35 @@
       <button type="submit" class="btn btn-primary btn-block">Create Idea</button>
     </form>
 
+    <div class="row md-menu">
+      <div class="md-menu-container" layout-align="center center" layout="column">
+        <md-menu ng-model="toShow">
+          <md-button aria-label="Open Sort options menu" ng-click="companiesShow.openMenu($mdMenu, $event)">Sort Options</md-button>
+          <md-menu-content width="4">
+            <md-menu-item>
+              <md-button ng-click="companiesShow.maxNum(5)" value="5">5</md-button>
+            </md-menu-item>
+            <md-menu-item>
+                <md-button ng-click="companiesShow.maxNum(10)">10</md-button>
+            </md-menu-item>
+            <md-menu-item>
+                <md-button ng-click="companiesShow.maxNum(25)">25</md-button>
+            </md-menu-item>
+            <md-menu-divider></md-menu-divider>
+            <md-menu-item>
+                <md-button ng-click="companiesShow.maxNum(0)">All</md-button>
+            </md-menu-item>
+          </md-menu-content>
+        </md-menu>
+      </div>
+    </div>
     <hr />
+
     <ul class="list-unstyled">
-      <li ng-repeat="idea in companiesShow.company.ideas">
+      <li ng-repeat="idea in companiesShow.company.ideas | orderBy: sortBy"
+          ng-animate="'animate'"
+          ng-show="$index < companiesShow.toShow">
+
         <p ui-sref="Idea({id: idea._id})">{{idea.idea}}</p>
         <p>by {{ idea.randomUsername}} {{ idea.createdAt }}</p>
 
