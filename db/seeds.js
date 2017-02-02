@@ -89,6 +89,21 @@ function createIdeas(done) {
         idea: 'More badass',
         company: companies[0],
         randomUsername: 'brave wolverine'
+      },
+      {
+        idea: 'More badass',
+        company: companies[0],
+        randomUsername: 'brave wolverine'
+      },
+      {
+        idea: 'More badass',
+        company: companies[0],
+        randomUsername: 'brave wolverine'
+      },
+      {
+        idea: 'More badass',
+        company: companies[0],
+        randomUsername: 'brave wolverine'
       }
     ];
 
