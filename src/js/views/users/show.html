@@ -4,7 +4,7 @@
       <div class="col-md-6">
         <h1>Welcome, {{ usersShow.user.username }}</h1>
         <h3>Your information</h3>
-        <div class="userLogo" style ="background-image: url('https://upload.wikimedia.org/wikipedia/commons/6/63/African_elephant_warning_raised_trunk.jpg')"></div>
+        <img class="userLogo" ng-if="usersShow.user.image" ng-src="{{usersShow.user.image}}" alt="">
         <h4>Nickname - {{ usersShow.user.username }}</h4>
         <h4>Email - {{ usersShow.user.email }}</h4>
         <md-button class="btn btn-primary" ui-sref ="usersUpdate({id: usersShow.user._id})" type="button" name="button">Edit Profile</md-button>
