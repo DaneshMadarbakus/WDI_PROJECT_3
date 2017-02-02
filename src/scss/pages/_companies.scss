@@ -1,7 +1,9 @@
 section.companies {
-  img {
-    height: 220px;
-    width: 220px;
-    border-radius: 5px;
-  }
+  .companyLogo {
+      width: 200px;
+      height: 200px;
+      display: block;
+      background-size: contain;
+      border-radius: 50%;
+    }
 }
