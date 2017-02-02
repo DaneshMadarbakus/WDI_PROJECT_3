@@ -9,10 +9,9 @@
       <div class="form-group">
         <input class="form-control" type="text" placeholder="What's your idea?" ng-model="companiesShow.idea.idea">
       </div>
+      <image-selector></image-selector>
       <button type="submit" class="btn btn-primary btn-block">Create Idea</button>
     </form>
-
-
     <hr />
     <div class="row">
       <div class="col-md-6">
@@ -73,6 +72,7 @@
               ng-animate="'animate'"
               ng-show="$index < companiesShow.toShow">
               <h2>  {{idea.idea}}  </h2>
+              <img ng-if="idea.image" ng-src="{{idea.image}}" alt="">
                 <p>by {{ idea.randomUsername}} {{ idea.createdAt }}</p>
               <div layout="row">
                 <div flex="33">

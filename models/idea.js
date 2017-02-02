@@ -2,6 +2,7 @@ const mongoose = require('mongoose');
 
 const ideaSchema = new mongoose.Schema({
   idea: { type: String, required: true },
+  image: { type: String },
   company: { type: mongoose.Schema.ObjectId, ref: 'Company' },
   upvotes: [{ type: mongoose.Schema.ObjectId, ref: 'User' }],
   downvotes: [{ type: mongoose.Schema.ObjectId, ref: 'User' }],
