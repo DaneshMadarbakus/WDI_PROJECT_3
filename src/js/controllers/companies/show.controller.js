@@ -10,14 +10,23 @@ function companiesShowCtrl(Company, $stateParams, $http, API, randNameService){
   vm.upvote    = upVote;
   vm.downvote  = downVote;
   vm.addIdea   = addIdea;
+  vm.toShow    = 10;
 
   //Menu functionality
-  //vars
   vm.originatorEvent;
   vm.openMenu = function($mdMenu, e) {
     vm.originatorEvent = e;
     $mdMenu.open(e);
+
+    //set max number of ideas to be shown
   };
+  vm.maxNum = function(int) {
+    console.log('ping', int);
+    vm.toShow = int;
+    console.log(vm.toShow);
+  };
+
+
 
   function addIdea() {
     vm.idea.randomUsername = randNameService.rndName();
