@@ -4,5 +4,6 @@ angular
     'ngResource',
     'angular-jwt',
     'ngAnimate',
-    'chart.js'
+    'chart.js',
+    'typer'
   ]);
