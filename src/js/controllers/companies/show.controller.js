@@ -14,7 +14,7 @@ function companiesShowCtrl(Company, $stateParams, $http, API, randNameService){
   vm.sortBy = '-createdAt';
 
   //Menu functionality
-  vm.originatorEvent;
+  vm.originatorEvent = null;
   vm.openMenu = function($mdMenu, e) {
     vm.originatorEvent = e;
     $mdMenu.open(e);

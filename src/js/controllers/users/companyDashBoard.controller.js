@@ -6,7 +6,7 @@ companyDashCtrl.$inject = ['User','Company', '$stateParams', '$http', 'API', '$s
 function companyDashCtrl(User, Company, $stateParams, $http, API) {
   const vm = this;
   vm.kek = 'LOL';
-  vm.company;
+  vm.company = null;
   vm.previewStringLength = 20;
   vm.sentChartData     = [];
   vm.chartLabels       = [];

@@ -5,5 +5,6 @@ angular
     'angular-jwt',
     'ngAnimate',
     'ngMaterial',
-    'chart.js'
+    'chart.js',
+    'typer'
   ]);
