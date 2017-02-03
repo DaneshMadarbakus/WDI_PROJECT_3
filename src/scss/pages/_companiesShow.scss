@@ -5,6 +5,7 @@ section.companiesShow {
   text-transform: capitalize;
 }
 .companyLogo {
+    top:  20px ;
     width: 150px;
     height: 150px;
     display: block;
@@ -12,6 +13,7 @@ section.companiesShow {
     background-repeat: no-repeat;
     background-position: center center;
     border-radius: 50%;
+    position: relative;
     h1{
       text-align: center;
     }
