@@ -84,6 +84,7 @@ function ideaRanker(ideas) {
     emptyChecker(ideas[i]);
     ideas[i].engage = ideas[i].upvotes + ideas[i].downvotes;
     ideas[i].score  = ideas[i].upvotes - ideas[i].downvotes;
+    console.log(ideas[i].score);
     //and some other chart related arrays
   }
 }

@@ -52,7 +52,7 @@ function companiesShowCtrl(Company, $stateParams, $http, API, randNameService, $
     if (typeof(ideas) !== 'object') throw 'Ideas should be an object';
     for (var i = 0; i < ideas.length; i++) {
       ideas[i].createdAt = createdOnParser(ideas[i].createdAt);
-      ideas[i].score     = ideas[i].upvotes - ideas[i].downvotes;
+      ideas[i].score     = ideas[i].upvotes.length - ideas[i].downvotes.length;
       ideas[i].engage    = ideas[i].upvotes + ideas[i].downvotes;
       console.log(ideas[i].createdAt);
     }

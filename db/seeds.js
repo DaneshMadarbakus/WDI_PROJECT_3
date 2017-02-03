@@ -310,7 +310,7 @@ function createCompanies(done) {
         name: 'Costa Coffee',
         description: 'coffee and stuff',
         website: 'www.costa.com',
-        owner: users[2],
+        owner: users[4],
         ideas: [],
         image: 'https://upload.wikimedia.org/wikipedia/en/thumb/4/42/CostaLogo.svg/1024px-CostaLogo.svg.png'
       },
@@ -318,7 +318,7 @@ function createCompanies(done) {
         name: 'Reginald B Bobcat Industries',
         description: 'Aniamls are us, any make, any model',
         website: 'www.reginaldsmenagerie.com',
-        owner: users[5],
+        owner: users[4],
         ideas: [],
         image: 'https://images.duckduckgo.com/iu/?u=http%3A%2F%2Fwww.freshcharacters.com%2Fwp-content%2Fuploads%2F2009%2F11%2FMenagerie_Coloured.jpg&f=1'
       },
@@ -326,7 +326,7 @@ function createCompanies(done) {
         name: 'AbleCable Ties',
         description: 'cable ties r us',
         website: 'www.cableties.com',
-        owner: users[3],
+        owner: users[4],
         ideas: [],
         image: 'http://s7g3.scene7.com/is/image//ae235?src=ae235/53684_P&$prodImageMedium$'
       },
@@ -334,7 +334,7 @@ function createCompanies(done) {
         name: 'Coke',
         description: 'Life\'s good!',
         website: 'www.coke.com',
-        owner: users[5],
+        owner: users[4],
         ideas: [],
         image: 'http://vignette4.wikia.nocookie.net/logopedia/images/5/59/Coca-Cola_logo_2007.jpg/revision/latest?cb=20150801090518'
       },
@@ -342,7 +342,7 @@ function createCompanies(done) {
         name: 'Cokeaine',
         description: 'Life\'s really good!',
         website: 'www.cokeaine.com',
-        owner: users[6],
+        owner: users[2],
         ideas: [],
         image: 'http://images.clipartpanda.com/smiley-face-clip-art-niXoRMbiB.png'
       },
