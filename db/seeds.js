@@ -353,22 +353,6 @@ function createCompanies(done) {
         owner: users[7],
         ideas: [],
         image: 'http://www.logodesignlove.com/images/brands/unilever-logo.jpg'
-      },
-      {
-        name: 'RBS Six Nations',
-        description: 'Rugby',
-        website: 'www.sixnations.com',
-        owner: users[9],
-        ideas: [],
-        image: 'http://maggiealphonsi.co.uk/wp-content/uploads/2016/01/6-Nations-logo-300x300.jpeg'
-      },
-      {
-        name: 'RBS Six Nations',
-        description: 'Rugby',
-        website: 'www.sixnations.com',
-        owner: users[9],
-        ideas: [],
-        image: 'http://maggiealphonsi.co.uk/wp-content/uploads/2016/01/6-Nations-logo-300x300.jpeg'
       }
     ];
 

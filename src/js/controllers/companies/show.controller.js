@@ -69,6 +69,7 @@ function companiesShowCtrl(Company, $stateParams, $http, API, randNameService, $
 
 
   function addIdea() {
+    console.log(vm.idea);
     vm.idea.randomUsername = randNameService.rndName();
     $http
       .post(`${API}/companies/${$stateParams.id}/ideas`, {idea: vm.idea})
