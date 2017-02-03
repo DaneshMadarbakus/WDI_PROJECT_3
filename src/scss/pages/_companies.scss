@@ -13,6 +13,7 @@ section.companies {
     }
     .company-info {
       width: 250px;
+      height: 50px;
       text-align: center;
       position: relative;
       top: -150px;
@@ -27,7 +28,6 @@ section.companies {
     .company-info {
       text-align: center;
       position: relative;
-      top: -157px;
       z-index: 2;
       word-wrap: normal;
       color: $white;

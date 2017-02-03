@@ -1,6 +1,13 @@
 section.usersShow {
   text-align: center;
-
+  h4{
+    padding-top: 5px; 
+    font-size: 25px;
+  }
+  .userShowBtn {
+    padding: 1rem 3rem;
+    margin: 5px
+  }
   // Almost duplicate of the layout for companies Index
   .companies {
     .companyLogo{
@@ -11,9 +18,10 @@ section.usersShow {
       background-size: contain;
     }
   }
-  .UserLogo{
-    width: 200px !important;
-    height: 200px !important;
+  .userLogo{
+    width: 350px;
+    height: 350px;
+    margin: 0 auto;
     display: block;
     background-size: cover;
     background-repeat: no-repeat;
