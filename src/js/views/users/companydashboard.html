@@ -84,7 +84,7 @@
               </md-button>
             </md-menu-item>
             <md-menu-item>
-              <md-button ng-click="companyDash.sortMethod('engage')">
+              <md-button ng-click="companyDash.sortMethod('-engage')">
                 Popular
               </md-button>
             </md-menu-item>
@@ -105,14 +105,15 @@
     </div>
   </div>
   <div class="row">
-    <ul id="list" ng-style="{height: ((myList.length * 40) + 'px')}">
+    <ul class="list-unstyled" ng-style="{height: ((myList.length * 40) + 'px')}">
       <li class="idea-info"
       ng-animate="'animate'"
-      ng-repeat="idea in companyDash.company.data.ideas | orderBy: companyDash.sortBy" ng-style="{top: ((item.order * 40) + 'px')}"
+      ng-repeat="idea in companyDash.company.data.ideas | orderBy: companyDash.sortBy"
+      ng-style="{top: ((item.order * 40) + 'px')}"
       ng-show="$index < companyDash.toShow"
       ng-hide="!showIdeas">
-      <div class="md-padding md-dialog">
-        <h4>Title: {{idea.idea}}</h4>
+      <div class="panel panel-default">
+        <h4>We think...  {{idea.idea}}</h4>
         <p>Score: {{ idea.score }}</p>
         <p>Downvotes: {{ idea.downvotes }}</p>
         <p>Upvotes: {{ idea.upvotes }}</p>

@@ -58,7 +58,7 @@
                 </md-button>
               </md-menu-item>
               <md-menu-item>
-                <md-button ng-click="companiesShow.sortMethod('engage')">
+                <md-button ng-click="companiesShow.sortMethod('-engage')">
                   Popular
                 </md-button>
               </md-menu-item>
@@ -79,15 +79,28 @@
       </div>
     </div>
 
-    <li ng-repeat="idea in companiesShow.company.ideas | orderBy:  comapniesShow.sortBy"
+    <li ng-repeat="idea in companiesShow.company.ideas | orderBy:  companiesShow.sortBy"
     ng-animate="'animate'"
     ng-show="$index < companiesShow.toShow">
-      <div class="md-padding md-dialog">
+      <div class="panel panel-default">
       <h2>  {{idea.idea}}  </h2>
-      <p class="ideasAuthor">by {{ idea.randomUsername}} {{ idea.createdAt }}</p>
+      <p class="ideasAuthor">by {{ idea.randomUsername}} <small>on</small> {{ idea.createdAt }}</p>
       <img ng-if="idea.image" ng-src="{{idea.image}}" alt="">
       <div layout="row">
         <div class="md-panel-content">
+
+          <!-- <md-button class="md-primary md-raised dialog-open-button"
+          ng-click="companiesShow.upvote(idea._id, $event)">
+          Upvote<i class="fa fa-arrow-up" aria-hidden="true"></i>
+          (<span class="upvotes">{{ idea.upvotes.length }}</span>)
+          </md-button>
+        <md-button class="md-primary md-raised menu-open-button"
+        ng-click="companiesShow.downvote(idea._id, $event)">
+        Downvote
+        <i class="fa fa-arrow-down" aria-hidden="true"></i>
+        (<span class="upvotes">{{ idea.downvotes.length }}</span>)
+      </md-button> -->
+
           <button class="btn btn-primary"
           ng-click="companiesShow.upvote(idea._id)">
           Upvote<i class="fa fa-arrow-up" aria-hidden="true"></i>
@@ -99,6 +112,7 @@
         <i class="fa fa-arrow-down" aria-hidden="true"></i>
         ({{ idea.downvotes.length }})
       </button>
+
     </div>
   </div>
 </div>

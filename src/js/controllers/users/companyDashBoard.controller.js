@@ -71,11 +71,6 @@ function companyDashCtrl(User, Company, $stateParams, $http, API) {
   };
 }
 
-function removeNegativeValue(val) {
-  console.log(val);
-  if (val < 1) console.log(val);
-  else return val;
-}
 
 function limitString(string, length) {
   const str = string.substring(0, length);
@@ -89,6 +84,7 @@ function ideaRanker(ideas) {
     emptyChecker(ideas[i]);
     ideas[i].engage = ideas[i].upvotes + ideas[i].downvotes;
     ideas[i].score  = ideas[i].upvotes - ideas[i].downvotes;
+    console.log(ideas[i].score);
     //and some other chart related arrays
   }
 }

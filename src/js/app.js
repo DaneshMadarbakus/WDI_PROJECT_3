@@ -7,5 +7,6 @@ angular
     'ngMaterial',
     'chart.js',
     'typer',
-    'ngFileUpload'
+    'ngFileUpload',
+    'angular-momentjs'
   ]);
