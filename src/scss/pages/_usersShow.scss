@@ -1,7 +1,7 @@
 section.usersShow {
   text-align: center;
   h4{
-    padding-top: 5px; 
+    padding-top: 5px;
     font-size: 25px;
   }
   .userShowBtn {
@@ -15,7 +15,8 @@ section.usersShow {
       width: 225px;
       border-radius: 50%;
       background-repeat: no-repeat;
-      background-size: contain;
+      background-position: center center;
+      background-size: cover;
     }
   }
   .userLogo{
@@ -24,6 +25,7 @@ section.usersShow {
     margin: 0 auto;
     display: block;
     background-size: cover;
+    background-repeat: no-repeat;
     background-repeat: no-repeat;
     border-radius: 50%;
   }
