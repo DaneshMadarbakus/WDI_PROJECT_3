@@ -1,0 +1,125 @@
+<section class="companyDash">
+  <div class="container">
+    <h1>{{ companyDash.company.data.name }}</h1>
+
+    <div class="row">
+      <div class="col-md-6">
+        <h3>Most Popular:</h3>
+        <div class="container doughnut">
+          <canvas id="sentdoughnut"
+          class="chart chart-doughnut"
+          chart-data="companyDash.sentChartData"
+          chart-labels="companyDash.chartLabels"
+          chart-options="{
+            responsive: false
+          }"
+          ></canvas>
+        </div>
+      </div>
+
+      <div class="container doughnut">
+        <div class="col-md-6">
+          <h3>Most Engagements:</h3>
+          <canvas id="engagedoughnut"
+          class="chart chart-doughnut"
+          chart-data="companyDash.engageChartData"
+          chart-labels="companyDash.engageChartLabels"
+          chart-options="{
+            responsive: false
+          }">
+        </canvas>
+      </div>
+    </div>
+  </div>
+  <hr />
+  <div class="row">
+    <div class="col-md-6">
+      <h2>Ideas</h2><p>Hidden by default</p>
+    </div>
+    <div class="col-md-3 toggle">
+      <md-button class="toggle-switch" ng-click="showIdeas = !showIdeas; companyDash.toggleIdeaText()">
+        {{ companyDash.ideaButtonText }}
+      </md-button>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-6">
+      <h3>Sort Options</h3>
+    </div>
+    <div class="col-md-3 md-menu">
+      <div class="md-menu-container" layout-align="center center" layout="column">
+        <md-menu ng-model="toShow">
+          <md-button aria-label="Open Sort options menu" ng-click="companyDash.openMenu($mdMenu, $event)">Number Showing</md-button>
+          <md-menu-content width="4">
+            <md-menu-item>
+              <md-button ng-click="companyDash.maxNum(5)" value="5">5</md-button>
+            </md-menu-item>
+            <md-menu-item>
+              <md-button ng-click="companyDash.maxNum(10)">10</md-button>
+            </md-menu-item>
+            <md-menu-item>
+              <md-button ng-click="companyDash.maxNum(25)">25</md-button>
+            </md-menu-item>
+            <md-menu-divider></md-menu-divider>
+            <md-menu-item>
+              <md-button ng-click="companyDash.maxNum(1000000000)">All</md-button>
+            </md-menu-item>
+          </md-menu-content>
+        </md-menu>
+      </div>
+    </div>
+    <div class="col-md-3">
+      <div class="md-menu-container" layout-align="center center" layout="column">
+        <md-menu ng-model="toShow">
+          <md-button aria-label="Open Sort options menu" ng-click="companyDash.openMenu($mdMenu, $event)">Sort Options</md-button>
+          <md-menu-content width="4">
+            <md-menu-item>
+              <md-button ng-click="companyDash.sortMethod('score')">
+                Score - Low to High
+              </md-button>
+            </md-menu-item>
+            <md-menu-item>
+              <md-button ng-click="companyDash.sortMethod('-score')">
+                Score - High to Low
+              </md-button>
+            </md-menu-item>
+            <md-menu-item>
+              <md-button ng-click="companyDash.sortMethod('-engage')">
+                Popular
+              </md-button>
+            </md-menu-item>
+            <md-menu-divider></md-menu-divider>
+            <md-menu-item>
+              <md-button ng-click="companyDash.sortMethod('-createdAt')">
+                Newest First
+              </md-button>
+            </md-menu-item>
+            <md-menu-item>
+              <md-button ng-click="companyDash.sortMethod('createdAt')">
+                Oldest First
+              </md-button>
+            </md-menu-item>
+          </md-menu-content>
+        </md-menu>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <ul class="list-unstyled" ng-style="{height: ((myList.length * 40) + 'px')}">
+      <li class="idea-info"
+      ng-animate="'animate'"
+      ng-repeat="idea in companyDash.company.data.ideas | orderBy: companyDash.sortBy"
+      ng-style="{top: ((item.order * 40) + 'px')}"
+      ng-show="$index < companyDash.toShow"
+      ng-hide="!showIdeas">
+      <div class="panel panel-default">
+        <h4><strong>We think...</strong>  {{idea.idea}}</h4>
+        <p><strong>Score:</strong> {{ idea.score }}</p>
+        <p>Downvotes: {{ idea.downvotes }}</p>
+        <p>Upvotes: {{ idea.upvotes }}</p>
+      </div>
+    </li>
+  </ul>
+</div>
+</div>
+</section>

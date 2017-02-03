@@ -1,0 +1,22 @@
+<section class="ideasShow">
+<p>{{companiesShow.company}}</p>
+<h1><span>{{companiesShow.company.name}}</span> ideas page</h1>
+<form ng-submit="i.login()">
+  <div>
+    <input type="idea" name="idea" ng-model="login.user.password" placeholder="My suggestion for improvement is ...">
+  </div>
+  <input type="submit" value="New Idea">
+</form>
+<hr />
+<ul class="list-unstyled">
+  <li ng-repeat="idea in companiesShow.company.idea">
+    <p ui-sref="Idea({id: idea._id})">{{idea}}</p>
+    <div class="btn-group pull-right" role="group" aria-label="...">
+      <button class="btn btn-default" ng-click="count = count + 1" ng-init="count=0">Up<span>count: {{count}}</span>
+      </button>
+      <button class="btn btn-default" ng-click="count = count + 1" ng-init="count=0">Down<span>count: {{count}}</span>
+      </button>
+    </div>
+  </li>
+</ul>
+</section>

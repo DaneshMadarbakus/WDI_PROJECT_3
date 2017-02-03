@@ -1,0 +1,121 @@
+<section class="companiesShow">
+  <div class="container">
+    <div class="row">
+
+
+      <div class="companyLogo pull-right" style="background-image: url('{{companiesShow.company.image}}')"></div>
+      <h1 class=><span class="companyName">{{companiesShow.company.name}}</span></h1>
+      <h3><span class="companyDescription">{{companiesShow.company.description}}</span></h3>
+    </div>
+    <h2>Add an idea</h2>
+    <form ng-submit="companiesShow.addIdea()">
+      <div class="form-group">
+        <input class="form-control" type="text" placeholder="What's your idea?" ng-model="companiesShow.idea.idea">
+      </div>
+      <image-selector></image-selector>
+      <button type="submit" class="btn btn-primary btn-block">Create Idea</button>
+    </form>
+    <hr />
+    <div class="row">
+      <div class="col-md-6">
+        <h2>Ideas</h2>
+      </div>
+      <div class="col-md-3 md-menu">
+        <div class="md-menu-container" layout-align="center center" layout="column">
+          <md-menu ng-model="toShow">
+            <md-button aria-label="Open Sort options menu" ng-click="companiesShow.openMenu($mdMenu, $event)">Limit Ideas Showing</md-button>
+            <md-menu-content width="4">
+              <md-menu-item>
+                <md-button ng-click="companiesShow.maxNum(5)" value="5">5</md-button>
+              </md-menu-item>
+              <md-menu-item>
+                <md-button ng-click="companiesShow.maxNum(10)">10</md-button>
+              </md-menu-item>
+              <md-menu-item>
+                <md-button ng-click="companiesShow.maxNum(25)">25</md-button>
+              </md-menu-item>
+              <md-menu-divider></md-menu-divider>
+              <md-menu-item>
+                <md-button ng-click="companiesShow.maxNum(1000000000)">All</md-button>
+              </md-menu-item>
+            </md-menu-content>
+          </md-menu>
+        </div>
+      </div>
+      <div class="col-md-3">
+        <div class="md-menu-container" layout-align="center center" layout="column">
+          <md-menu ng-model="toShow">
+            <md-button aria-label="Open Sort options menu" ng-click="companiesShow.openMenu($mdMenu, $event)">Sort By</md-button>
+            <md-menu-content width="4">
+              <md-menu-item>
+                <md-button ng-click="companiesShow.sortMethod('score')">
+                  Score - Low to High
+                </md-button>
+              </md-menu-item>
+              <md-menu-item>
+                <md-button ng-click="companiesShow.sortMethod('-score')">
+                  Score - High to Low
+                </md-button>
+              </md-menu-item>
+              <md-menu-item>
+                <md-button ng-click="companiesShow.sortMethod('-engage')">
+                  Popular
+                </md-button>
+              </md-menu-item>
+              <md-menu-divider></md-menu-divider>
+              <md-menu-item>
+                <md-button ng-click="companiesShow.sortMethod('-createdAt')">
+                  Newest First
+                </md-button>
+              </md-menu-item>
+              <md-menu-item>
+                <md-button ng-click="companiesShow.sortMethod('createdAt')">
+                  Oldest First
+                </md-button>
+              </md-menu-item>
+            </md-menu-content>
+          </md-menu>
+        </div>
+      </div>
+    </div>
+
+    <li ng-repeat="idea in companiesShow.company.ideas | orderBy:  companiesShow.sortBy"
+    ng-animate="'animate'"
+    ng-show="$index < companiesShow.toShow">
+      <div class="panel panel-default">
+      <h2>  {{idea.idea}}  </h2>
+      <p class="ideasAuthor">by {{ idea.randomUsername}} <small>on</small> {{ idea.createdAt }}</p>
+      <img ng-if="idea.image" ng-src="{{idea.image}}" alt="">
+      <div layout="row">
+        <div class="md-panel-content">
+
+          <!-- <md-button class="md-primary md-raised dialog-open-button"
+          ng-click="companiesShow.upvote(idea._id, $event)">
+          Upvote<i class="fa fa-arrow-up" aria-hidden="true"></i>
+          (<span class="upvotes">{{ idea.upvotes.length }}</span>)
+          </md-button>
+        <md-button class="md-primary md-raised menu-open-button"
+        ng-click="companiesShow.downvote(idea._id, $event)">
+        Downvote
+        <i class="fa fa-arrow-down" aria-hidden="true"></i>
+        (<span class="upvotes">{{ idea.downvotes.length }}</span>)
+      </md-button> -->
+
+          <button class="btn btn-primary"
+          ng-click="companiesShow.upvote(idea._id)">
+          Upvote<i class="fa fa-arrow-up" aria-hidden="true"></i>
+          ({{ idea.upvotes.length }})
+          </button>
+        <button class="btn btn-primary"
+        ng-click="companiesShow.downvote(idea._id)">
+        Downvote
+        <i class="fa fa-arrow-down" aria-hidden="true"></i>
+        ({{ idea.downvotes.length }})
+      </button>
+
+    </div>
+  </div>
+</div>
+</li>
+</div>
+</section>
