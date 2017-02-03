@@ -105,7 +105,7 @@
     </div>
   </div>
   <div class="row">
-    <ul id="list" ng-style="{height: ((myList.length * 40) + 'px')}">
+    <ul class="list-unstyled" ng-style="{height: ((myList.length * 40) + 'px')}">
       <li class="idea-info"
       ng-animate="'animate'"
       ng-repeat="idea in companyDash.company.data.ideas | orderBy: companyDash.sortBy"
